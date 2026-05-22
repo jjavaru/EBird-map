@@ -1,0 +1,333 @@
+Row #,Taxon Order,Category,Common Name,Scientific Name,Count,Location,S/P,Date,LocID,SubID,Exotic,Countable
+1,33564,species,Bobolink,Dolichonyx oryzivorus,1,Battelle Darby Creek Metro Park--Nature Center,US-OH,16 May 2026,L2343567,S340326757,,1
+2,7724,species,Western Cattle-Egret,Ardea ibis,1,Battelle Darby Creek Metro Park--Nature Center,US-OH,12 May 2026,L2343567,S337959969,,1
+3,33563,species,Yellow-headed Blackbird,Xanthocephalus xanthocephalus,1,Howard Marsh Metropark,US-OH,09 May 2026,L4971040,S335264533,,1
+4,6119,species,Wilson's Phalarope,Phalaropus tricolor,2,Howard Marsh Metropark,US-OH,09 May 2026,L4971040,S335264533,,1
+5,33956,species,Golden-winged Warbler,Vermivora chrysoptera,1,Magee Marsh--Boardwalk,US-OH,08 May 2026,L275986,S334837416,,1
+6,3614,species,Eastern Whip-poor-will,Antrostomus vociferus,1,Magee Marsh--Boardwalk,US-OH,08 May 2026,L275986,S334837416,,1
+7,8909,species,Snowy Owl,Bubo scandiacus,1,"9512 County Road 30, Thornville, Ohio, US (39.837, -82.396)",US-OH,07 May 2026,L65298625,S334218047,,1
+8,7591,species,Yellow-crowned Night Heron,Nyctanassa violacea,1,McKinley Quarry,US-OH,04 May 2026,L870692,S332396339,,1
+9,19220,species,Yellow-throated Vireo,Vireo flavifrons,1,Shawnee State Forest--Pond Lick Rd.,US-OH,25 Apr 2026,L1149608,S327330031,,1
+10,33964,species,Swainson's Warbler,Limnothlypis swainsonii,2,Shawnee State Forest--Shawnee Trail,US-OH,25 Apr 2026,L46312433,S327177260,,1
+11,33957,species,Blue-winged Warbler,Vermivora cyanoptera,3,Shawnee State Forest--Shawnee Trail,US-OH,25 Apr 2026,L46312433,S327177260,,1
+12,8910,species,Great Horned Owl,Bubo virginianus,2,Glacier Ridge Metro Park--Red Oak Trail,US-OH,17 Apr 2026,L5292963,S323209159,,1
+14,33950,species,Worm-eating Warbler,Helmitheros vermivorum,1,Scioto Audubon Metro Park--Whittier,US-OH,15 Apr 2026,L450283,S322009295,,1
+15,34185,species,Prairie Warbler,Setophaga discolor,1,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,11 Apr 2026,L353630,S320354070,,1
+16,8479,species,Broad-winged Hawk,Buteo platypterus,1,Cove Spring Park,US-KY,10 Apr 2026,L9690840,S319773009,,1
+17,6927,species,Red-throated Loon,Gavia stellata,1,Marysville Upground Reservoir,US-OH,04 Apr 2026,L1306334,S316969379,,1
+18,33198,species,Harris's Sparrow,Zonotrichia querula,1,"33837-33835 Township Highway 20, Brinkhaven, Ohio, US (40.448, -82.145)",US-OH,21 Mar 2026,L60684896,S312224596,,1
+19,33565,species,Western Meadowlark,Sturnella neglecta,1,"31999 U.S. 36, Walhonding, Ohio, US (40.334, -82.169)",US-OH,21 Mar 2026,L60672546,S312224587,,1
+20,28069,species,Sage Thrasher,Oreoscoptes montanus,1,"stakeout Sage Thrasher, Millersburg (2026)",US-OH,21 Mar 2026,L60305177,S312224574,,1
+21,741,species,Long-tailed Duck,Clangula hyemalis,1,Duranceau Park,US-OH,07 Feb 2026,L3606088,S298664315,,1
+22,33244,species,Savannah Sparrow,Passerculus sandwichensis,1,Alum Creek SP--Spillway,US-OH,29 Jan 2026,L3296354,S296901167,,1
+23,32674,species,Snow Bunting,Plectrophenax nivalis,50,Alum Creek SP--Spillway,US-OH,29 Jan 2026,L3296354,S296901167,,1
+24,6606,species,Iceland Gull,Larus glaucoides,2,"Wendy Park, Whiskey Island",US-OH,17 Jan 2026,L284586,S294752739,,1
+25,6566,species,Glaucous Gull,Larus hyperboreus,1,"Wendy Park, Whiskey Island",US-OH,17 Jan 2026,L284586,S294752739,,1
+28,9304,species,Northern Saw-whet Owl,Aegolius acadicus,2,Cleveland Lakefront Nature Preserve,US-OH,17 Jan 2026,L618902,S294704364,,1
+30,9276,species,Short-eared Owl,Asio flammeus,1,Battelle Darby Creek Metro Park--Darby Plains Wet Prairie Restoration,US-OH,02 Jan 2026,L1129017,S291979817,,1
+31,32595,species,Pine Siskin,Spinus pinus,1,"Green Lawn Cemetery, Columbus",US-OH,30 Dec 2025,L164553,S291236011,,1
+32,34621,species,Painted Bunting,Passerina ciris,1,Audubon Corkscrew Swamp Sanctuary,US-FL,27 Dec 2025,L127407,S290590309,,1
+33,7467,species,Glossy Ibis,Plegadis falcinellus,5,Naples Botanical Garden,US-FL,26 Dec 2025,L2603780,S290377831,,1
+34,6622,species,Black Skimmer,Rynchops niger,50,Dog Beach,US-FL,24 Dec 2025,L1190122,S290010567,,1
+35,384,species,Tundra Swan,Cygnus columbianus,2,Prairie Oaks Metro Park--Darby Bend Lakes (Franklin Co.),US-OH,17 Dec 2025,L629294,S289011650,,1
+36,8528,species,Rough-legged Hawk,Buteo lagopus,2,Ohio State University--Airport,US-OH,15 Dec 2025,L5742870,S288753560,,1
+37,12062,species,Merlin,Falco columbarius,1,"2585 Billingsley Road, Columbus, Ohio, US (40.112, -83.085)",US-OH,11 Dec 2025,L55892437,S288187821,,1
+38,33099,species,Fox Sparrow,Passerella iliaca,2,"Blacklick Woods Metro Park--Nature Center, Canopy Walk, and Buttonbush Trail (Fairfield Co.)",US-OH,08 Dec 2025,L864176,S287812627,,1
+39,730,species,White-winged Scoter,Melanitta deglandi,1,Alum Creek SP--Beach and Alum Reservoir South,US-OH,07 Dec 2025,L1335935,S287734259,,1
+40,728,species,Surf Scoter,Melanitta perspicillata,3,Alum Creek SP--Beach and Alum Reservoir South,US-OH,07 Dec 2025,L1335935,S287734259,,1
+41,8866,species,Eastern Screech-Owl,Megascops asio,1,Kiwanis Riverway Park,US-OH,07 Dec 2025,L323166,S287698571,,1
+42,4826,species,Rufous Hummingbird,Selasphorus rufus,1,"stakeout Rufous Hummingbird, Columbus (2025)",US-OH,22 Nov 2025,L55226928,S285621484,,1
+43,27295,species,Winter Wren,Troglodytes hiemalis,1,Kiwanis Riverway Park,US-OH,17 Nov 2025,L323166,S284977402,,1
+44,32664,species,Lapland Longspur,Calcarius lapponicus,2,Alum Creek SP--Marina,US-OH,16 Nov 2025,L4024644,S284838285,,1
+45,737,species,Black Scoter,Melanitta americana,1,Duranceau Park,US-OH,12 Nov 2025,L3606088,S284193151,,1
+46,33187,species,White-crowned Sparrow,Zonotrichia leucophrys,2,Glacier Ridge Metro Park--Honda Wetlands,US-OH,11 Oct 2025,L1137897,S278771157,,1
+47,6869,species,Red-necked Grebe,Podiceps grisegena,12,Colonel Samuel Smith Park,CA-ON,16 Aug 2025,L421884,S267636581,,1
+48,6562,species,Great Black-backed Gull,Larus marinus,4,Presque Isle SP--Gull Pt.,US-PA,12 Aug 2025,L337068,S266838708,,1
+49,22065,species,Black-capped Chickadee,Poecile atricapillus,1,Hinckley Reservation--West Drive Scenic Overlook,US-OH,11 Aug 2025,L15656489,S266660889,,1
+50,28318,species,Gray-cheeked Thrush,Catharus minimus,1,Magee Marsh--Boardwalk,US-OH,25 May 2025,L275986,S243316449,,1
+51,27329,species,Marsh Wren,Cistothorus palustris,1,Metzger Marsh Wildlife Area,US-OH,24 May 2025,L211111,S242151472,,1
+52,24051,species,Bank Swallow,Riparia riparia,1,Metzger Marsh Wildlife Area,US-OH,24 May 2025,L211111,S242151472,,1
+53,19226,species,Blue-headed Vireo,Vireo solitarius,1,Glen Echo Park,US-OH,07 May 2025,L1138317,S234370658,,1
+54,34057,species,Hooded Warbler,Setophaga citrina,1,Glen Echo Park,US-OH,02 May 2025,L1138317,S232253432,,1
+55,19165,species,White-eyed Vireo,Vireo griseus,2,Kiwanis Riverway Park,US-OH,30 Apr 2025,L323166,S231366524,,1
+56,33953,species,Northern Waterthrush,Parkesia noveboracensis,1,Glen Echo Park,US-OH,30 Apr 2025,L1138317,S231318383,,1
+57,28313,species,Veery,Catharus fuscescens,1,Glen Echo Park,US-OH,30 Apr 2025,L1138317,S231318383,,1
+58,34432,species,Summer Tanager,Piranga rubra,2,Pinson Mounds SP,US-TN,19 Apr 2025,L2765147,S227137729,,1
+59,9219,species,Barred Owl,Strix varia,3,"Walhalla Rd., Columbus",US-OH,16 Apr 2025,L880389,S226177534,,1
+60,6576,species,Lesser Black-backed Gull,Larus fuscus,2,Langton Rd Field,US-OH,15 Apr 2025,L42712903,S225942878,,1
+61,6227,species,Pectoral Sandpiper,Calidris melanotos,100,Langton Rd Field,US-OH,15 Apr 2025,L42712903,S225942878,,1
+62,33315,species,Swamp Sparrow,Melospiza georgiana,1,Battelle Darby Creek Metro Park--Darby Plains Wet Prairie Restoration,US-OH,13 Apr 2025,L1129017,S225399633,,1
+63,6104,species,Wilson's Snipe,Gallinago delicata,4,Battelle Darby Creek Metro Park--Darby Plains Wet Prairie Restoration,US-OH,13 Apr 2025,L1129017,S225399633,,1
+64,32324,species,Purple Finch,Haemorhous purpureus,4,Walnut Woods Metro Park--Tall Pines Area,US-OH,12 Apr 2025,L13418171,S225043264,,1
+65,6145,species,Lesser Yellowlegs,Tringa flavipes,12,Clover Cemetery and Wetlands,US-OH,01 Apr 2025,L1648709,S222367764,,1
+66,6061,species,Long-billed Dowitcher,Limnodromus scolopaceus,1,Clover Cemetery and Wetlands,US-OH,01 Apr 2025,L1648709,S222367764,,1
+67,694,species,Greater Scaup,Aythya marila,3,Prairie Oaks Metro Park--Darby Bend Lakes (Franklin Co.),US-OH,11 Mar 2025,L629294,S217985924,,1
+68,6064,species,American Woodcock,Scolopax minor,3,Blendon Woods Metro Park--Natural Playground,US-OH,08 Mar 2025,L11414378,S217340479,,1
+69,33095,species,American Tree Sparrow,Spizelloides arborea,2,Blendon Woods Metro Park,US-OH,08 Mar 2025,L164552,S217317431,,1
+70,571,species,American Black Duck,Anas rubripes,4,Blendon Woods Metro Park,US-OH,08 Mar 2025,L164552,S217317431,,1
+71,6462,species,Bonaparte's Gull,Chroicocephalus philadelphia,1,Hoover Reservoir (Franklin Co.),US-OH,01 Mar 2025,L1797346,S216087474,,1
+72,742,species,Bufflehead,Bucephala albeola,2,Hoover Reservoir (Franklin Co.),US-OH,01 Mar 2025,L1797346,S216087474,,1
+73,762,species,Common Merganser,Mergus merganser,3,Prairie Oaks Metro Park--Darby Bend Lakes (Franklin Co.),US-OH,22 Feb 2025,L629294,S214909836,,1
+74,594,species,Northern Pintail,Anas acuta,2,Prairie Oaks Metro Park--Darby Bend Lakes (Franklin Co.),US-OH,22 Feb 2025,L629294,S214909836,,1
+75,517,species,American Wigeon,Mareca americana,3,Prairie Oaks Metro Park--Darby Bend Lakes (Franklin Co.),US-OH,22 Feb 2025,L629294,S214909836,,1
+76,8324,species,Northern Harrier,Circus hudsonius,1,Clover Cemetery and Wetlands,US-OH,22 Feb 2025,L1648709,S214892437,,1
+77,287,species,Greater White-fronted Goose,Anser albifrons,40,Clover Cemetery and Wetlands,US-OH,22 Feb 2025,L1648709,S214892437,,1
+78,272,species,Ross's Goose,Anser rossii,4,Clover Cemetery and Wetlands,US-OH,22 Feb 2025,L1648709,S214892437,,1
+79,6866,species,Horned Grebe,Podiceps auritus,1,Clover Cemetery and Wetlands,US-OH,20 Feb 2025,L1648709,S214574021,,1
+80,331,species,Cackling Goose,Branta hutchinsii,1,Clover Cemetery and Wetlands,US-OH,20 Feb 2025,L1648709,S214574021,,1
+81,8278,species,Cooper's Hawk,Astur cooperii,1,Home,US-OH,14 Feb 2025,L22940035,S213274805,,1
+82,7446,species,Imperial Cormorant,Leucocarbo atriceps,55,Puerto Natales--Costanera,CL-MA,10 Feb 2025,L8229584,S212821422,,1
+83,35352,species,Patagonian Sierra Finch,Phrygilus patagonicus,4,PN Torres del Paine--Camping Lago Pehoé (Noroeste),CL-MA,09 Feb 2025,L1259312,S212706928,,1
+84,27209,species,Southern House Wren,Troglodytes musculus,1,PN Torres del Paine--Camping Lago Pehoé (Noroeste),CL-MA,09 Feb 2025,L1259312,S212706928,,1
+85,17099,species,Dark-faced Ground-Tyrant,Muscisaxicola maclovianus,1,PN Torres del Paine--Camping Lago Pehoé (Noroeste),CL-MA,09 Feb 2025,L1259312,S212706928,,1
+86,15422,species,Cordilleran Canastero,Asthenes modesta,1,PN Torres del Paine--Camping Lago Pehoé (Noroeste),CL-MA,09 Feb 2025,L1259312,S212706928,,1
+87,7487,species,Black-faced Ibis,Theristicus melanopis,8,PN Torres del Paine--Camping Lago Pehoé (Noroeste),CL-MA,09 Feb 2025,L1259312,S212706928,,1
+88,6863,species,Great Grebe,Podiceps major,2,PN Torres del Paine--Camping Lago Pehoé (Noroeste),CL-MA,09 Feb 2025,L1259312,S212706928,,1
+89,6735,species,South American Tern,Sterna hirundinacea,1,PN Torres del Paine--Camping Lago Pehoé (Noroeste),CL-MA,09 Feb 2025,L1259312,S212706928,,1
+90,629,species,Yellow-billed Teal,Anas flavirostris,1,PN Torres del Paine--Camping Lago Pehoé (Noroeste),CL-MA,09 Feb 2025,L1259312,S212706928,,1
+91,432,species,Flying Steamer-Duck,Tachyeres patachonicus,1,PN Torres del Paine--Camping Lago Pehoé (Noroeste),CL-MA,09 Feb 2025,L1259312,S212706928,,1
+92,16712,species,White-crested Elaenia,Elaenia albiceps,1,PN Torres del Paine--Camping Grey,CL-MA,08 Feb 2025,L6663915,S213047085,,1
+93,11569,species,Magellanic Woodpecker,Campephilus magellanicus,2,PN Torres del Paine--Camping Grey,CL-MA,08 Feb 2025,L6663915,S213047085,,1
+94,401,species,Upland Goose,Chloephaga picta,2,PN Torres del Paine--Camping Grey,CL-MA,08 Feb 2025,L6663915,S213047085,,1
+95,15087,species,Buff-winged Cinclodes,Cinclodes fuscus,1,PN Torres del Paine--Valle del Francés,CL-MA,07 Feb 2025,L22587151,S212706820,,1
+96,11962,species,Crested Caracara,Caracara plancus,1,PN Torres del Paine--Valle del Francés,CL-MA,07 Feb 2025,L22587151,S212706820,,1
+97,33910,species,Austral Blackbird,Curaeus curaeus,12,PN Torres del Paine--Trek de Los Cuernos a Chileno/Las Torres,CL-MA,06 Feb 2025,L3568114,S212706791,,1
+98,11480,species,Striped Woodpecker,Veniliornis lignarius,1,PN Torres del Paine--Trek de Los Cuernos a Chileno/Las Torres,CL-MA,06 Feb 2025,L3568114,S212706791,,1
+99,35347,species,Gray-hooded Sierra Finch,Phrygilus gayi,1,PN Torres del Paine--Trek a mirador Torres del Paine,CL-MA,05 Feb 2025,L1259323,S212706732,,1
+100,32658,species,Black-chinned Siskin,Spinus barbatus,1,PN Torres del Paine--Trek a mirador Torres del Paine,CL-MA,05 Feb 2025,L1259323,S212706732,,1
+101,24068,species,Chilean Swallow,Tachycineta leucopyga,8,PN Torres del Paine--Trek a mirador Torres del Paine,CL-MA,05 Feb 2025,L1259323,S212706732,,1
+102,15308,species,Thorn-tailed Rayadito,Aphrastura spinicauda,1,PN Torres del Paine--Trek a mirador Torres del Paine,CL-MA,05 Feb 2025,L1259323,S212706732,,1
+103,13076,species,Austral Parakeet,Enicognathus ferrugineus,1,PN Torres del Paine--Trek a mirador Torres del Paine,CL-MA,05 Feb 2025,L1259323,S212706732,,1
+104,8458,species,Black-chested Buzzard-Eagle,Geranoaetus melanoleucus,1,PN Torres del Paine--Trek a mirador Torres del Paine,CL-MA,05 Feb 2025,L1259323,S212706732,,1
+105,7810,species,Andean Condor,Vultur gryphus,4,PN Torres del Paine--Trek a mirador Torres del Paine,CL-MA,05 Feb 2025,L1259323,S212706732,,1
+106,5896,species,Southern Lapwing,Vanellus chilensis,4,PN Torres del Paine--Trek a mirador Torres del Paine,CL-MA,05 Feb 2025,L1259323,S212706732,,1
+107,38,species,Lesser Rhea,Rhea pennata,1,PN Torres del Paine--Trek a mirador Torres del Paine,CL-MA,05 Feb 2025,L1259323,S212706732,,1
+108,35354,species,Diuca Finch,Diuca diuca,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+109,33158,species,Rufous-collared Sparrow,Zonotrichia capensis,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+110,15887,species,Rufous-tailed Plantcutter,Phytotoma rara,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+111,15116,species,Dark-bellied Cinclodes,Cinclodes patagonicus,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+112,7762,species,Cocoi Heron,Ardea cocoi,3,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+113,5512,species,White-winged Coot,Fulica leucoptera,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+114,5486,species,Red-gartered Coot,Fulica armillata,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+115,5451,species,Spot-flanked Gallinule,Porphyriops melanops,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+116,5415,species,Plumbeous Rail,Pardirallus sanguinolentus,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+117,524,species,Chiloe Wigeon,Mareca sibilatrix,40,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+118,487,species,Cinnamon Teal,Spatula cyanoptera,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+119,395,species,Coscoroba Swan,Coscoroba coscoroba,1,Parque Tricao--Embarcadero,CL-VS,03 Feb 2025,L30209481,S211960367,,1
+120,381,species,Black-necked Swan,Cygnus melancoryphus,1,Tranque San Juan,CL-VS,03 Feb 2025,L10714113,S211829685,,1
+121,7388,species,Red-legged Cormorant,Poikilocarbo gaimardi,6,Bahía de Valparaíso,CL-VS,01 Feb 2025,L898822,S211515820,,1
+122,7362,species,Peruvian Booby,Sula variegata,4,Bahía de Valparaíso,CL-VS,01 Feb 2025,L898822,S211515820,,1
+123,6719,species,Inca Tern,Larosterna inca,1,Bahía de Valparaíso,CL-VS,01 Feb 2025,L898822,S211515820,,1
+124,6494,species,Franklin's Gull,Leucophaeus pipixcan,3,Bahía de Valparaíso,CL-VS,01 Feb 2025,L898822,S211515820,,1
+125,7799,species,Peruvian Pelican,Pelecanus thagus,1,Maitencillo--La Caleta,CL-VS,31 Jan 2025,L38987851,S211418549,,1
+126,7431,species,Neotropic Cormorant,Nannopterum brasilianum,5,Maitencillo--La Caleta,CL-VS,31 Jan 2025,L38987851,S211418549,,1
+127,6533,species,Kelp Gull,Larus dominicanus,8,Maitencillo--La Caleta,CL-VS,31 Jan 2025,L38987851,S211418549,,1
+128,6011,species,Hudsonian Whimbrel,Numenius hudsonicus,1,Maitencillo--La Caleta,CL-VS,31 Jan 2025,L38987851,S211418549,,1
+129,5804,species,Blackish Oystercatcher,Haematopus ater,2,Maitencillo--La Caleta,CL-VS,31 Jan 2025,L38987851,S211418549,,1
+130,28692,species,Austral Thrush,Turdus falcklandii,1,Escuela Militar,CL-RM,31 Jan 2025,L7729163,S211423512,,1
+131,11970,species,Chimango Caracara,Daptrius chimango,1,Escuela Militar,CL-RM,31 Jan 2025,L7729163,S211423512,,1
+132,743,species,Common Goldeneye,Bucephala clangula,5,Griggs Reservoir Park--Disc Golf Course,US-OH,24 Jan 2025,L4272507,S210538225,,1
+133,27026,species,Brown Creeper,Certhia americana,1,Prairie Oaks Metro Park--Darby Bend Lakes (Franklin Co.),US-OH,19 Jan 2025,L629294,S209960489,,1
+134,667,species,Redhead,Aythya americana,4,Prairie Oaks Metro Park--Darby Bend Lakes (Franklin Co.),US-OH,19 Jan 2025,L629294,S209960489,,1
+135,666,species,Canvasback,Aythya valisineria,2,Prairie Oaks Metro Park--Darby Bend Lakes (Franklin Co.),US-OH,19 Jan 2025,L629294,S209960489,,1
+136,612,species,Green-winged Teal,Anas crecca,2,Prairie Oaks Metro Park--Darby Bend Lakes (Franklin Co.),US-OH,19 Jan 2025,L629294,S209960489,,1
+137,26848,species,Golden-crowned Kinglet,Regulus satrapa,1,Hoover Reservoir--Spillway,US-OH,11 Jan 2025,L4126478,S208907472,,1
+138,505,species,Gadwall,Mareca strepera,20,Hoover Reservoir--Spillway,US-OH,11 Jan 2025,L4126478,S208907472,,1
+139,21091,species,Loggerhead Shrike,Lanius ludovicianus,2,Huntington Lakes,US-FL,25 Dec 2024,L38844500,S206524640,,1
+140,754,species,Hooded Merganser,Lophodytes cucullatus,2,Huntington Lakes,US-FL,25 Dec 2024,L38844500,S206524640,,1
+141,575,species,Mottled Duck,Anas fulvigula,4,Huntington Lakes,US-FL,25 Dec 2024,L38844500,S206524640,,1
+142,33858,species,Boat-tailed Grackle,Quiscalus major,4,Cypress Woods,US-FL,24 Dec 2024,L28726637,S206420820,,1
+143,21570,species,Fish Crow,Corvus ossifragus,10,Cypress Woods,US-FL,24 Dec 2024,L28726637,S206420820,,1
+144,7630,species,Tricolored Heron,Egretta tricolor,19,J. N. Ding Darling NWR--Indigo Trail,US-FL,22 Dec 2024,L889504,S206229050,,1
+145,7533,species,Roseate Spoonbill,Platalea ajaja,11,J. N. Ding Darling NWR--Indigo Trail,US-FL,22 Dec 2024,L889504,S206229050,,1
+146,5811,species,Black-bellied Plover,Pluvialis squatarola,1,J. N. Ding Darling NWR--Indigo Trail,US-FL,22 Dec 2024,L889504,S206229050,,1
+147,33386,species,Spotted Towhee,Pipilo maculatus,1,Boynton Canyon,US-AZ,10 Jun 2024,L1873056,S180691758,,1
+148,29909,species,Phainopepla,Phainopepla nitens,4,Boynton Canyon,US-AZ,10 Jun 2024,L1873056,S180691758,,1
+149,25253,species,Bushtit,Psaltriparus minimus,3,Boynton Canyon,US-AZ,10 Jun 2024,L1873056,S180691758,,1
+150,21309,species,Woodhouse's Scrub-Jay,Aphelocoma woodhouseii,1,Boynton Canyon,US-AZ,10 Jun 2024,L1873056,S180691758,,1
+151,19203,species,Gray Vireo,Vireo vicinior,1,Boynton Canyon,US-AZ,10 Jun 2024,L1873056,S180691758,,1
+152,27412,species,Cactus Wren,Campylorhynchus brunneicapillus,3,Desert Botanical Garden,US-AZ,07 Jun 2024,L210015,S179970167,,1
+153,4818,species,Costa's Hummingbird,Calypte costae,1,Desert Botanical Garden,US-AZ,07 Jun 2024,L210015,S179970167,,1
+154,4814,species,Anna's Hummingbird,Calypte anna,1,Desert Botanical Garden,US-AZ,07 Jun 2024,L210015,S179970167,,1
+155,33980,species,Lucy's Warbler,Leiothlypis luciae,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+156,33864,species,Great-tailed Grackle,Quiscalus mexicanus,4,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+157,33682,species,Hooded Oriole,Icterus cucullatus,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+158,33344,species,Abert's Towhee,Melozone aberti,2,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+159,33018,species,Black-throated Sparrow,Amphispiza bilineata,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+160,32609,species,Lesser Goldfinch,Spinus psaltria,2,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+161,32310,species,House Finch,Haemorhous mexicanus,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+162,28024,species,Curve-billed Thrasher,Toxostoma curvirostre,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+163,22269,species,Verdin,Auriparus flaviceps,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+164,19197,species,Bell's Vireo,Vireo bellii,3,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+165,17335,species,Brown-crested Flycatcher,Myiarchus tyrannulus,2,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+166,17029,species,Vermilion Flycatcher,Pyrocephalus rubinus,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+167,16998,species,Black Phoebe,Sayornis nigricans,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+168,11412,species,Ladder-backed Woodpecker,Dryobates scalaris,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+169,11176,species,Gila Woodpecker,Melanerpes uropygialis,4,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+170,4803,species,Black-chinned Hummingbird,Archilochus alexandri,1,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+171,2389,species,White-winged Dove,Zenaida asiatica,2,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+172,1105,species,Gambel's Quail,Callipepla gambelii,2,Boyce Thompson Arboretum,US-AZ,06 Jun 2024,L166979,S179765735,,1
+173,21624,species,Common Raven,Corvus corax,2,"6401 East Cave Creek Road, Cave Creek, Arizona, US (33.832, -111.943)",US-AZ,05 Jun 2024,L32919139,S179702301,,1
+174,34218,species,Black-throated Green Warbler,Setophaga virens,1,Magee Marsh--Boardwalk,US-OH,17 May 2024,L275986,S175160241,,1
+176,6192,species,Dunlin,Calidris alpina,48,Howard Marsh Metropark,US-OH,17 May 2024,L4971040,S175144312,,1
+177,5770,species,Black-necked Stilt,Himantopus mexicanus,1,Howard Marsh Metropark,US-OH,17 May 2024,L4971040,S175144312,,1
+178,778,species,Ruddy Duck,Oxyura jamaicensis,1,Howard Marsh Metropark,US-OH,17 May 2024,L4971040,S175144312,,1
+179,17334,species,Great Crested Flycatcher,Myiarchus crinitus,1,Ottawa NWR--Walking Trail Pools,US-OH,16 May 2024,L691081,S174973713,,1
+180,34084,species,Blackburnian Warbler,Setophaga fusca,1,Magee Marsh--Goosehaven Trail (seasonal),US-OH,16 May 2024,L14384031,S174914658,,1
+181,22710,species,Horned Lark,Eremophila alpestris,2,Howard Marsh Metropark,US-OH,15 May 2024,L4971040,S174770549,,1
+182,6748,species,Common Tern,Sterna hirundo,13,Metzger Marsh--Outer Dike,US-OH,15 May 2024,L3594551,S174757561,,1
+183,6725,species,Black Tern,Chlidonias niger,3,Metzger Marsh--Outer Dike,US-OH,15 May 2024,L3594551,S174757561,,1
+184,5468,species,Common Gallinule,Gallinula galeata,2,Metzger Marsh--Outer Dike,US-OH,15 May 2024,L3594551,S174757561,,1
+185,34346,species,Wilson's Warbler,Cardellina pusilla,1,Magee Marsh--Boardwalk,US-OH,15 May 2024,L275986,S174728081,,1
+186,34133,species,Chestnut-sided Warbler,Setophaga pensylvanica,1,Magee Marsh--Boardwalk,US-OH,15 May 2024,L275986,S174728081,,1
+187,34063,species,Northern Parula,Setophaga americana,1,Magee Marsh--Boardwalk,US-OH,15 May 2024,L275986,S174728081,,1
+188,33981,species,Nashville Warbler,Leiothlypis ruficapilla,2,Magee Marsh--Boardwalk,US-OH,15 May 2024,L275986,S174728081,,1
+189,34138,species,Blackpoll Warbler,Setophaga striata,1,Magee Marsh (Lucas Co.),US-OH,14 May 2024,L317582,S174537642,,1
+190,34083,species,Bay-breasted Warbler,Setophaga castanea,2,Magee Marsh (Lucas Co.),US-OH,14 May 2024,L317582,S174537642,,1
+191,34058,species,American Redstart,Setophaga ruticilla,3,Magee Marsh (Lucas Co.),US-OH,14 May 2024,L317582,S174537642,,1
+192,33963,species,Prothonotary Warbler,Protonotaria citrea,2,Magee Marsh (Lucas Co.),US-OH,14 May 2024,L317582,S174537642,,1
+193,33946,species,Ovenbird,Seiurus aurocapilla,1,Magee Marsh (Lucas Co.),US-OH,14 May 2024,L317582,S174537642,,1
+194,7791,species,American White Pelican,Pelecanus erythrorhynchos,2,Magee Marsh (Lucas Co.),US-OH,14 May 2024,L317582,S174537642,,1
+195,34557,species,Rose-breasted Grosbeak,Pheucticus ludovicianus,1,Glen Echo Park,US-OH,27 Apr 2024,L1138317,S170601222,,1
+196,34061,species,Cerulean Warbler,Setophaga cerulea,1,Glen Echo Park,US-OH,27 Apr 2024,L1138317,S170601222,,1
+197,28037,species,Brown Thrasher,Toxostoma rufum,1,Home,US-OH,24 Apr 2024,L22940035,S170106808,,1
+198,34153,species,Pine Warbler,Setophaga pinus,1,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,16 Apr 2024,L353630,S168968736,,1
+199,11126,species,Yellow-bellied Sapsucker,Sphyrapicus varius,1,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,16 Apr 2024,L353630,S168968736,,1
+200,33848,species,Rusty Blackbird,Euphagus carolinus,36,Pickerington Ponds (Franklin Co.),US-OH,29 Mar 2024,L214134,S166420026,,1
+201,501,species,Northern Shoveler,Spatula clypeata,3,Pickerington Ponds (Franklin Co.),US-OH,29 Mar 2024,L214134,S166420026,,1
+202,7811,species,Black Vulture,Coragyps atratus,12,O'Shaughnessy Reservoir--Dam,US-OH,19 Jan 2024,L599370,S159290678,,1
+203,267,species,Snow Goose,Anser caerulescens,1,Quarry Apartments Lake,US-OH,16 Jan 2024,L2452667,S159083336,,1
+204,6231,species,Western Sandpiper,Calidris mauri,1,Clam Pass Park,US-FL,13 Jan 2024,L2399703,S158813902,,1
+205,6161,species,Ruddy Turnstone,Arenaria interpres,1,Clam Pass Park,US-FL,13 Jan 2024,L2399703,S158813902,,1
+206,6147,species,Willet,Tringa semipalmata,10,Clam Pass Park,US-FL,13 Jan 2024,L2399703,S158813902,,1
+207,34171,species,Yellow-throated Warbler,Setophaga dominica,1,Lovers Key SP,US-FL,12 Jan 2024,L160668,S158739458,,1
+208,7792,species,Brown Pelican,Pelecanus occidentalis,3,Lovers Key SP,US-FL,12 Jan 2024,L160668,S158739458,,1
+209,7462,species,White Ibis,Eudocimus albus,1,Lovers Key SP,US-FL,12 Jan 2024,L160668,S158739458,,1
+210,6789,species,Royal Tern,Thalasseus maximus,1,Lovers Key SP,US-FL,12 Jan 2024,L160668,S158739458,,1
+211,6731,species,Forster's Tern,Sterna forsteri,2,Lovers Key SP,US-FL,12 Jan 2024,L160668,S158739458,,1
+212,6490,species,Laughing Gull,Leucophaeus atricilla,20,Lovers Key SP,US-FL,12 Jan 2024,L160668,S158739458,,1
+213,6189,species,Sanderling,Calidris alba,2,Lovers Key SP,US-FL,12 Jan 2024,L160668,S158739458,,1
+214,5941,species,Snowy Plover,Anarhynchus nivosus,1,Lovers Key SP,US-FL,12 Jan 2024,L160668,S158739458,,1
+215,2243,species,Common Ground Dove,Columbina passerina,2,Lovers Key SP,US-FL,12 Jan 2024,L160668,S158739458,,1
+216,33973,species,Orange-crowned Warbler,Leiothlypis celata,1,Corkscrew Regional Ecosystem Watershed--Bird Rookery Swamp Trails,US-FL,11 Jan 2024,L1061691,S158661503,,1
+217,5671,species,Limpkin,Aramus guarauna,1,Corkscrew Regional Ecosystem Watershed--Bird Rookery Swamp Trails,US-FL,11 Jan 2024,L1061691,S158661503,,1
+218,7367,species,Anhinga,Anhinga anhinga,1,Cypress Woods,US-FL,10 Jan 2024,L28726637,S158587349,,1
+219,7306,species,Wood Stork,Mycteria americana,1,Cypress Woods,US-FL,10 Jan 2024,L28726637,S158587349,,1
+220,445,species,Muscovy Duck,Cairina moschata,1,Cypress Woods,US-FL,10 Jan 2024,L28726637,S158587349,N,1
+221,34159,species,Yellow-rumped Warbler,Setophaga coronata,3,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,29 Oct 2023,L353630,S153350793,,1
+222,33124,species,Dark-eyed Junco,Junco hyemalis,6,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,29 Oct 2023,L353630,S153350793,,1
+223,8633,species,American Barn Owl,Tyto furcata,4,Pickerington Ponds (Franklin Co.),US-OH,19 Sep 2023,L214134,S150305424,,1
+224,7629,species,Little Blue Heron,Egretta caerulea,3,Griggs Reservoir Park--Disc Golf Course,US-OH,19 Aug 2023,L4272507,S147657916,,1
+225,6539,species,American Herring Gull,Larus smithsonianus,2,Griggs Reservoir Park--Disc Golf Course,US-OH,19 Aug 2023,L4272507,S147657916,,1
+226,7645,species,Snowy Egret,Egretta thula,1,Hilliard Bradley High School Pond,US-OH,13 Aug 2023,L16233781,S147162785,,1
+227,6232,species,Semipalmated Sandpiper,Calidris pusilla,8,Hilliard Bradley High School Pond,US-OH,13 Aug 2023,L16233781,S147162785,,1
+229,6933,species,Common Loon,Gavia immer,1,Alum Creek SP--Park Office Trails,US-OH,12 Aug 2023,L2788349,S147093480,,1
+230,6718,species,Caspian Tern,Hydroprogne caspia,8,Alum Creek SP--Beach and Alum Reservoir South,US-OH,12 Aug 2023,L1335935,S147057751,,1
+231,6521,species,Ring-billed Gull,Larus delawarensis,,Alum Creek SP--Beach and Alum Reservoir South,US-OH,12 Aug 2023,L1335935,S147057751,,1
+232,12028,species,American Kestrel,Falco sparverius,1,Quarry Trails Metro Park--North Entrance,US-OH,04 Aug 2023,L17012584,S146447612,,1
+233,16963,species,Least Flycatcher,Empidonax minimus,1,Battelle Darby Creek Metro Park--Darby Plains Wet Prairie Restoration,US-OH,30 Jul 2023,L1129017,S146007304,,1
+234,16952,species,Willow Flycatcher,Empidonax traillii,1,Battelle Darby Creek Metro Park--Darby Plains Wet Prairie Restoration,US-OH,30 Jul 2023,L1129017,S146007304,,1
+235,3238,species,Yellow-billed Cuckoo,Coccyzus americanus,1,Battelle Darby Creek Metro Park--Darby Plains Wet Prairie Restoration,US-OH,30 Jul 2023,L1129017,S146007304,,1
+237,33002,species,Field Sparrow,Spizella pusilla,1,Quarry Trails Metro Park--North Entrance,US-OH,04 Jul 2023,L17012584,S143576222,,1
+238,382,species,Trumpeter Swan,Cygnus buccinator,3,Quarry Trails Metro Park--North Entrance,US-OH,04 Jul 2023,L17012584,S143576222,,1
+239,24281,species,Cliff Swallow,Petrochelidon pyrrhonota,23,Scioto Audubon Metro Park,US-OH,30 Jun 2023,L756566,S143190269,,1
+240,7600,species,Black-crowned Night Heron,Nycticorax nycticorax,1,Scioto Audubon Metro Park,US-OH,30 Jun 2023,L756566,S143190269,,1
+241,3492,species,Common Nighthawk,Chordeiles minor,1,Christy Woods,US-IN,10 Jun 2023,L2519135,S141159944,,1
+242,33679,species,Orchard Oriole,Icterus spurius,1,Scioto Audubon Metro Park,US-OH,09 Jun 2023,L756566,S141040551,,1
+243,11427,species,Hairy Woodpecker,Leuconotopicus villosus,2,Scioto Audubon Metro Park--Whittier,US-OH,06 Jun 2023,L450283,S140744134,,1
+244,29888,species,Cedar Waxwing,Bombycilla cedrorum,2,Scioto Audubon Metro Park--Whittier,US-OH,30 May 2023,L450283,S139953837,,1
+245,8487,species,Red-shouldered Hawk,Buteo lineatus,2,Whetstone Park--Columbus Park of Roses,US-OH,28 May 2023,L5156976,S139659857,,1
+246,11145,species,Red-headed Woodpecker,Melanerpes erythrocephalus,1,Bischoff Reservoir--Public Access Site,US-IN,27 May 2023,L7216939,S139497087,,1
+247,7704,species,Green Heron,Butorides virescens,4,Bischoff Reservoir--Public Access Site,US-IN,27 May 2023,L7216939,S139497087,,1
+248,34607,species,Indigo Bunting,Passerina cyanea,1,Rockbridge State Nature Preserve,US-OH,21 May 2023,L513326,S138719880,,1
+249,34087,species,Northern Yellow Warbler,Setophaga aestiva,1,Rockbridge State Nature Preserve,US-OH,21 May 2023,L513326,S138719880,,1
+250,34028,species,Common Yellowthroat,Geothlypis trichas,1,Rockbridge State Nature Preserve,US-OH,21 May 2023,L513326,S138719880,,1
+251,27191,species,Northern House Wren,Troglodytes aedon,1,Rockbridge State Nature Preserve,US-OH,21 May 2023,L513326,S138719880,,1
+252,33952,species,Louisiana Waterthrush,Parkesia motacilla,2,Glenlaurel Inn,US-OH,21 May 2023,L24474914,S138697569,,1
+253,28333,species,Hermit Thrush,Catharus guttatus,1,Hocking Hills SP--Cantwell Cliffs,US-OH,20 May 2023,L2880512,S138565702,,1
+254,16924,species,Eastern Wood-Pewee,Contopus virens,,Hocking Hills SP--Cantwell Cliffs,US-OH,20 May 2023,L2880512,S138565914,,1
+255,24187,species,Barn Swallow,Hirundo rustica,4,Lake Logan SP,US-OH,19 May 2023,L285575,S138438846,,1
+256,1853,species,Rock Pigeon,Columba livia,16,Hocking Hills SP--Rock House,US-OH,19 May 2023,L2480241,S138427305,N,1
+257,17007,species,Eastern Phoebe,Sayornis phoebe,1,Glenlaurel Inn,US-OH,19 May 2023,L24474914,S138403342,,1
+258,28347,species,Wood Thrush,Hylocichla mustelina,1,"14940 Mount Olive Road, Rockbridge, Ohio, US (39.519, -82.563)",US-OH,18 May 2023,L24447151,S138314465,,1
+259,33568,species,Eastern Meadowlark,Sturnella magna,1,"15690 Mount Olive Road, Rockbridge, Ohio, US (39.508, -82.557)",US-OH,18 May 2023,L24456994,S138314609,,1
+260,33972,species,Tennessee Warbler,Leiothlypis peregrina,1,"14940 Mount Olive Road, Rockbridge, Ohio, US (39.519, -82.563)",US-OH,18 May 2023,L24447151,S138266070,,1
+261,19267,species,Red-eyed Vireo,Vireo olivaceus,1,"14940 Mount Olive Road, Rockbridge, Ohio, US (39.519, -82.563)",US-OH,18 May 2023,L24447151,S138266070,,1
+262,19244,species,Philadelphia Vireo,Vireo philadelphicus,1,"14940 Mount Olive Road, Rockbridge, Ohio, US (39.519, -82.563)",US-OH,18 May 2023,L24447151,S138266070,,1
+263,16950,species,Acadian Flycatcher,Empidonax virescens,1,"14940 Mount Olive Road, Rockbridge, Ohio, US (39.519, -82.563)",US-OH,18 May 2023,L24447151,S138266070,,1
+264,34141,species,Black-throated Blue Warbler,Setophaga caerulescens,2,Home,US-OH,15 May 2023,L22940035,S137867162,,1
+265,34344,species,Canada Warbler,Cardellina canadensis,1,Home,US-OH,14 May 2023,L22940035,S137680294,,1
+266,34060,species,Cape May Warbler,Setophaga tigrina,3,Home,US-OH,14 May 2023,L22940035,S137680294,,1
+267,28000,species,Gray Catbird,Dumetella carolinensis,1,Home,US-OH,14 May 2023,L22940035,S137680294,,1
+268,4802,species,Ruby-throated Hummingbird,Archilochus colubris,1,Home,US-OH,14 May 2023,L22940035,S137680294,,1
+269,17472,species,Eastern Kingbird,Tyrannus tyrannus,1,Pickerington Ponds--Wood Duck Picnic Area,US-OH,13 May 2023,L1926131,S137563911,,1
+270,6855,species,Pied-billed Grebe,Podilymbus podiceps,1,Pickerington Ponds--Wood Duck Picnic Area,US-OH,13 May 2023,L1926131,S137563911,,1
+271,770,species,Red-breasted Merganser,Mergus serrator,2,Pickerington Ponds--Wood Duck Picnic Area,US-OH,13 May 2023,L1926131,S137563911,,1
+272,28114,species,Northern Mockingbird,Mimus polyglottos,1,"6600 Bigerton Bend, Canal Winchester, Ohio, US (39.849, -82.825)",US-OH,13 May 2023,L24309622,S137532326,,1
+273,34436,species,Scarlet Tanager,Piranga olivacea,1,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,13 May 2023,L353630,S137468761,,1
+274,33962,species,Black-and-white Warbler,Mniotilta varia,1,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,13 May 2023,L353630,S137468761,,1
+275,33853,species,Common Grackle,Quiscalus quiscula,3,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,13 May 2023,L353630,S137468761,,1
+276,28324,species,Swainson's Thrush,Catharus ustulatus,1,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,13 May 2023,L353630,S137468761,,1
+277,34079,species,Magnolia Warbler,Setophaga magnolia,,Home,US-OH,11 May 2023,L22940035,S137125668,,1
+278,485,species,Blue-winged Teal,Spatula discors,4,Scioto Audubon Metro Park--Whittier,US-OH,09 May 2023,L450283,S136843858,,1
+279,33770,species,Baltimore Oriole,Icterus galbula,1,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,07 May 2023,L353630,S136498173,,1
+280,19245,species,Eastern Warbling Vireo,Vireo gilvus,1,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,07 May 2023,L353630,S136498173,,1
+281,6126,species,Spotted Sandpiper,Actitis macularius,1,Scioto Audubon Metro Park--Lower Scioto Park,US-OH,07 May 2023,L353630,S136498173,,1
+282,700,species,Lesser Scaup,Aythya affinis,2,Highbanks Metro Park--Wetland Blind,US-OH,06 May 2023,L3985745,S136390894,,1
+283,455,species,Wood Duck,Aix sponsa,2,Highbanks Metro Park--Wetland Blind,US-OH,06 May 2023,L3985745,S136390894,,1
+284,26889,species,White-breasted Nuthatch,Sitta carolinensis,,Highbanks Metro Park,US-OH,06 May 2023,L164582,S136353352,,1
+285,3896,species,Chimney Swift,Chaetura pelagica,,Whetstone Park,US-OH,04 May 2023,L305639,S136104873,,1
+286,34148,species,Palm Warbler,Setophaga palmarum,1,Highbanks Metro Park,US-OH,03 May 2023,L164582,S136000014,,1
+287,6129,species,Solitary Sandpiper,Tringa solitaria,1,Kiwanis Riverway Park,US-OH,30 Apr 2023,L323166,S135628680,,1
+288,27348,species,Carolina Wren,Thryothorus ludovicianus,1,"5201 North Austin Drive, Muncie, Indiana, US (40.238, -85.432)",US-IN,29 Apr 2023,L23915020,S135446601,,1
+289,26937,species,Red-breasted Nuthatch,Sitta canadensis,,Home,US-OH,25 Apr 2023,L22940035,S134973474,,1
+290,32990,species,Chipping Sparrow,Spizella passerina,1,Schiller Park,US-OH,22 Apr 2023,L3838565,S134629275,,1
+291,24081,species,Purple Martin,Progne subis,3,Pickerington Ponds (Franklin Co.),US-OH,20 Apr 2023,L214134,S134407254,,1
+292,24064,species,Tree Swallow,Tachycineta bicolor,1,Pickerington Ponds (Franklin Co.),US-OH,20 Apr 2023,L214134,S134407254,,1
+293,6154,species,Greater Yellowlegs,Tringa melanoleuca,1,Pickerington Ponds (Franklin Co.),US-OH,20 Apr 2023,L214134,S134407254,,1
+294,5827,species,Killdeer,Charadrius vociferus,1,Pickerington Ponds (Franklin Co.),US-OH,20 Apr 2023,L214134,S134407254,,1
+295,5697,species,Sandhill Crane,Antigone canadensis,1,Pickerington Ponds (Franklin Co.),US-OH,20 Apr 2023,L214134,S134407254,,1
+296,673,species,Ring-necked Duck,Aythya collaris,,Pickerington Ponds (Franklin Co.),US-OH,20 Apr 2023,L214134,S134407254,,1
+297,26844,species,Ruby-crowned Kinglet,Corthylio calendula,,Home,US-OH,20 Apr 2023,L22940035,S134354219,,1
+298,33277,species,Song Sparrow,Melospiza melodia,1,Quarry Trails Metro Park--Millkin Falls,US-OH,16 Apr 2023,L17008008,S133981173,,1
+299,7832,species,Osprey,Pandion haliaetus,2,Quarry Trails Metro Park--Millkin Falls,US-OH,16 Apr 2023,L17008008,S133981173,,1
+300,7815,species,Turkey Vulture,Cathartes aura,4,Quarry Trails Metro Park--Millkin Falls,US-OH,16 Apr 2023,L17008008,S133981173,,1
+301,7424,species,Double-crested Cormorant,Nannopterum auritum,4,Quarry Trails Metro Park--Millkin Falls,US-OH,16 Apr 2023,L17008008,S133981173,,1
+302,377,species,Mute Swan,Cygnus olor,2,Quarry Trails Metro Park--Millkin Falls,US-OH,16 Apr 2023,L17008008,S133981173,N,1
+303,24106,species,Northern Rough-winged Swallow,Stelgidopteryx serripennis,1,Scioto River Dublin Rd. Parking,US-OH,16 Apr 2023,L13883474,S133967407,,1
+304,8367,species,Bald Eagle,Haliaeetus leucocephalus,1,Scioto River Dublin Rd. Parking,US-OH,16 Apr 2023,L13883474,S133967407,,1
+305,33833,species,Brown-headed Cowbird,Molothrus ater,,Scioto Audubon park,US-OH,15 Apr 2023,L23618324,S133876351,,1
+306,33415,species,Eastern Towhee,Pipilo erythrophthalmus,1,Scioto Audubon Metro Park--Wetland Trails,US-OH,14 Apr 2023,L17013426,S133764616,,1
+307,27123,species,Blue-gray Gnatcatcher,Polioptila caerulea,2,Scioto Audubon Metro Park--Wetland Trails,US-OH,14 Apr 2023,L17013426,S133764616,,1
+308,11400,species,Downy Woodpecker,Dryobates pubescens,1,Scioto Audubon Metro Park--Wetland Trails,US-OH,14 Apr 2023,L17013426,S133764616,,1
+309,7729,species,Great Egret,Ardea alba,9,Scioto Audubon Metro Park--Wetland Trails,US-OH,14 Apr 2023,L17013426,S133764616,,1
+310,32617,species,American Goldfinch,Spinus tristis,1,Home,US-OH,11 Apr 2023,L22940035,S133472347,,1
+311,31534,species,House Sparrow,Passer domesticus,1,Home,US-OH,11 Apr 2023,L22940035,S133472347,N,1
+312,11762,species,Pileated Woodpecker,Dryocopus pileatus,1,Jeffrey Park,US-OH,09 Apr 2023,L624682,S133244329,,1
+313,10306,species,Belted Kingfisher,Megaceryle alcyon,1,Jeffrey Park,US-OH,09 Apr 2023,L624682,S133244329,,1
+314,8506,species,Red-tailed Hawk,Buteo jamaicensis,1,Jeffrey Park,US-OH,09 Apr 2023,L624682,S133244329,,1
+315,27813,species,European Starling,Sturnus vulgaris,,Home,US-OH,09 Apr 2023,L22940035,S133236558,N,1
+316,5500,species,American Coot,Fulica americana,,Schiller Park,US-OH,09 Apr 2023,L23489901,S133204937,,1
+317,34515,species,Northern Cardinal,Cardinalis cardinalis,2,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+318,33779,species,Red-winged Blackbird,Agelaius phoeniceus,1,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+319,33201,species,White-throated Sparrow,Zonotrichia albicollis,2,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+320,28633,species,American Robin,Turdus migratorius,3,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+321,22160,species,Tufted Titmouse,Baeolophus bicolor,1,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+322,22060,species,Carolina Chickadee,Poecile carolinensis,3,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+323,21557,species,American Crow,Corvus brachyrhynchos,1,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+324,21294,species,Blue Jay,Cyanocitta cristata,1,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+325,11199,species,Red-bellied Woodpecker,Melanerpes carolinus,1,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+326,1274,species,Wild Turkey,Meleagris gallopavo,2,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+327,545,species,Mallard,Anas platyrhynchos,3,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+328,342,species,Canada Goose,Branta canadensis,2,Blendon Woods,US-OH,08 Apr 2023,L23468827,S133117574,,1
+329,11900,species,Northern Flicker,Colaptes auratus,,Home,US-OH,03 Apr 2023,L22940035,S132580268,,1
+330,28126,species,Eastern Bluebird,Sialia sialis,,Inniswood Gardens Metro Park,US-OH,26 Mar 2023,L23237738,S131897025,,1
+331,2412,species,Mourning Dove,Zenaida macroura,,Home,US-OH,06 Mar 2023,L22940035,S130330993,,1
+332,7753,species,Great Blue Heron,Ardea herodias,,CREW Rookery,US-FL,26 Feb 2023,L22834643,S129757373,,1
+13,33959,hybrid,Brewster's Warbler (hybrid),Vermivora chrysoptera x cyanoptera (F1 hybrid),1,Thaddeus Kosciuszko Park,US-OH,15 Apr 2026,L2403986,S322267569,,0
+26,708,slash,Greater/Lesser Scaup,Aythya marila/affinis,2,"Wendy Park, Whiskey Island",US-OH,17 Jan 2026,L284586,S294815165,,0
+27,21620,spuh,crow sp.,Corvus sp. (crow sp.),2,Cleveland Lakefront Nature Preserve,US-OH,17 Jan 2026,L618902,S294704364,,0
+29,8304,spuh,Accipitrine hawk sp. (former Accipiter sp.),Aerospiza/Tachyspiza/Accipiter/Astur sp.,3,Rocky Fork Metro Park--Beech Woodland and Millstone Trails,US-OH,03 Jan 2026,L7566351,S292163935,,0
+175,6619,spuh,gull sp.,Larinae sp.,3,Howard Marsh Metropark,US-OH,17 May 2024,L4971040,S175144312,,0
+228,19306,spuh,vireo sp.,Vireo sp.,1,Alum Creek SP--Park Office Trails,US-OH,12 Aug 2023,L2788349,S147093480,,0
+236,24305,spuh,swallow sp.,Hirundinidae sp.,1,Chase Retention Ponds,US-OH,08 Jul 2023,L2040538,S143917286,,0
