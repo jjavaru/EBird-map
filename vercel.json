@@ -1,0 +1,16 @@
+{
+  "buildCommand": "echo 'No build needed'",
+  "framework": null,
+  "installCommand": "npm install",
+  "outputDirectory": ".",
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
