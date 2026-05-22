@@ -410,19 +410,22 @@
           "commonName": "Red-tailed Hawk",
           "speciesCode": "rethaw",
           "count": 2,
-          "date": "2026-05-20"
+          "date": "2026-05-20",
+          "subId": "S123456789"
         },
         {
           "commonName": "American Robin",
           "speciesCode": "amerob",
           "count": 5,
-          "date": "2026-05-20"
+          "date": "2026-05-20",
+          "subId": "S123456790"
         },
         {
           "commonName": "Blue Jay",
           "speciesCode": "blujay",
           "count": 3,
-          "date": "2026-05-21"
+          "date": "2026-05-21",
+          "subId": "S123456791"
         }
       ]
     },
@@ -438,31 +441,36 @@
           "commonName": "Great Blue Heron",
           "speciesCode": "grbher3",
           "count": 1,
-          "date": "2026-05-19"
+          "date": "2026-05-19",
+          "subId": "S123456792"
         },
         {
           "commonName": "Bald Eagle",
           "speciesCode": "baleag",
           "count": 1,
-          "date": "2026-05-19"
+          "date": "2026-05-19",
+          "subId": "S123456792"
         },
         {
           "commonName": "Osprey",
           "speciesCode": "osprey",
           "count": 2,
-          "date": "2026-05-20"
+          "date": "2026-05-20",
+          "subId": "S123456793"
         },
         {
           "commonName": "Double-crested Cormorant",
           "speciesCode": "doccor",
           "count": 4,
-          "date": "2026-05-21"
+          "date": "2026-05-21",
+          "subId": "S123456794"
         },
         {
           "commonName": "Ring-billed Gull",
           "speciesCode": "ribgul",
           "count": 8,
-          "date": "2026-05-21"
+          "date": "2026-05-21",
+          "subId": "S123456794"
         }
       ]
     },
@@ -478,13 +486,15 @@
           "commonName": "Sandhill Crane",
           "speciesCode": "sancra",
           "count": 12,
-          "date": "2026-05-18"
+          "date": "2026-05-18",
+          "subId": "S123456795"
         },
         {
           "commonName": "Bobolink",
           "speciesCode": "boboli",
           "count": 3,
-          "date": "2026-05-19"
+          "date": "2026-05-19",
+          "subId": "S123456796"
         }
       ]
     }
@@ -683,7 +693,10 @@
               <div class="species-name">
                 <a href="https://ebird.org/species/${s.speciesCode}" target="_blank">${s.commonName}</a>
               </div>
-              <div class="species-details">${s.count} seen on ${s.date}</div>
+              <div class="species-details">
+                ${s.count} seen on ${s.date}
+                ${s.subId ? ` • <a href="https://ebird.org/checklist/${s.subId}" target="_blank">View checklist</a>` : ''}
+              </div>
             </div>
           `).join('');
 

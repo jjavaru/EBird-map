@@ -140,6 +140,7 @@ export default async function handler(req, res) {
           speciesCode: obs.speciesCode,
           count: obs.howMany || "?",
           date: obs.obsDt,
+          subId: obs.subId
         })),
       })),
     };
@@ -169,7 +170,7 @@ function parseLifeListCsv(csvContent) {
 
 async function recentObservationsNearby(lat, lng, dist, back, requestOptions) {
   const response = await fetch(
-    `${API_ROOT}/data/obs/geo/recent?lat=${lat}&lng=${lng}&dist=${dist}&back=${back}&maxResults=10000`,
+    `${API_ROOT}/data/obs/geo/recent?lat=${lat}&lng=${lng}&dist=${dist}&back=${back}&maxResults=10000&includeProvisional=true`,
     requestOptions
   );
   return response.json();
@@ -177,7 +178,7 @@ async function recentObservationsNearby(lat, lng, dist, back, requestOptions) {
 
 async function recentSpeciesObservations(speciesCode, lat, lng, dist, back, requestOptions) {
   const response = await fetch(
-    `${API_ROOT}/data/obs/geo/recent/${speciesCode}?lat=${lat}&lng=${lng}&dist=${dist}&back=${back}`,
+    `${API_ROOT}/data/obs/geo/recent/${speciesCode}?lat=${lat}&lng=${lng}&dist=${dist}&back=${back}&includeProvisional=true`,
     requestOptions
   );
   return response.json();
