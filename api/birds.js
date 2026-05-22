@@ -1,5 +1,6 @@
 import https from "https";
 import fs from "fs";
+import path from "path";
 
 const API_ROOT = "https://api.ebird.org/v2";
 const DAYS_BACK = 7;
@@ -38,14 +39,17 @@ export default async function handler(req, res) {
       agent: httpsAgent,
     };
 
-    // Load life list from CSV (you'll need to upload this to Vercel)
-    const lifeListCsvPath = "./ebird_world_life_list.csv";
+    // Load life list from CSV - use process.cwd() to get project root
+    const lifeListCsvPath = path.join(process.cwd(), 'ebird_world_life_list.csv');
     let lifeListData = [];
     
     try {
       if (fs.existsSync(lifeListCsvPath)) {
         const csvContent = fs.readFileSync(lifeListCsvPath, "utf-8");
         lifeListData = parseLifeListCsv(csvContent);
+        console.log(`Loaded ${lifeListData.length} species from life list`);
+      } else {
+        console.warn(`Life list CSV not found at: ${lifeListCsvPath}`);
       }
     } catch (error) {
       console.error("Error reading life list:", error);
