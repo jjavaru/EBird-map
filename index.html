@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
+    :root {
+        --z-sidebar: 2000;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -20,7 +24,7 @@
       position: fixed;
       top: 10px;
       left: 10px;
-      z-index: 1001;
+      z-index: calc(var(--z-sidebar) + 1);
       width: 50px;
       height: 50px;
       background: #2c3e50;
@@ -50,7 +54,7 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
+      z-index: calc(var(--z-sidebar) - 1);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s;
@@ -69,7 +73,7 @@
       background: white;
       box-shadow: 2px 0 8px rgba(0,0,0,0.2);
       overflow-y: auto;
-      z-index: 1000;
+      z-index: var(--z-sidebar);
       transition: left 0.3s ease-in-out;
     }
     #sidebar.active {
@@ -131,6 +135,52 @@
       background: white;
       color: #2c3e50;
     }
+    
+    /* Days filter control */
+    #days-filter-container {
+      padding: 15px 20px;
+      background: #34495e;
+      border-bottom: 1px solid #2c3e50;
+    }
+    #days-filter-label {
+      font-size: 13px;
+      color: #bdc3c7;
+      margin-bottom: 8px;
+      display: block;
+    }
+    #days-filter-value {
+      color: white;
+      font-weight: bold;
+    }
+    #days-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #95a5a6;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+    #days-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3498db;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    #days-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3498db;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
     #species-list {
       padding: 10px;
     }
@@ -211,9 +261,15 @@
       font-size: 12px;
       color: #3498db;
     }
+    /* Leaflet zoom controls positioning */
+    .leaflet-top.leaflet-right {
+      top: 10px;
+      right: 10px;
+    }
+    
     .legend {
       position: absolute;
-      bottom: 20px;
+      bottom: 100px;
       right: 20px;
       background: white;
       padding: 15px;
@@ -242,7 +298,7 @@
     /* Mobile optimizations */
     @media (max-width: 767px) {
       .legend {
-        bottom: 10px;
+        bottom: 80px;
         right: 10px;
         padding: 10px;
         font-size: 11px;
@@ -295,10 +351,19 @@
     <div id="sidebar-header">
       <div id="sidebar-header-text">
         <h2>Species Nearby</h2>
-        <div class="subtitle">Click to filter locations</div>
+        <div class="subtitle" id="data-timestamp">Loading...</div>
       </div>
       <button id="clear-filter">Clear</button>
     </div>
+    
+    <!-- Days filter -->
+    <div id="days-filter-container">
+      <label id="days-filter-label">
+        Show observations from last <span id="days-filter-value">7</span> days
+      </label>
+      <input type="range" id="days-slider" min="1" max="7" value="7" step="1">
+    </div>
+    
     <div id="species-list"></div>
   </div>
   <div id="map">
@@ -326,6 +391,107 @@
       </div>
     </div>
   </div>
+  <script>
+    window.mockData = {
+  "home": {
+    "lat": 39.95,
+    "lng": -82.99
+  },
+  "locations": [
+    {
+      "name": "Blendon Woods Metro Park",
+      "lat": 40.0591,
+      "lng": -82.8979,
+      "locId": "L266219",
+      "distance": 8.2,
+      "speciesCount": 3,
+      "species": [
+        {
+          "commonName": "Red-tailed Hawk",
+          "speciesCode": "rethaw",
+          "count": 2,
+          "date": "2026-05-20"
+        },
+        {
+          "commonName": "American Robin",
+          "speciesCode": "amerob",
+          "count": 5,
+          "date": "2026-05-20"
+        },
+        {
+          "commonName": "Blue Jay",
+          "speciesCode": "blujay",
+          "count": 3,
+          "date": "2026-05-21"
+        }
+      ]
+    },
+    {
+      "name": "Hoover Reservoir",
+      "lat": 40.1156,
+      "lng": -82.8669,
+      "locId": "L266220",
+      "distance": 12.5,
+      "speciesCount": 5,
+      "species": [
+        {
+          "commonName": "Great Blue Heron",
+          "speciesCode": "grbher3",
+          "count": 1,
+          "date": "2026-05-19"
+        },
+        {
+          "commonName": "Bald Eagle",
+          "speciesCode": "baleag",
+          "count": 1,
+          "date": "2026-05-19"
+        },
+        {
+          "commonName": "Osprey",
+          "speciesCode": "osprey",
+          "count": 2,
+          "date": "2026-05-20"
+        },
+        {
+          "commonName": "Double-crested Cormorant",
+          "speciesCode": "doccor",
+          "count": 4,
+          "date": "2026-05-21"
+        },
+        {
+          "commonName": "Ring-billed Gull",
+          "speciesCode": "ribgul",
+          "count": 8,
+          "date": "2026-05-21"
+        }
+      ]
+    },
+    {
+      "name": "Battelle Darby Creek Metro Park",
+      "lat": 39.8833,
+      "lng": -83.2167,
+      "locId": "L266221",
+      "distance": 15.3,
+      "speciesCount": 2,
+      "species": [
+        {
+          "commonName": "Sandhill Crane",
+          "speciesCode": "sancra",
+          "count": 12,
+          "date": "2026-05-18"
+        },
+        {
+          "commonName": "Bobolink",
+          "speciesCode": "boboli",
+          "count": 3,
+          "date": "2026-05-19"
+        }
+      ]
+    }
+  ]
+}
+
+  </script>
 
   <script>
     // Sidebar toggle for mobile
@@ -352,11 +518,28 @@
     // Fetch bird data from API
     window.addEventListener('DOMContentLoaded', async function() {
       try {
-        const response = await fetch('/api/birds');
-        if (!response.ok) {
-          throw new Error(`API error: ${response.status}`);
+        let response;
+        if (window.location.protocol === 'file:') {
+            response = window.mockData ? { ok: true, json: async () => window.mockData } : { ok: false, status: 404, statusText: 'Mock data not found' };
+        } else {
+            response = await fetch('/api/birds');
         }
+        
+        if (!response.ok) {
+          throw new Error(`Failed to load data: ${response.status}`);
+        }
+        
         const data = await response.json();
+        
+        // Update timestamp in sidebar
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('en-US', { 
+          hour: 'numeric', 
+          minute: '2-digit',
+          hour12: true 
+        });
+        document.getElementById('data-timestamp').textContent = `Updated at ${timeString}`;
+        
         document.getElementById('loading').style.display = 'none';
         initMap(data);
       } catch (error) {
@@ -371,17 +554,240 @@
     });
 
     function initMap(data) {
-      // Initialize the map centered on home
-      const map = L.map('map').setView([data.home.lat, data.home.lng], 10);
+      // Store original data globally for filtering
+      let fullData = data;
+      let currentDaysFilter = 7;
+      let selectedSpecies = null;
+      let map, markers, clearFilterBtn;
+      
+      // Helper function to filter data by days
+      function filterDataByDays(data, days) {
+        const cutoffDate = new Date();
+        cutoffDate.setDate(cutoffDate.getDate() - days);
+        
+        // Filter locations and their species by date
+        const filteredLocations = data.locations.map(location => {
+          const filteredSpecies = location.species.filter(species => {
+            const obsDate = new Date(species.date);
+            return obsDate >= cutoffDate;
+          });
+          
+          if (filteredSpecies.length === 0) return null;
+          
+          return {
+            ...location,
+            species: filteredSpecies,
+            speciesCount: filteredSpecies.length
+          };
+        }).filter(loc => loc !== null);
+        
+        return {
+          home: data.home,
+          locations: filteredLocations
+        };
+      }
+      
+      // Main render function
+      function renderMap(filteredData) {
+        // Clear existing markers if any
+        if (markers) {
+          Object.values(markers).forEach(({ marker }) => {
+            map.removeLayer(marker);
+          });
+        }
+        markers = {};
+        
+        // Clear species list
+        const speciesList = document.getElementById('species-list');
+        speciesList.innerHTML = '';
+        
+        // Reset selected species
+        selectedSpecies = null;
+        if (clearFilterBtn) {
+          clearFilterBtn.classList.remove('visible');
+        }
+        
+        // Build species index
+        const speciesData = {};
+        filteredData.locations.forEach(location => {
+          location.species.forEach(species => {
+            if (!speciesData[species.commonName]) {
+              speciesData[species.commonName] = {
+                name: species.commonName,
+                code: species.speciesCode,
+                count: 0,
+                locations: []
+              };
+            }
+            speciesData[species.commonName].count++;
+            if (!speciesData[species.commonName].locations.includes(location.name)) {
+              speciesData[species.commonName].locations.push(location.name);
+            }
+          });
+        });
 
-      // Add CartoDB tiles (more permissive for local use)
+        // Sort species by observation count
+        const sortedSpecies = Object.values(speciesData).sort((a, b) => b.count - a.count);
+
+        // Build species list in sidebar
+        sortedSpecies.forEach(species => {
+          const item = document.createElement('div');
+          item.className = 'species-item';
+          item.innerHTML = `
+            <div class="name">${species.name}</div>
+            <div class="count">${species.count} observation${species.count > 1 ? 's' : ''} at ${species.locations.length} location${species.locations.length > 1 ? 's' : ''}</div>
+          `;
+          item.dataset.speciesName = species.name;
+          speciesList.appendChild(item);
+        });
+
+        // Add markers for each location
+        filteredData.locations.forEach(location => {
+          // Color code by species count
+          let color;
+          if (location.speciesCount >= 5) {
+            color = '#e74c3c'; // red
+          } else if (location.speciesCount >= 3) {
+            color = '#f39c12'; // orange
+          } else if (location.speciesCount === 2) {
+            color = '#3498db'; // blue
+          } else {
+            color = '#9b59b6'; // purple
+          }
+
+          // Create marker
+          const marker = L.circleMarker([location.lat, location.lng], {
+            radius: 6 + (location.speciesCount * 2),
+            fillColor: color,
+            color: '#2c3e50',
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.7
+          }).addTo(map);
+
+          // Store marker and metadata
+          markers[location.name] = {
+            marker: marker,
+            location: location,
+            defaultStyle: {
+              fillColor: color,
+              fillOpacity: 0.7,
+              weight: 2,
+              opacity: 1
+            }
+          };
+
+          // Create popup content
+          const speciesListHtml = location.species.map(s => `
+            <div class="species-item">
+              <div class="species-name">
+                <a href="https://ebird.org/species/${s.speciesCode}" target="_blank">${s.commonName}</a>
+              </div>
+              <div class="species-details">${s.count} seen on ${s.date}</div>
+            </div>
+          `).join('');
+
+          const hotspotLink = location.locId ? `<a href="https://ebird.org/hotspot/${location.locId}" target="_blank" class="hotspot-link">🔗 View hotspot on eBird</a>` : '';
+
+          const popupContent = `
+            <div class="location-popup">
+              <h3>${location.name}</h3>
+              <div class="info">
+                ${location.distance} mi away • ${location.speciesCount} species
+                ${hotspotLink}
+              </div>
+              <div class="species-list">
+                ${speciesListHtml}
+              </div>
+            </div>
+          `;
+
+          marker.bindPopup(popupContent);
+        });
+
+        // Wire up click handlers for species filtering
+        function clearFilter() {
+          selectedSpecies = null;
+          document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
+          clearFilterBtn.classList.remove('visible');
+          
+          // Reset all markers to default style
+          Object.values(markers).forEach(({ marker, defaultStyle }) => {
+            marker.setStyle({
+              ...defaultStyle,
+              fillOpacity: 0.7,
+              opacity: 1
+            });
+          });
+        }
+        
+        document.querySelectorAll('.species-item').forEach(item => {
+          item.addEventListener('click', function() {
+            const speciesName = this.dataset.speciesName;
+            
+            // Toggle selection
+            if (selectedSpecies === speciesName) {
+              clearFilter();
+            } else {
+              // Select this species
+              selectedSpecies = speciesName;
+              document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
+              this.classList.add('active');
+              clearFilterBtn.classList.add('visible');
+              
+              // Dim all markers first
+              Object.values(markers).forEach(({ marker }) => {
+                marker.setStyle({
+                  fillOpacity: 0.1,
+                  opacity: 0.3
+                });
+              });
+              
+              // Highlight markers that have this species
+              const relevantLocations = speciesData[speciesName].locations;
+              relevantLocations.forEach(locationName => {
+                if (markers[locationName]) {
+                  const { marker, defaultStyle } = markers[locationName];
+                  marker.setStyle({
+                    ...defaultStyle,
+                    fillOpacity: 0.9,
+                    opacity: 1,
+                    weight: 3
+                  });
+                }
+              });
+            }
+          });
+        });
+
+        // Fit map to show all markers
+        if (filteredData.locations.length > 0) {
+          const bounds = L.latLngBounds(
+            filteredData.locations.map(loc => [loc.lat, loc.lng])
+          );
+          bounds.extend([filteredData.home.lat, filteredData.home.lng]);
+          map.fitBounds(bounds, { padding: [50, 50] });
+        }
+      }
+      
+      // Initialize the map with zoom controls on top-right
+      map = L.map('map', {
+        zoomControl: false
+      }).setView([data.home.lat, data.home.lng], 10);
+      
+      // Add zoom control to top-right
+      L.control.zoom({
+        position: 'topright'
+      }).addTo(map);
+
+      // Add CartoDB tiles
       L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20
       }).addTo(map);
 
-      // Add home marker
+      // Add home marker (permanent)
       L.circleMarker([data.home.lat, data.home.lng], {
         radius: 8,
         fillColor: '#2ecc71',
@@ -391,119 +797,12 @@
         fillOpacity: 0.8
       }).addTo(map).bindPopup('<b>Home</b>');
 
-      // Build species index
-      const speciesData = {};
-      data.locations.forEach(location => {
-        location.species.forEach(species => {
-          if (!speciesData[species.commonName]) {
-            speciesData[species.commonName] = {
-              name: species.commonName,
-              code: species.speciesCode,
-              count: 0,
-              locations: []
-            };
-          }
-          speciesData[species.commonName].count++;
-          if (!speciesData[species.commonName].locations.includes(location.name)) {
-            speciesData[species.commonName].locations.push(location.name);
-          }
-        });
-      });
-
-      // Sort species by observation count
-      const sortedSpecies = Object.values(speciesData).sort((a, b) => b.count - a.count);
-
-      // Build species list in sidebar
-      const speciesList = document.getElementById('species-list');
-      let selectedSpecies = null;
-
-      sortedSpecies.forEach(species => {
-        const item = document.createElement('div');
-        item.className = 'species-item';
-        item.innerHTML = `
-          <div class="name">${species.name}</div>
-          <div class="count">${species.count} observation${species.count > 1 ? 's' : ''} at ${species.locations.length} location${species.locations.length > 1 ? 's' : ''}</div>
-        `;
-        item.dataset.speciesName = species.name;
-        speciesList.appendChild(item);
-      });
-
-      // Store markers by location name for filtering
-      const markers = {};
-
-      // Add markers for each location
-      data.locations.forEach(location => {
-        // Color code by species count
-        let color;
-        if (location.speciesCount >= 5) {
-          color = '#e74c3c'; // red
-        } else if (location.speciesCount >= 3) {
-          color = '#f39c12'; // orange
-        } else if (location.speciesCount === 2) {
-          color = '#3498db'; // blue
-        } else {
-          color = '#9b59b6'; // purple
-        }
-
-        // Create marker
-        const marker = L.circleMarker([location.lat, location.lng], {
-          radius: 6 + (location.speciesCount * 2),
-          fillColor: color,
-          color: '#2c3e50',
-          weight: 2,
-          opacity: 1,
-          fillOpacity: 0.7
-        }).addTo(map);
-
-        // Store marker and metadata
-        markers[location.name] = {
-          marker: marker,
-          location: location,
-          defaultStyle: {
-            fillColor: color,
-            fillOpacity: 0.7,
-            weight: 2,
-            opacity: 1
-          }
-        };
-
-        // Create popup content
-        const speciesList = location.species.map(s => `
-          <div class="species-item">
-            <div class="species-name">
-              <a href="https://ebird.org/species/${s.speciesCode}" target="_blank">${s.commonName}</a>
-            </div>
-            <div class="species-details">${s.count} seen on ${s.date}</div>
-          </div>
-        `).join('');
-
-        const hotspotLink = location.locId ? `<a href="https://ebird.org/hotspot/${location.locId}" target="_blank" class="hotspot-link">🔗 View hotspot on eBird</a>` : '';
-
-        const popupContent = `
-          <div class="location-popup">
-            <h3>${location.name}</h3>
-            <div class="info">
-              ${location.distance} mi away • ${location.speciesCount} species
-              ${hotspotLink}
-            </div>
-            <div class="species-list">
-              ${speciesList}
-            </div>
-          </div>
-        `;
-
-        marker.bindPopup(popupContent);
-      });
-
-      // Add click handlers for species filtering
-      const clearFilterBtn = document.getElementById('clear-filter');
-      
-      function clearFilter() {
+      // Get clear filter button reference
+      clearFilterBtn = document.getElementById('clear-filter');
+      clearFilterBtn.addEventListener('click', () => {
         selectedSpecies = null;
         document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
         clearFilterBtn.classList.remove('visible');
-        
-        // Reset all markers to default style
         Object.values(markers).forEach(({ marker, defaultStyle }) => {
           marker.setStyle({
             ...defaultStyle,
@@ -511,57 +810,22 @@
             opacity: 1
           });
         });
-      }
-      
-      clearFilterBtn.addEventListener('click', clearFilter);
-      
-      document.querySelectorAll('.species-item').forEach(item => {
-        item.addEventListener('click', function() {
-          const speciesName = this.dataset.speciesName;
-          
-          // Toggle selection
-          if (selectedSpecies === speciesName) {
-            clearFilter();
-          } else {
-            // Select this species
-            selectedSpecies = speciesName;
-            document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
-            this.classList.add('active');
-            clearFilterBtn.classList.add('visible');
-            
-            // Dim all markers first
-            Object.values(markers).forEach(({ marker }) => {
-              marker.setStyle({
-                fillOpacity: 0.1,
-                opacity: 0.3
-              });
-            });
-            
-            // Highlight markers that have this species
-            const relevantLocations = speciesData[speciesName].locations;
-            relevantLocations.forEach(locationName => {
-              if (markers[locationName]) {
-                const { marker, defaultStyle } = markers[locationName];
-                marker.setStyle({
-                  ...defaultStyle,
-                  fillOpacity: 0.9,
-                  opacity: 1,
-                  weight: 3
-                });
-              }
-            });
-          }
-        });
       });
-
-      // Fit map to show all markers
-      if (data.locations.length > 0) {
-        const bounds = L.latLngBounds(
-          data.locations.map(loc => [loc.lat, loc.lng])
-        );
-        bounds.extend([data.home.lat, data.home.lng]);
-        map.fitBounds(bounds, { padding: [50, 50] });
-      }
+      
+      // Wire up days slider
+      const daysSlider = document.getElementById('days-slider');
+      const daysValue = document.getElementById('days-filter-value');
+      
+      daysSlider.addEventListener('input', function() {
+        currentDaysFilter = parseInt(this.value);
+        daysValue.textContent = currentDaysFilter;
+        const filteredData = filterDataByDays(fullData, currentDaysFilter);
+        renderMap(filteredData);
+      });
+      
+      // Initial render with all data
+      const initialFilteredData = filterDataByDays(fullData, currentDaysFilter);
+      renderMap(initialFilteredData);
     }
   </script>
 </body>
