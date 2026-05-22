@@ -12,14 +12,84 @@
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       display: flex;
+      overflow: hidden;
     }
+    
+    /* Toggle button */
+    #sidebar-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1001;
+      width: 50px;
+      height: 50px;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    #sidebar-toggle:hover {
+      background: #34495e;
+    }
+    #sidebar-toggle.active {
+      left: 330px;
+    }
+    
+    /* Backdrop overlay */
+    #sidebar-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    #sidebar-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
     #sidebar {
+      position: fixed;
+      left: -320px;
+      top: 0;
       width: 320px;
       height: 100vh;
       background: white;
-      border-right: 1px solid #ddd;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.2);
       overflow-y: auto;
       z-index: 1000;
+      transition: left 0.3s ease-in-out;
+    }
+    #sidebar.active {
+      left: 0;
+    }
+    
+    /* Desktop: show sidebar by default */
+    @media (min-width: 768px) {
+      #sidebar {
+        position: relative;
+        left: 0;
+        box-shadow: none;
+        border-right: 1px solid #ddd;
+      }
+      #sidebar-toggle {
+        display: none;
+      }
+      #sidebar-backdrop {
+        display: none;
+      }
     }
     #sidebar-header {
       padding: 20px;
@@ -28,14 +98,38 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    #sidebar-header h2 {
+    #sidebar-header-text h2 {
       margin: 0 0 5px 0;
       font-size: 18px;
     }
-    #sidebar-header .subtitle {
+    #sidebar-header-text .subtitle {
       font-size: 12px;
       color: #bdc3c7;
+    }
+    #clear-filter {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    #clear-filter.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #clear-filter:hover {
+      background: white;
+      color: #2c3e50;
     }
     #species-list {
       padding: 10px;
@@ -144,6 +238,33 @@
       margin-right: 8px;
       border: 2px solid #333;
     }
+    
+    /* Mobile optimizations */
+    @media (max-width: 767px) {
+      .legend {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+        font-size: 11px;
+      }
+      .legend h4 {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+      .legend-item {
+        margin-bottom: 3px;
+      }
+      .legend-color {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+      }
+      #clear-filter {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+    }
+    
     #loading {
       position: absolute;
       top: 50%;
@@ -163,10 +284,20 @@
 </head>
 <body>
   <div id="loading">Loading bird data...</div>
+  
+  <!-- Mobile sidebar toggle button -->
+  <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+  
+  <!-- Backdrop for mobile -->
+  <div id="sidebar-backdrop"></div>
+  
   <div id="sidebar">
     <div id="sidebar-header">
-      <h2>Species Nearby</h2>
-      <div class="subtitle">Click to filter locations</div>
+      <div id="sidebar-header-text">
+        <h2>Species Nearby</h2>
+        <div class="subtitle">Click to filter locations</div>
+      </div>
+      <button id="clear-filter">Clear</button>
     </div>
     <div id="species-list"></div>
   </div>
@@ -197,6 +328,27 @@
   </div>
 
   <script>
+    // Sidebar toggle for mobile
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    
+    function toggleSidebar() {
+      sidebar.classList.toggle('active');
+      sidebarBackdrop.classList.toggle('active');
+      sidebarToggle.classList.toggle('active');
+    }
+    
+    sidebarToggle.addEventListener('click', toggleSidebar);
+    sidebarBackdrop.addEventListener('click', toggleSidebar);
+    
+    // Close sidebar when clicking on a species (mobile only)
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.species-item') && window.innerWidth < 768) {
+        toggleSidebar();
+      }
+    });
+    
     // Fetch bird data from API
     window.addEventListener('DOMContentLoaded', async function() {
       try {
@@ -344,29 +496,38 @@
       });
 
       // Add click handlers for species filtering
+      const clearFilterBtn = document.getElementById('clear-filter');
+      
+      function clearFilter() {
+        selectedSpecies = null;
+        document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
+        clearFilterBtn.classList.remove('visible');
+        
+        // Reset all markers to default style
+        Object.values(markers).forEach(({ marker, defaultStyle }) => {
+          marker.setStyle({
+            ...defaultStyle,
+            fillOpacity: 0.7,
+            opacity: 1
+          });
+        });
+      }
+      
+      clearFilterBtn.addEventListener('click', clearFilter);
+      
       document.querySelectorAll('.species-item').forEach(item => {
         item.addEventListener('click', function() {
           const speciesName = this.dataset.speciesName;
           
           // Toggle selection
           if (selectedSpecies === speciesName) {
-            // Deselect - show all markers normally
-            selectedSpecies = null;
-            document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
-            
-            // Reset all markers to default style
-            Object.values(markers).forEach(({ marker, defaultStyle }) => {
-              marker.setStyle({
-                ...defaultStyle,
-                fillOpacity: 0.7,
-                opacity: 1
-              });
-            });
+            clearFilter();
           } else {
             // Select this species
             selectedSpecies = speciesName;
             document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
             this.classList.add('active');
+            clearFilterBtn.classList.add('visible');
             
             // Dim all markers first
             Object.values(markers).forEach(({ marker }) => {
