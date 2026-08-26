@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eBird Needs Map</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" />
+  <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
   <script src="bird-map-data.js"></script>
   <style>
     body {
@@ -203,27 +203,18 @@
     });
 
     function initMap(data) {
-      // Initialize the map centered on home
-      const map = L.map('map').setView([data.home.lat, data.home.lng], 10);
+      // Initialize the map with MapLibre GL JS and Carto vector tiles
+      const map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
+        center: [data.home.lng, data.home.lat],
+        zoom: 10
+      });
 
-      // Add CartoDB tiles (more permissive for local use)
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 20
-      }).addTo(map);
+      // Add navigation controls
+      map.addControl(new maplibregl.NavigationControl());
 
-      // Add home marker
-      L.circleMarker([data.home.lat, data.home.lng], {
-        radius: 8,
-        fillColor: '#2ecc71',
-        color: '#27ae60',
-        weight: 2,
-        opacity: 1,
-        fillOpacity: 0.8
-      }).addTo(map).bindPopup('<b>Home</b>');
-
-      // Build species index
+      // Build species index (before map loads)
       const speciesData = {};
       data.locations.forEach(location => {
         location.species.forEach(species => {
@@ -260,44 +251,62 @@
         speciesList.appendChild(item);
       });
 
-      // Store markers by location name for filtering
-      const markers = {};
+      // Wait for map to load before adding markers
+      map.on('load', function() {
+        // Add home marker
+        const homeEl = document.createElement('div');
+        homeEl.style.width = '20px';
+        homeEl.style.height = '20px';
+        homeEl.style.borderRadius = '50%';
+        homeEl.style.backgroundColor = '#2ecc71';
+        homeEl.style.border = '2px solid #27ae60';
+        
+        new maplibregl.Marker({ element: homeEl })
+          .setLngLat([data.home.lng, data.home.lat])
+          .setPopup(new maplibregl.Popup().setHTML('<b>Home</b>'))
+          .addTo(map);
 
-      // Add markers for each location
-      data.locations.forEach(location => {
-        // Color code by species count
-        let color;
-        if (location.speciesCount >= 5) {
-          color = '#e74c3c'; // red
-        } else if (location.speciesCount >= 3) {
-          color = '#f39c12'; // orange
-        } else if (location.speciesCount === 2) {
-          color = '#3498db'; // blue
-        } else {
-          color = '#9b59b6'; // purple
-        }
+        // Store markers by location name for filtering
+        const markers = {};
 
-        // Create marker
-        const marker = L.circleMarker([location.lat, location.lng], {
-          radius: 6 + (location.speciesCount * 2),
-          fillColor: color,
-          color: '#2c3e50',
-          weight: 2,
-          opacity: 1,
-          fillOpacity: 0.7
-        }).addTo(map);
-
-        // Store marker and metadata
-        markers[location.name] = {
-          marker: marker,
-          location: location,
-          defaultStyle: {
-            fillColor: color,
-            fillOpacity: 0.7,
-            weight: 2,
-            opacity: 1
+        // Add markers for each location
+        data.locations.forEach(location => {
+          // Color code by species count
+          let color;
+          if (location.speciesCount >= 5) {
+            color = '#e74c3c'; // red
+          } else if (location.speciesCount >= 3) {
+            color = '#f39c12'; // orange
+          } else if (location.speciesCount === 2) {
+            color = '#3498db'; // blue
+          } else {
+            color = '#9b59b6'; // purple
           }
-        };
+
+          // Create marker element
+          const size = 12 + (location.speciesCount * 4);
+          const el = document.createElement('div');
+          el.style.width = size + 'px';
+          el.style.height = size + 'px';
+          el.style.borderRadius = '50%';
+          el.style.backgroundColor = color;
+          el.style.border = '2px solid #2c3e50';
+          el.style.opacity = '0.9';
+          el.style.cursor = 'pointer';
+          el.dataset.color = color;
+
+          // Create marker
+          const marker = new maplibregl.Marker({ element: el })
+            .setLngLat([location.lng, location.lat])
+            .addTo(map);
+
+          // Store marker and metadata
+          markers[location.name] = {
+            marker: marker,
+            element: el,
+            location: location,
+            defaultColor: color
+          };
 
         // Create popup content
         const speciesList = location.species.map(s => `
@@ -311,24 +320,24 @@
 
         const hotspotLink = location.locId ? `<a href="https://ebird.org/hotspot/${location.locId}" target="_blank" class="hotspot-link">🔗 View hotspot on eBird</a>` : '';
 
-        const popupContent = `
-          <div class="location-popup">
-            <h3>${location.name}</h3>
-            <div class="info">
-              ${location.distance} mi away • ${location.speciesCount} species
-              ${hotspotLink}
+          const popupContent = `
+            <div class="location-popup">
+              <h3>${location.name}</h3>
+              <div class="info">
+                ${location.distance} mi away • ${location.speciesCount} species
+                ${hotspotLink}
+              </div>
+              <div class="species-list">
+                ${speciesList}
+              </div>
             </div>
-            <div class="species-list">
-              ${speciesList}
-            </div>
-          </div>
-        `;
+          `;
 
-        marker.bindPopup(popupContent);
-      });
+          marker.setPopup(new maplibregl.Popup({ offset: 25 }).setHTML(popupContent));
+        });
 
-      // Add click handlers for species filtering
-      document.querySelectorAll('.species-item').forEach(item => {
+        // Add click handlers for species filtering
+        document.querySelectorAll('.species-item').forEach(item => {
         item.addEventListener('click', function() {
           const speciesName = this.dataset.speciesName;
           
@@ -339,12 +348,10 @@
             document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
             
             // Reset all markers to default style
-            Object.values(markers).forEach(({ marker, defaultStyle }) => {
-              marker.setStyle({
-                ...defaultStyle,
-                fillOpacity: 0.7,
-                opacity: 1
-              });
+            Object.values(markers).forEach(({ element, defaultColor }) => {
+              element.style.backgroundColor = defaultColor;
+              element.style.opacity = '0.9';
+              element.style.borderWidth = '2px';
             });
           } else {
             // Select this species
@@ -353,38 +360,34 @@
             this.classList.add('active');
             
             // Dim all markers first
-            Object.values(markers).forEach(({ marker }) => {
-              marker.setStyle({
-                fillOpacity: 0.1,
-                opacity: 0.3
-              });
+            Object.values(markers).forEach(({ element }) => {
+              element.style.opacity = '0.2';
             });
             
             // Highlight markers that have this species
             const relevantLocations = speciesData[speciesName].locations;
             relevantLocations.forEach(locationName => {
               if (markers[locationName]) {
-                const { marker, defaultStyle } = markers[locationName];
-                marker.setStyle({
-                  ...defaultStyle,
-                  fillOpacity: 0.9,
-                  opacity: 1,
-                  weight: 3
-                });
+                const { element, defaultColor } = markers[locationName];
+                element.style.backgroundColor = defaultColor;
+                element.style.opacity = '1';
+                element.style.borderWidth = '3px';
               }
             });
           }
         });
       });
 
-      // Fit map to show all markers
-      if (data.locations.length > 0) {
-        const bounds = L.latLngBounds(
-          data.locations.map(loc => [loc.lat, loc.lng])
-        );
-        bounds.extend([data.home.lat, data.home.lng]);
-        map.fitBounds(bounds, { padding: [50, 50] });
-      }
+        // Fit map to show all markers
+        if (data.locations.length > 0) {
+          const bounds = new maplibregl.LngLatBounds();
+          data.locations.forEach(loc => {
+            bounds.extend([loc.lng, loc.lat]);
+          });
+          bounds.extend([data.home.lng, data.home.lat]);
+          map.fitBounds(bounds, { padding: 50 });
+        }
+      });
     }
   </script>
 </body>

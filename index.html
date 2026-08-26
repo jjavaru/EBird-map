@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eBird Needs Map</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" />
+  <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
   <style>
     :root {
         --z-sidebar: 2000;
@@ -265,8 +265,9 @@
       font-size: 12px;
       color: #3498db;
     }
-    /* Leaflet zoom controls positioning */
-    .leaflet-top.leaflet-right {
+    
+    /* MapLibre controls */
+    .maplibregl-ctrl-top-right {
       top: 10px;
       right: 10px;
     }
@@ -686,25 +687,29 @@
           }
 
           // Create marker
-          const marker = L.circleMarker([location.lat, location.lng], {
-            radius: 6 + (location.speciesCount * 2),
-            fillColor: color,
-            color: '#2c3e50',
-            weight: 2,
-            opacity: 1,
-            fillOpacity: 0.7
-          }).addTo(map);
+          // Create marker element
+          const size = 12 + (location.speciesCount * 4);
+          const el = document.createElement('div');
+          el.style.width = size + 'px';
+          el.style.height = size + 'px';
+          el.style.borderRadius = '50%';
+          el.style.backgroundColor = color;
+          el.style.border = '2px solid #2c3e50';
+          el.style.opacity = '0.9';
+          el.style.cursor = 'pointer';
+          el.dataset.color = color;
+
+          // Create marker
+          const marker = new maplibregl.Marker({ element: el })
+            .setLngLat([location.lng, location.lat])
+            .addTo(map);
 
           // Store marker and metadata
           markers[location.name] = {
             marker: marker,
+            element: el,
             location: location,
-            defaultStyle: {
-              fillColor: color,
-              fillOpacity: 0.7,
-              weight: 2,
-              opacity: 1
-            }
+            defaultColor: color
           };
 
           // Create popup content
@@ -735,7 +740,7 @@
             </div>
           `;
 
-          marker.bindPopup(popupContent);
+          marker.setPopup(new maplibregl.Popup({ offset: 25 }).setHTML(popupContent));
         });
 
         // Wire up click handlers for species filtering
@@ -745,12 +750,10 @@
           clearFilterBtn.classList.remove('visible');
           
           // Reset all markers to default style
-          Object.values(markers).forEach(({ marker, defaultStyle }) => {
-            marker.setStyle({
-              ...defaultStyle,
-              fillOpacity: 0.7,
-              opacity: 1
-            });
+          Object.values(markers).forEach(({ element, defaultColor }) => {
+            element.style.backgroundColor = defaultColor;
+            element.style.opacity = '0.9';
+            element.style.borderWidth = '2px';
           });
         }
         
@@ -769,24 +772,18 @@
               clearFilterBtn.classList.add('visible');
               
               // Dim all markers first
-              Object.values(markers).forEach(({ marker }) => {
-                marker.setStyle({
-                  fillOpacity: 0.1,
-                  opacity: 0.3
-                });
+              Object.values(markers).forEach(({ element }) => {
+                element.style.opacity = '0.2';
               });
               
               // Highlight markers that have this species
               const relevantLocations = speciesData[speciesName].locations;
               relevantLocations.forEach(locationName => {
                 if (markers[locationName]) {
-                  const { marker, defaultStyle } = markers[locationName];
-                  marker.setStyle({
-                    ...defaultStyle,
-                    fillOpacity: 0.9,
-                    opacity: 1,
-                    weight: 3
-                  });
+                  const { element, defaultColor } = markers[locationName];
+                  element.style.backgroundColor = defaultColor;
+                  element.style.opacity = '1';
+                  element.style.borderWidth = '3px';
                 }
               });
             }
@@ -795,48 +792,52 @@
 
         // Fit map to show all markers
         if (filteredData.locations.length > 0) {
-          const bounds = L.latLngBounds(
-            filteredData.locations.map(loc => [loc.lat, loc.lng])
-          );
-          bounds.extend([filteredData.home.lat, filteredData.home.lng]);
-          map.fitBounds(bounds, { padding: [50, 50] });
+          const bounds = new maplibregl.LngLatBounds();
+          filteredData.locations.forEach(loc => {
+            bounds.extend([loc.lng, loc.lat]);
+          });
+          bounds.extend([filteredData.home.lng, filteredData.home.lat]);
+          map.fitBounds(bounds, { padding: 50 });
         }
       }
       
-      // Initialize the map with zoom controls on top-right
-      map = L.map('map', {
-        zoomControl: false
-      }).setView([data.home.lat, data.home.lng], 10);
+      // Initialize the map with MapLibre GL JS and Carto vector tiles
+      map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
+        center: [data.home.lng, data.home.lat],
+        zoom: 10
+      });
       
       // Save map reference globally
       globalMap = map;
       
-      // Add zoom control to top-right
-      L.control.zoom({
-        position: 'topright'
-      }).addTo(map);
+      // Add navigation controls to top-right
+      map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
-      // Add CartoDB tiles
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 20
-      }).addTo(map);
-
-      // Add home marker (permanent)
-      const homeMarker = L.circleMarker([data.home.lat, data.home.lng], {
-        radius: 8,
-        fillColor: '#2ecc71',
-        color: '#27ae60',
-        weight: 2,
-        opacity: 1,
-        fillOpacity: 0.8
-      }).addTo(map).bindPopup('<b>Search Center</b><br><small>Click anywhere on map to search from new location</small>');
+      // Store home marker globally so we can restore it after re-renders
+      let homeMarker;
+      
+      // Wait for map to load before adding home marker
+      map.on('load', function() {
+        // Add home marker (permanent)
+        const homeEl = document.createElement('div');
+        homeEl.style.width = '20px';
+        homeEl.style.height = '20px';
+        homeEl.style.borderRadius = '50%';
+        homeEl.style.backgroundColor = '#2ecc71';
+        homeEl.style.border = '2px solid #27ae60';
+        
+        homeMarker = new maplibregl.Marker({ element: homeEl })
+          .setLngLat([data.home.lng, data.home.lat])
+          .setPopup(new maplibregl.Popup().setHTML('<b>Search Center</b><br><small>Click anywhere on map to search from new location</small>'))
+          .addTo(map);
+      });
       
       // Add map click handler for new search
       map.on('click', async function(e) {
-        const clickedLat = e.latlng.lat.toFixed(4);
-        const clickedLng = e.latlng.lng.toFixed(4);
+        const clickedLat = e.lngLat.lat.toFixed(4);
+        const clickedLng = e.lngLat.lng.toFixed(4);
         
         // Confirm before searching
         const confirmed = confirm(`Search for birds near this location?\n\nLatitude: ${clickedLat}\nLongitude: ${clickedLng}\n\nThis will fetch new data from eBird.`);
@@ -890,12 +891,10 @@
         selectedSpecies = null;
         document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
         clearFilterBtn.classList.remove('visible');
-        Object.values(markers).forEach(({ marker, defaultStyle }) => {
-          marker.setStyle({
-            ...defaultStyle,
-            fillOpacity: 0.7,
-            opacity: 1
-          });
+        Object.values(markers).forEach(({ element, defaultColor }) => {
+          element.style.backgroundColor = defaultColor;
+          element.style.opacity = '0.9';
+          element.style.borderWidth = '2px';
         });
       });
       
