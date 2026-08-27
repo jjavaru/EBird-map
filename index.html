@@ -72,9 +72,11 @@
       height: 100vh;
       background: white;
       box-shadow: 2px 0 8px rgba(0,0,0,0.2);
-      overflow-y: auto;
+      overflow: hidden;
       z-index: var(--z-sidebar);
       transition: left 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
     }
     #sidebar.active {
       left: 0;
@@ -99,12 +101,11 @@
       padding: 20px;
       background: #2c3e50;
       color: white;
-      position: sticky;
-      top: 0;
       z-index: 10;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-shrink: 0;
     }
     #sidebar-header-text h2 {
       margin: 0 0 5px 0;
@@ -136,11 +137,54 @@
       color: #2c3e50;
     }
     
+    /* List type toggle */
+    #list-type-container {
+      padding: 15px 20px;
+      background: #2c3e50;
+      border-bottom: 1px solid #1a252f;
+      flex-shrink: 0;
+    }
+    #list-type-label {
+      font-size: 13px;
+      color: #bdc3c7;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .toggle-switch {
+      display: flex;
+      background: #34495e;
+      border-radius: 6px;
+      padding: 4px;
+      position: relative;
+    }
+    .toggle-option {
+      flex: 1;
+      padding: 8px 12px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      color: #bdc3c7;
+      border-radius: 4px;
+      transition: all 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+    .toggle-option.active {
+      background: #3498db;
+      color: white;
+    }
+    .toggle-option:hover:not(.active) {
+      background: #445a70;
+      color: white;
+    }
+    
     /* Days filter control */
     #days-filter-container {
       padding: 15px 20px;
       background: #34495e;
       border-bottom: 1px solid #2c3e50;
+      flex-shrink: 0;
     }
     #days-filter-label {
       font-size: 13px;
@@ -183,6 +227,9 @@
     
     #species-list {
       padding: 10px;
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
     .species-item {
       padding: 12px;
@@ -355,10 +402,19 @@
   <div id="sidebar">
     <div id="sidebar-header">
       <div id="sidebar-header-text">
-        <h2>Species Nearby</h2>
+        <h2>Species Nearby (Life List)</h2>
         <div class="subtitle" id="data-timestamp">Loading...</div>
       </div>
       <button id="clear-filter">Clear</button>
+    </div>
+    
+    <!-- List type toggle -->
+    <div id="list-type-container">
+      <label id="list-type-label">List Type</label>
+      <div class="toggle-switch">
+        <div class="toggle-option active" data-list-type="life">Life List</div>
+        <div class="toggle-option" data-list-type="year">Year List</div>
+      </div>
     </div>
     
     <!-- Days filter -->
@@ -535,15 +591,16 @@
     
     // Global variables
     let globalMap = null;
+    let currentListType = 'life';
     
     // Fetch bird data from API
-    async function fetchBirdData(lat, lng, dist = 50) {
+    async function fetchBirdData(lat, lng, dist = 50, listType = 'life') {
       try {
         let response;
         if (window.location.protocol === 'file:') {
             response = window.mockData ? { ok: true, json: async () => window.mockData } : { ok: false, status: 404, statusText: 'Mock data not found' };
         } else {
-            response = await fetch(`/api/birds?lat=${lat}&lng=${lng}&dist=${dist}`);
+            response = await fetch(`/api/birds?lat=${lat}&lng=${lng}&dist=${dist}&listType=${listType}`);
         }
         
         if (!response.ok) {
@@ -557,10 +614,65 @@
       }
     }
     
+    // List type toggle handler
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('toggle-option')) {
+        const listType = e.target.getAttribute('data-list-type');
+        if (listType !== currentListType) {
+          currentListType = listType;
+          
+          // Update active state
+          document.querySelectorAll('.toggle-option').forEach(opt => {
+            opt.classList.remove('active');
+          });
+          e.target.classList.add('active');
+          
+          // Update header to show list type
+          const headerTitle = document.querySelector('#sidebar-header-text h2');
+          headerTitle.textContent = listType === 'life' ? 'Species Nearby (Life List)' : 'Species Nearby (Year List)';
+          
+          // Reload data with new list type
+          if (globalMap) {
+            reloadMapData();
+          }
+        }
+      }
+    });
+    
+    async function reloadMapData() {
+      try {
+        document.getElementById('loading').style.display = 'block';
+        document.getElementById('loading').textContent = 'Loading bird data...';
+        
+        const currentCenter = globalMap.getCenter();
+        const data = await fetchBirdData(currentCenter.lat, currentCenter.lng, 50, currentListType);
+        
+        // Update timestamp
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('en-US', { 
+          hour: 'numeric', 
+          minute: '2-digit',
+          hour12: true 
+        });
+        document.getElementById('data-timestamp').textContent = `Updated at ${timeString}`;
+        
+        document.getElementById('loading').style.display = 'none';
+        initMap(data);
+      } catch (error) {
+        console.error('Error reloading bird data:', error);
+        document.getElementById('loading').innerHTML = `
+          <div class="error">
+            <div>Error loading bird data</div>
+            <div style="font-size: 14px; margin-top: 10px;">${error.message}</div>
+          </div>
+        `;
+      }
+    }
+    
     window.addEventListener('DOMContentLoaded', async function() {
       try {
         document.getElementById('loading').textContent = 'Loading bird data...';
-        const data = await fetchBirdData(39.95, -82.99); // Default location
+        const data = await fetchBirdData(39.95, -82.99, 50, currentListType); // Default location
         
         // Update timestamp in sidebar
         const now = new Date();
@@ -859,7 +971,7 @@
         
         try {
           // Fetch new data
-          const newData = await fetchBirdData(clickedLat, clickedLng);
+          const newData = await fetchBirdData(clickedLat, clickedLng, 50, currentListType);
           
           // Update timestamp
           const now = new Date();

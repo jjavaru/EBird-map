@@ -31,6 +31,7 @@ export default async function handler(req, res) {
     const lat = req.query.lat || "39.95";
     const lng = req.query.lng || "-82.99";
     const dist = req.query.dist || "50";
+    const listType = req.query.listType || "life"; // 'life' or 'year'
 
     const requestOptions = {
       method: "GET",
@@ -39,20 +40,21 @@ export default async function handler(req, res) {
       agent: httpsAgent,
     };
 
-    // Load life list from CSV - use process.cwd() to get project root
-    const lifeListCsvPath = path.join(process.cwd(), 'ebird_world_life_list.csv');
+    // Load life/year list from CSV - use process.cwd() to get project root
+    const csvFileName = listType === 'year' ? 'ebird_world_year_list.csv' : 'ebird_world_life_list.csv';
+    const lifeListCsvPath = path.join(process.cwd(), csvFileName);
     let lifeListData = [];
     
     try {
       if (fs.existsSync(lifeListCsvPath)) {
         const csvContent = fs.readFileSync(lifeListCsvPath, "utf-8");
         lifeListData = parseLifeListCsv(csvContent);
-        console.log(`Loaded ${lifeListData.length} species from life list`);
+        console.log(`Loaded ${lifeListData.length} species from ${listType} list`);
       } else {
-        console.warn(`Life list CSV not found at: ${lifeListCsvPath}`);
+        console.warn(`${listType} list CSV not found at: ${lifeListCsvPath}`);
       }
     } catch (error) {
-      console.error("Error reading life list:", error);
+      console.error(`Error reading ${listType} list:`, error);
     }
 
     const lifeListSpecies = new Set(lifeListData.map((bird) => bird.commonName));
