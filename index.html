@@ -836,6 +836,12 @@
       
       // Add map click handler for new search
       map.on('click', async function(e) {
+        // Don't trigger search if clicking on a marker
+        const features = map.queryRenderedFeatures(e.point);
+        if (e.originalEvent.target.closest('.maplibregl-marker')) {
+          return; // Clicked on a marker, let the popup handle it
+        }
+        
         const clickedLat = e.lngLat.lat.toFixed(4);
         const clickedLng = e.lngLat.lng.toFixed(4);
         
