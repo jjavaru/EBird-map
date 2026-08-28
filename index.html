@@ -763,8 +763,8 @@
               };
             }
             speciesData[species.commonName].count++;
-            if (!speciesData[species.commonName].locations.includes(location.name)) {
-              speciesData[species.commonName].locations.push(location.name);
+            if (!speciesData[species.commonName].locations.includes(location.locId)) {
+              speciesData[species.commonName].locations.push(location.locId);
             }
           });
         });
@@ -816,8 +816,8 @@
             .setLngLat([location.lng, location.lat])
             .addTo(map);
 
-          // Store marker and metadata
-          markers[location.name] = {
+          // Store marker and metadata (using locId as unique key)
+          markers[location.locId] = {
             marker: marker,
             element: el,
             location: location,
@@ -890,9 +890,9 @@
               
               // Highlight markers that have this species
               const relevantLocations = speciesData[speciesName].locations;
-              relevantLocations.forEach(locationName => {
-                if (markers[locationName]) {
-                  const { element, defaultColor } = markers[locationName];
+              relevantLocations.forEach(locId => {
+                if (markers[locId]) {
+                  const { element, defaultColor } = markers[locId];
                   element.style.backgroundColor = defaultColor;
                   element.style.opacity = '1';
                   element.style.borderWidth = '3px';
