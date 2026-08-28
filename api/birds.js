@@ -96,25 +96,25 @@ export default async function handler(req, res) {
       }
     }
 
-    // Group by location
+    // Group by location ID (not name, to avoid combining different locations with same name)
     const byLocation = allObservations.reduce((acc, obs) => {
-      const locName = obs.locName || obs.locId;
-      if (!acc[locName]) {
-        acc[locName] = [];
+      const locId = obs.locId;
+      if (!acc[locId]) {
+        acc[locId] = [];
       }
-      acc[locName].push(obs);
+      acc[locId].push(obs);
       return acc;
     }, {});
 
     // Calculate distance and prepare locations
-    const locationsWithDistance = Object.entries(byLocation).map(([location, observations]) => {
+    const locationsWithDistance = Object.entries(byLocation).map(([locId, observations]) => {
       const distance = calculateDistance(
         parseFloat(lat),
         parseFloat(lng),
         observations[0].lat,
         observations[0].lng
       );
-      return { location, observations, distance };
+      return { locId, observations, distance };
     });
 
     // Sort by observation count, then distance
@@ -130,11 +130,11 @@ export default async function handler(req, res) {
         lat: parseFloat(lat),
         lng: parseFloat(lng),
       },
-      locations: sortedLocations.map(({ location, observations, distance }) => ({
-        name: location,
+      locations: sortedLocations.map(({ locId, observations, distance }) => ({
+        name: observations[0].locName || locId,
         lat: observations[0].lat,
         lng: observations[0].lng,
-        locId: observations[0].locId,
+        locId: locId,
         distance: parseFloat(distance.toFixed(1)),
         speciesCount: observations.length,
         species: observations.map((obs) => ({
