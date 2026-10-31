@@ -388,6 +388,15 @@
       padding: 20px;
       text-align: center;
     }
+    #data-warning {
+      display: none;
+      padding: 10px 20px;
+      background: #fff3cd;
+      color: #856404;
+      border-bottom: 1px solid #ffeeba;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -407,6 +416,9 @@
       </div>
       <button id="clear-filter">Clear</button>
     </div>
+    
+    <!-- Partial results warning (e.g. eBird rate limit) -->
+    <div id="data-warning"></div>
     
     <!-- List type toggle -->
     <div id="list-type-container">
@@ -702,6 +714,11 @@
       let currentDaysFilter = 7;
       let selectedSpecies = null;
       let map, markers, clearFilterBtn;
+      
+      // Show or hide the partial results warning
+      const dataWarning = document.getElementById('data-warning');
+      dataWarning.textContent = data.warning ? `⚠️ ${data.warning}` : '';
+      dataWarning.style.display = data.warning ? 'block' : 'none';
       
       // Helper function to filter data by days
       function filterDataByDays(data, days) {
