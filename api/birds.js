@@ -82,15 +82,36 @@ export default async function handler(req, res) {
 
     // Fetch all observations for each species
     const allObservations = [];
-    for (const speciesCode of uniqueSpeciesCodes) {
-      const speciesObs = await recentSpeciesObservations(
-        speciesCode,
-        lat,
-        lng,
-        dist,
-        DAYS_BACK,
-        requestOptions
-      );
+    let requestCount = 1; // includes the recentObservationsNearby request
+    let warning = null;
+    for (const [index, speciesCode] of uniqueSpeciesCodes.entries()) {
+      let speciesObs;
+      try {
+        requestCount++;
+        speciesObs = await recentSpeciesObservations(
+          speciesCode,
+          lat,
+          lng,
+          dist,
+          DAYS_BACK,
+          requestOptions
+        );
+      } catch (error) {
+        if (!(error instanceof EbirdApiError)) throw error;
+        const progress = `${index} of ${uniqueSpeciesCodes.length} species`;
+        console.warn(
+          `${error.name} on request #${requestCount}: HTTP ${error.status} ` +
+          `(${progress} fetched, listType=${listType}, lat=${lat}, lng=${lng}, dist=${dist})`
+        );
+        if (error instanceof RateLimitError) {
+          warning = `eBird rate limit reached: only ${progress} were loaded. Results are incomplete.`;
+        } else if (error instanceof EbirdServerError) {
+          warning = `eBird server error (HTTP ${error.status}): only ${progress} were loaded. Results are incomplete.`;
+        } else {
+          warning = `eBird rejected a request (HTTP ${error.status}): only ${progress} were loaded. Results are incomplete.`;
+        }
+        break;
+      }
       if (speciesObs && speciesObs.length > 0) {
         allObservations.push(...speciesObs);
       }
@@ -145,6 +166,7 @@ export default async function handler(req, res) {
           subId: obs.subId
         })),
       })),
+      warning,
     };
 
     res.status(200).json(mapData);
@@ -155,6 +177,49 @@ export default async function handler(req, res) {
 }
 
 // Helper functions
+class EbirdApiError extends Error {
+  constructor(message, status, url) {
+    super(`${message} (HTTP ${status}): ${url}`);
+    this.name = 'EbirdApiError';
+    this.status = status;
+  }
+}
+
+class RateLimitError extends EbirdApiError {
+  constructor(status, url) {
+    super('eBird rate limit exceeded', status, url);
+    this.name = 'RateLimitError';
+  }
+}
+
+class EbirdClientError extends EbirdApiError {
+  constructor(status, url) {
+    super('eBird request rejected', status, url);
+    this.name = 'EbirdClientError';
+  }
+}
+
+class EbirdServerError extends EbirdApiError {
+  constructor(status, url) {
+    super('eBird server error', status, url);
+    this.name = 'EbirdServerError';
+  }
+}
+
+async function parseEbirdResponse(response) {
+  const { status, url } = response;
+  if (status === 429) {
+    throw new RateLimitError(status, url);
+  }
+  if (status >= 400 && status < 500) {
+    throw new EbirdClientError(status, url);
+  }
+  if (status >= 500) {
+    throw new EbirdServerError(status, url);
+  }
+  return response.json();
+}
+
 function parseLifeListCsv(csvContent) {
   const rows = csvContent.split("\n").slice(1);
   return rows
@@ -175,7 +240,7 @@ async function recentObservationsNearby(lat, lng, dist, back, requestOptions) {
     `${API_ROOT}/data/obs/geo/recent?lat=${lat}&lng=${lng}&dist=${dist}&back=${back}&maxResults=10000&includeProvisional=true`,
     requestOptions
   );
-  return response.json();
+  return parseEbirdResponse(response);
 }
 
 async function recentSpeciesObservations(speciesCode, lat, lng, dist, back, requestOptions) {
@@ -183,7 +248,7 @@ async function recentSpeciesObservations(speciesCode, lat, lng, dist, back, requ
     `${API_ROOT}/data/obs/geo/recent/${speciesCode}?lat=${lat}&lng=${lng}&dist=${dist}&back=${back}&includeProvisional=true`,
     requestOptions
   );
-  return response.json();
+  return parseEbirdResponse(response);
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
