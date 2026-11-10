@@ -1,0 +1,4943 @@
+{
+  "generatedAt": "2026-09-02T19:02:26.142Z",
+  "userId": "USER3644381",
+  "lifeListSpecies": 353,
+  "speciesWithNoPhoto": [
+    {
+      "commonName": "Red Knot",
+      "scientificName": "Calidris canutus",
+      "speciesCode": "redkno",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Short-billed Dowitcher",
+      "scientificName": "Limnodromus griseus",
+      "speciesCode": "shbdow",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Least Sandpiper",
+      "scientificName": "Calidris minutilla",
+      "speciesCode": "leasan",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rhinoceros Auklet",
+      "scientificName": "Cerorhinca monocerata",
+      "speciesCode": "rhiauk",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-necked Phalarope",
+      "scientificName": "Phalaropus lobatus",
+      "speciesCode": "renpha",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-legged Kittiwake",
+      "scientificName": "Rissa tridactyla",
+      "speciesCode": "bklkit",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black Oystercatcher",
+      "scientificName": "Haematopus bachmani",
+      "speciesCode": "blkoys",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Arctic Tern",
+      "scientificName": "Sterna paradisaea",
+      "speciesCode": "arcter",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Steller's Jay",
+      "scientificName": "Cyanocitta stelleri",
+      "speciesCode": "stejay",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Eurasian Collared-Dove",
+      "scientificName": "Streptopelia decaocto",
+      "speciesCode": "eucdov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Townsend's Warbler",
+      "scientificName": "Setophaga townsendi",
+      "speciesCode": "towwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "California Gull",
+      "scientificName": "Larus californicus",
+      "speciesCode": "calgul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Short-billed Gull",
+      "scientificName": "Larus brachyrhynchus",
+      "speciesCode": "mewgul2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Murre",
+      "scientificName": "Uria aalge",
+      "speciesCode": "commur",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Pelagic Cormorant",
+      "scientificName": "Urile pelagicus",
+      "speciesCode": "pelcor",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chestnut-backed Chickadee",
+      "scientificName": "Poecile rufescens",
+      "speciesCode": "chbchi",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Glaucous-winged Gull",
+      "scientificName": "Larus glaucescens",
+      "speciesCode": "glwgul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Peregrine Falcon",
+      "scientificName": "Falco peregrinus",
+      "speciesCode": "perfal",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bobolink",
+      "scientificName": "Dolichonyx oryzivorus",
+      "speciesCode": "boboli",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-throated Vireo",
+      "scientificName": "Vireo flavifrons",
+      "speciesCode": "yetvir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Swainson's Warbler",
+      "scientificName": "Limnothlypis swainsonii",
+      "speciesCode": "swawar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Broad-winged Hawk",
+      "scientificName": "Buteo platypterus",
+      "speciesCode": "brwhaw",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-throated Loon",
+      "scientificName": "Gavia stellata",
+      "speciesCode": "retloo",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Iceland Gull",
+      "scientificName": "Larus glaucoides",
+      "speciesCode": "y00478",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Glaucous Gull",
+      "scientificName": "Larus hyperboreus",
+      "speciesCode": "glagul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Northern Saw-whet Owl",
+      "scientificName": "Aegolius acadicus",
+      "speciesCode": "nswowl",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Short-eared Owl",
+      "scientificName": "Asio flammeus",
+      "speciesCode": "sheowl",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Painted Bunting",
+      "scientificName": "Passerina ciris",
+      "speciesCode": "paibun",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Glossy Ibis",
+      "scientificName": "Plegadis falcinellus",
+      "speciesCode": "gloibi",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black Skimmer",
+      "scientificName": "Rynchops niger",
+      "speciesCode": "blkski",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-winged Scoter",
+      "scientificName": "Melanitta deglandi",
+      "speciesCode": "whwsco2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Eastern Screech-Owl",
+      "scientificName": "Megascops asio",
+      "speciesCode": "easowl1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rufous Hummingbird",
+      "scientificName": "Selasphorus rufus",
+      "speciesCode": "rufhum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bank Swallow",
+      "scientificName": "Riparia riparia",
+      "speciesCode": "banswa",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "American Black Duck",
+      "scientificName": "Anas rubripes",
+      "speciesCode": "ambduc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Merganser",
+      "scientificName": "Mergus merganser",
+      "speciesCode": "commer",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Northern Pintail",
+      "scientificName": "Anas acuta",
+      "speciesCode": "norpin",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "American Wigeon",
+      "scientificName": "Mareca americana",
+      "speciesCode": "amewig",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Imperial Cormorant",
+      "scientificName": "Leucocarbo atriceps",
+      "speciesCode": "impcor6",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Patagonian Sierra Finch",
+      "scientificName": "Phrygilus patagonicus",
+      "speciesCode": "pasfin1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cordilleran Canastero",
+      "scientificName": "Asthenes modesta",
+      "speciesCode": "corcan1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-billed Teal",
+      "scientificName": "Anas flavirostris",
+      "speciesCode": "yebtea1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-crested Elaenia",
+      "scientificName": "Elaenia albiceps",
+      "speciesCode": "whcela1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Striped Woodpecker",
+      "scientificName": "Veniliornis lignarius",
+      "speciesCode": "strwoo6",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Gray-hooded Sierra Finch",
+      "scientificName": "Phrygilus gayi",
+      "speciesCode": "gyhsif1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-chinned Siskin",
+      "scientificName": "Spinus barbatus",
+      "speciesCode": "blcsis2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chilean Swallow",
+      "scientificName": "Tachycineta leucopyga",
+      "speciesCode": "chiswa1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Austral Parakeet",
+      "scientificName": "Enicognathus ferrugineus",
+      "speciesCode": "auspar1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Andean Condor",
+      "scientificName": "Vultur gryphus",
+      "speciesCode": "andcon1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Lesser Rhea",
+      "scientificName": "Rhea pennata",
+      "speciesCode": "lesrhe2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Diuca Finch",
+      "scientificName": "Diuca diuca",
+      "speciesCode": "codfin1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rufous-tailed Plantcutter",
+      "scientificName": "Phytotoma rara",
+      "speciesCode": "rutpla1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Dark-bellied Cinclodes",
+      "scientificName": "Cinclodes patagonicus",
+      "speciesCode": "dabcin1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cocoi Heron",
+      "scientificName": "Ardea cocoi",
+      "speciesCode": "cocher1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-winged Coot",
+      "scientificName": "Fulica leucoptera",
+      "speciesCode": "whwcoo1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-gartered Coot",
+      "scientificName": "Fulica armillata",
+      "speciesCode": "regcoo1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Spot-flanked Gallinule",
+      "scientificName": "Porphyriops melanops",
+      "speciesCode": "spfgal1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Plumbeous Rail",
+      "scientificName": "Pardirallus sanguinolentus",
+      "speciesCode": "plurai1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chiloe Wigeon",
+      "scientificName": "Mareca sibilatrix",
+      "speciesCode": "chiwig1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cinnamon Teal",
+      "scientificName": "Spatula cyanoptera",
+      "speciesCode": "cintea",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Coscoroba Swan",
+      "scientificName": "Coscoroba coscoroba",
+      "speciesCode": "cosswa1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-necked Swan",
+      "scientificName": "Cygnus melancoryphus",
+      "speciesCode": "blnswa2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-legged Cormorant",
+      "scientificName": "Poikilocarbo gaimardi",
+      "speciesCode": "relcor1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Peruvian Booby",
+      "scientificName": "Sula variegata",
+      "speciesCode": "perboo1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Inca Tern",
+      "scientificName": "Larosterna inca",
+      "speciesCode": "incter1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Franklin's Gull",
+      "scientificName": "Leucophaeus pipixcan",
+      "speciesCode": "fragul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Peruvian Pelican",
+      "scientificName": "Pelecanus thagus",
+      "speciesCode": "perpel1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Brown Creeper",
+      "scientificName": "Certhia americana",
+      "speciesCode": "brncre",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Canvasback",
+      "scientificName": "Aythya valisineria",
+      "speciesCode": "canvas",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Boat-tailed Grackle",
+      "scientificName": "Quiscalus major",
+      "speciesCode": "botgra",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Fish Crow",
+      "scientificName": "Corvus ossifragus",
+      "speciesCode": "fiscro",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Spotted Towhee",
+      "scientificName": "Pipilo maculatus",
+      "speciesCode": "spotow",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bushtit",
+      "scientificName": "Psaltriparus minimus",
+      "speciesCode": "bushti",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Gray Vireo",
+      "scientificName": "Vireo vicinior",
+      "speciesCode": "gryvir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Anna's Hummingbird",
+      "scientificName": "Calypte anna",
+      "speciesCode": "annhum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Lucy's Warbler",
+      "scientificName": "Leiothlypis luciae",
+      "speciesCode": "lucwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Abert's Towhee",
+      "scientificName": "Melozone aberti",
+      "speciesCode": "abetow",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Lesser Goldfinch",
+      "scientificName": "Spinus psaltria",
+      "speciesCode": "lesgol",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Curve-billed Thrasher",
+      "scientificName": "Toxostoma curvirostre",
+      "speciesCode": "cubthr",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bell's Vireo",
+      "scientificName": "Vireo bellii",
+      "speciesCode": "belvir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Brown-crested Flycatcher",
+      "scientificName": "Myiarchus tyrannulus",
+      "speciesCode": "bncfly",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-chinned Hummingbird",
+      "scientificName": "Archilochus alexandri",
+      "speciesCode": "bkchum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-winged Dove",
+      "scientificName": "Zenaida asiatica",
+      "speciesCode": "whwdov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Ruddy Duck",
+      "scientificName": "Oxyura jamaicensis",
+      "speciesCode": "rudduc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Great Crested Flycatcher",
+      "scientificName": "Myiarchus crinitus",
+      "speciesCode": "grcfly",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Blackburnian Warbler",
+      "scientificName": "Setophaga fusca",
+      "speciesCode": "bkbwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black Tern",
+      "scientificName": "Chlidonias niger",
+      "speciesCode": "blkter",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Ovenbird",
+      "scientificName": "Seiurus aurocapilla",
+      "speciesCode": "ovenbi1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cerulean Warbler",
+      "scientificName": "Setophaga cerulea",
+      "speciesCode": "cerwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Western Sandpiper",
+      "scientificName": "Calidris mauri",
+      "speciesCode": "wessan",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Ruddy Turnstone",
+      "scientificName": "Arenaria interpres",
+      "speciesCode": "rudtur",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Willet",
+      "scientificName": "Tringa semipalmata",
+      "speciesCode": "willet1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-throated Warbler",
+      "scientificName": "Setophaga dominica",
+      "speciesCode": "yetwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Royal Tern",
+      "scientificName": "Thalasseus maximus",
+      "speciesCode": "royter1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Laughing Gull",
+      "scientificName": "Leucophaeus atricilla",
+      "speciesCode": "laugul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Sanderling",
+      "scientificName": "Calidris alba",
+      "speciesCode": "sander",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Snowy Plover",
+      "scientificName": "Anarhynchus nivosus",
+      "speciesCode": "snoplo5",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Ground Dove",
+      "scientificName": "Columbina passerina",
+      "speciesCode": "cogdov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Orange-crowned Warbler",
+      "scientificName": "Leiothlypis celata",
+      "speciesCode": "orcwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Muscovy Duck",
+      "scientificName": "Cairina moschata",
+      "speciesCode": "musduc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "American Barn Owl",
+      "scientificName": "Tyto furcata",
+      "speciesCode": "brnowl",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Little Blue Heron",
+      "scientificName": "Egretta caerulea",
+      "speciesCode": "libher",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-billed Cuckoo",
+      "scientificName": "Coccyzus americanus",
+      "speciesCode": "yebcuc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cliff Swallow",
+      "scientificName": "Petrochelidon pyrrhonota",
+      "speciesCode": "cliswa",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Nighthawk",
+      "scientificName": "Chordeiles minor",
+      "speciesCode": "comnig",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-headed Woodpecker",
+      "scientificName": "Melanerpes erythrocephalus",
+      "speciesCode": "rehwoo",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Louisiana Waterthrush",
+      "scientificName": "Parkesia motacilla",
+      "speciesCode": "louwat",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Eastern Wood-Pewee",
+      "scientificName": "Contopus virens",
+      "speciesCode": "eawpew",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rock Pigeon",
+      "scientificName": "Columba livia",
+      "speciesCode": "rocpig",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Philadelphia Vireo",
+      "scientificName": "Vireo philadelphicus",
+      "speciesCode": "phivir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Acadian Flycatcher",
+      "scientificName": "Empidonax virescens",
+      "speciesCode": "acafly",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Ruby-throated Hummingbird",
+      "scientificName": "Archilochus colubris",
+      "speciesCode": "rthhum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chimney Swift",
+      "scientificName": "Chaetura pelagica",
+      "speciesCode": "chiswi",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chipping Sparrow",
+      "scientificName": "Spizella passerina",
+      "speciesCode": "chispa",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Greater Yellowlegs",
+      "scientificName": "Tringa melanoleuca",
+      "speciesCode": "greyel",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Mourning Dove",
+      "scientificName": "Zenaida macroura",
+      "speciesCode": "moudov",
+      "userCountsWithPhoto": 0
+    }
+  ],
+  "mostPhotographed": [
+    {
+      "commonName": "Song Sparrow",
+      "scientificName": "Melospiza melodia",
+      "speciesCode": "sonspa",
+      "userCountsWithPhoto": 10
+    },
+    {
+      "commonName": "Red-bellied Woodpecker",
+      "scientificName": "Melanerpes carolinus",
+      "speciesCode": "rebwoo",
+      "userCountsWithPhoto": 8
+    },
+    {
+      "commonName": "Mallard",
+      "scientificName": "Anas platyrhynchos",
+      "speciesCode": "mallar3",
+      "userCountsWithPhoto": 8
+    },
+    {
+      "commonName": "Killdeer",
+      "scientificName": "Charadrius vociferus",
+      "speciesCode": "killde",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Osprey",
+      "scientificName": "Pandion haliaetus",
+      "speciesCode": "osprey",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Great Egret",
+      "scientificName": "Ardea alba",
+      "speciesCode": "greegr",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "American Goldfinch",
+      "scientificName": "Spinus tristis",
+      "speciesCode": "amegfi",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Belted Kingfisher",
+      "scientificName": "Megaceryle alcyon",
+      "speciesCode": "belkin1",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "American Robin",
+      "scientificName": "Turdus migratorius",
+      "speciesCode": "amerob",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Eastern Bluebird",
+      "scientificName": "Sialia sialis",
+      "speciesCode": "easblu",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Eastern Phoebe",
+      "scientificName": "Sayornis phoebe",
+      "speciesCode": "easpho",
+      "userCountsWithPhoto": 6
+    },
+    {
+      "commonName": "Bald Eagle",
+      "scientificName": "Haliaeetus leucocephalus",
+      "speciesCode": "baleag",
+      "userCountsWithPhoto": 6
+    },
+    {
+      "commonName": "Red-winged Blackbird",
+      "scientificName": "Agelaius phoeniceus",
+      "speciesCode": "rewbla",
+      "userCountsWithPhoto": 6
+    },
+    {
+      "commonName": "Blue Jay",
+      "scientificName": "Cyanocitta cristata",
+      "speciesCode": "blujay",
+      "userCountsWithPhoto": 6
+    },
+    {
+      "commonName": "Yellow-rumped Warbler",
+      "scientificName": "Setophaga coronata",
+      "speciesCode": "yerwar",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Ring-billed Gull",
+      "scientificName": "Larus delawarensis",
+      "speciesCode": "ribgul",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Northern Yellow Warbler",
+      "scientificName": "Setophaga aestiva",
+      "speciesCode": "yelwar1",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Spotted Sandpiper",
+      "scientificName": "Actitis macularius",
+      "speciesCode": "sposan",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Double-crested Cormorant",
+      "scientificName": "Nannopterum auritum",
+      "speciesCode": "doccor",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Northern Cardinal",
+      "scientificName": "Cardinalis cardinalis",
+      "speciesCode": "norcar",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Canada Goose",
+      "scientificName": "Branta canadensis",
+      "speciesCode": "cangoo",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Horned Grebe",
+      "scientificName": "Podiceps auritus",
+      "speciesCode": "horgre",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Cooper's Hawk",
+      "scientificName": "Astur cooperii",
+      "speciesCode": "coohaw",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Black-throated Green Warbler",
+      "scientificName": "Setophaga virens",
+      "speciesCode": "btnwar",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Northern Shoveler",
+      "scientificName": "Spatula clypeata",
+      "speciesCode": "norsho",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Common Loon",
+      "scientificName": "Gavia immer",
+      "speciesCode": "comloo",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Trumpeter Swan",
+      "scientificName": "Cygnus buccinator",
+      "speciesCode": "truswa",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Common Grackle",
+      "scientificName": "Quiscalus quiscula",
+      "speciesCode": "comgra",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Baltimore Oriole",
+      "scientificName": "Icterus galbula",
+      "speciesCode": "balori",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Palm Warbler",
+      "scientificName": "Setophaga palmarum",
+      "speciesCode": "palwar",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Eastern Towhee",
+      "scientificName": "Pipilo erythrophthalmus",
+      "speciesCode": "eastow",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "House Sparrow",
+      "scientificName": "Passer domesticus",
+      "speciesCode": "houspa",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "European Starling",
+      "scientificName": "Sturnus vulgaris",
+      "speciesCode": "eursta",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Blue-headed Vireo",
+      "scientificName": "Vireo solitarius",
+      "speciesCode": "buhvir",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Bonaparte's Gull",
+      "scientificName": "Chroicocephalus philadelphia",
+      "speciesCode": "bongul",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Hooded Merganser",
+      "scientificName": "Lophodytes cucullatus",
+      "speciesCode": "hoomer",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Bay-breasted Warbler",
+      "scientificName": "Setophaga castanea",
+      "speciesCode": "babwar",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Rose-breasted Grosbeak",
+      "scientificName": "Pheucticus ludovicianus",
+      "speciesCode": "robgro",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Hairy Woodpecker",
+      "scientificName": "Leuconotopicus villosus",
+      "speciesCode": "haiwoo",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Red-shouldered Hawk",
+      "scientificName": "Buteo lineatus",
+      "speciesCode": "reshaw",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Barn Swallow",
+      "scientificName": "Hirundo rustica",
+      "speciesCode": "barswa",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Gray Catbird",
+      "scientificName": "Dumetella carolinensis",
+      "speciesCode": "grycat",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Eastern Kingbird",
+      "scientificName": "Tyrannus tyrannus",
+      "speciesCode": "easkin",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Red-breasted Merganser",
+      "scientificName": "Mergus serrator",
+      "speciesCode": "rebmer",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Black-and-white Warbler",
+      "scientificName": "Mniotilta varia",
+      "speciesCode": "bawwar",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Magnolia Warbler",
+      "scientificName": "Setophaga magnolia",
+      "speciesCode": "magwar",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Wood Duck",
+      "scientificName": "Aix sponsa",
+      "speciesCode": "wooduc",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Carolina Wren",
+      "scientificName": "Thryothorus ludovicianus",
+      "speciesCode": "carwre",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Tree Swallow",
+      "scientificName": "Tachycineta bicolor",
+      "speciesCode": "treswa",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Ruby-crowned Kinglet",
+      "scientificName": "Corthylio calendula",
+      "speciesCode": "ruckin",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Brown-headed Cowbird",
+      "scientificName": "Molothrus ater",
+      "speciesCode": "bnhcow",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Blue-gray Gnatcatcher",
+      "scientificName": "Polioptila caerulea",
+      "speciesCode": "buggna",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Downy Woodpecker",
+      "scientificName": "Dryobates pubescens",
+      "speciesCode": "dowwoo",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Red-tailed Hawk",
+      "scientificName": "Buteo jamaicensis",
+      "speciesCode": "rethaw",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "White-throated Sparrow",
+      "scientificName": "Zonotrichia albicollis",
+      "speciesCode": "whtspa",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Tufted Titmouse",
+      "scientificName": "Baeolophus bicolor",
+      "speciesCode": "tuftit",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Great Blue Heron",
+      "scientificName": "Ardea herodias",
+      "speciesCode": "grbher3",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Pine Siskin",
+      "scientificName": "Spinus pinus",
+      "speciesCode": "pinsis",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Rough-legged Hawk",
+      "scientificName": "Buteo lagopus",
+      "speciesCode": "rolhaw",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Fox Sparrow",
+      "scientificName": "Passerella iliaca",
+      "speciesCode": "foxspa",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Black Scoter",
+      "scientificName": "Melanitta americana",
+      "speciesCode": "blksco2",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "White-crowned Sparrow",
+      "scientificName": "Zonotrichia leucophrys",
+      "speciesCode": "whcspa",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Northern Waterthrush",
+      "scientificName": "Parkesia noveboracensis",
+      "speciesCode": "norwat",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Barred Owl",
+      "scientificName": "Strix varia",
+      "speciesCode": "brdowl",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Wilson's Snipe",
+      "scientificName": "Gallinago delicata",
+      "speciesCode": "wilsni1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Greater Scaup",
+      "scientificName": "Aythya marila",
+      "speciesCode": "gresca",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Bufflehead",
+      "scientificName": "Bucephala albeola",
+      "speciesCode": "buffle",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Northern Harrier",
+      "scientificName": "Circus hudsonius",
+      "speciesCode": "norhar2",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Buff-winged Cinclodes",
+      "scientificName": "Cinclodes fuscus",
+      "speciesCode": "buwcin1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Chimango Caracara",
+      "scientificName": "Daptrius chimango",
+      "speciesCode": "chicar1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Common Goldeneye",
+      "scientificName": "Bucephala clangula",
+      "speciesCode": "comgol",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Golden-crowned Kinglet",
+      "scientificName": "Regulus satrapa",
+      "speciesCode": "gockin",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Gadwall",
+      "scientificName": "Mareca strepera",
+      "speciesCode": "gadwal",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Common Raven",
+      "scientificName": "Corvus corax",
+      "speciesCode": "comrav",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Dunlin",
+      "scientificName": "Calidris alpina",
+      "speciesCode": "dunlin",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Horned Lark",
+      "scientificName": "Eremophila alpestris",
+      "speciesCode": "horlar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Common Tern",
+      "scientificName": "Sterna hirundo",
+      "speciesCode": "comter",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Chestnut-sided Warbler",
+      "scientificName": "Setophaga pensylvanica",
+      "speciesCode": "chswar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Northern Parula",
+      "scientificName": "Setophaga americana",
+      "speciesCode": "norpar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Nashville Warbler",
+      "scientificName": "Leiothlypis ruficapilla",
+      "speciesCode": "naswar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Blackpoll Warbler",
+      "scientificName": "Setophaga striata",
+      "speciesCode": "bkpwar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Prothonotary Warbler",
+      "scientificName": "Protonotaria citrea",
+      "speciesCode": "prowar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "American White Pelican",
+      "scientificName": "Pelecanus erythrorhynchos",
+      "speciesCode": "amwpel",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Brown Thrasher",
+      "scientificName": "Toxostoma rufum",
+      "speciesCode": "brnthr",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Dark-eyed Junco",
+      "scientificName": "Junco hyemalis",
+      "speciesCode": "daejun",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "American Herring Gull",
+      "scientificName": "Larus smithsonianus",
+      "speciesCode": "amhgul1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Caspian Tern",
+      "scientificName": "Hydroprogne caspia",
+      "speciesCode": "caster1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Willow Flycatcher",
+      "scientificName": "Empidonax traillii",
+      "speciesCode": "wilfly",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Black-crowned Night Heron",
+      "scientificName": "Nycticorax nycticorax",
+      "speciesCode": "bcnher",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Orchard Oriole",
+      "scientificName": "Icterus spurius",
+      "speciesCode": "orcori",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Hermit Thrush",
+      "scientificName": "Catharus guttatus",
+      "speciesCode": "herthr",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Wood Thrush",
+      "scientificName": "Hylocichla mustelina",
+      "speciesCode": "woothr",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Eastern Meadowlark",
+      "scientificName": "Sturnella magna",
+      "speciesCode": "easmea",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Cape May Warbler",
+      "scientificName": "Setophaga tigrina",
+      "speciesCode": "camwar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Pied-billed Grebe",
+      "scientificName": "Podilymbus podiceps",
+      "speciesCode": "pibgre",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Blue-winged Teal",
+      "scientificName": "Spatula discors",
+      "speciesCode": "buwtea",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "White-breasted Nuthatch",
+      "scientificName": "Sitta carolinensis",
+      "speciesCode": "whbnut",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Solitary Sandpiper",
+      "scientificName": "Tringa solitaria",
+      "speciesCode": "solsan",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Turkey Vulture",
+      "scientificName": "Cathartes aura",
+      "speciesCode": "turvul",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Mute Swan",
+      "scientificName": "Cygnus olor",
+      "speciesCode": "mutswa",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Northern Rough-winged Swallow",
+      "scientificName": "Stelgidopteryx serripennis",
+      "speciesCode": "nrwswa",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "American Coot",
+      "scientificName": "Fulica americana",
+      "speciesCode": "y00475",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "American Crow",
+      "scientificName": "Corvus brachyrhynchos",
+      "speciesCode": "amecro",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Semipalmated Plover",
+      "scientificName": "Charadrius semipalmatus",
+      "speciesCode": "semplo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Sabine's Gull",
+      "scientificName": "Xema sabini",
+      "speciesCode": "sabgul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Tufted Puffin",
+      "scientificName": "Fratercula cirrhata",
+      "speciesCode": "tufpuf",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Pigeon Guillemot",
+      "scientificName": "Cepphus columba",
+      "speciesCode": "piggui",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Marbled Murrelet",
+      "scientificName": "Brachyramphus marmoratus",
+      "speciesCode": "marmur",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Mississippi Kite",
+      "scientificName": "Ictinia mississippiensis",
+      "speciesCode": "miskit",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Dickcissel",
+      "scientificName": "Spiza americana",
+      "speciesCode": "dickci",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Blue Grosbeak",
+      "scientificName": "Passerina caerulea",
+      "speciesCode": "blugrb1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Grasshopper Sparrow",
+      "scientificName": "Ammodramus savannarum",
+      "speciesCode": "graspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-bellied Whistling-Duck",
+      "scientificName": "Dendrocygna autumnalis",
+      "speciesCode": "bbwduc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Western Cattle-Egret",
+      "scientificName": "Ardea ibis",
+      "speciesCode": "categr1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Yellow-headed Blackbird",
+      "scientificName": "Xanthocephalus xanthocephalus",
+      "speciesCode": "yehbla",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Wilson's Phalarope",
+      "scientificName": "Phalaropus tricolor",
+      "speciesCode": "wilpha",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Golden-winged Warbler",
+      "scientificName": "Vermivora chrysoptera",
+      "speciesCode": "gowwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Eastern Whip-poor-will",
+      "scientificName": "Antrostomus vociferus",
+      "speciesCode": "easwpw1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Snowy Owl",
+      "scientificName": "Bubo scandiacus",
+      "speciesCode": "snoowl1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Yellow-crowned Night Heron",
+      "scientificName": "Nyctanassa violacea",
+      "speciesCode": "ycnher",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Blue-winged Warbler",
+      "scientificName": "Vermivora cyanoptera",
+      "speciesCode": "buwwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Great Horned Owl",
+      "scientificName": "Bubo virginianus",
+      "speciesCode": "grhowl",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Worm-eating Warbler",
+      "scientificName": "Helmitheros vermivorum",
+      "speciesCode": "woewar1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Prairie Warbler",
+      "scientificName": "Setophaga discolor",
+      "speciesCode": "prawar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Harris's Sparrow",
+      "scientificName": "Zonotrichia querula",
+      "speciesCode": "harspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Western Meadowlark",
+      "scientificName": "Sturnella neglecta",
+      "speciesCode": "wesmea",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Sage Thrasher",
+      "scientificName": "Oreoscoptes montanus",
+      "speciesCode": "sagthr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Long-tailed Duck",
+      "scientificName": "Clangula hyemalis",
+      "speciesCode": "lotduc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Savannah Sparrow",
+      "scientificName": "Passerculus sandwichensis",
+      "speciesCode": "savspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Snow Bunting",
+      "scientificName": "Plectrophenax nivalis",
+      "speciesCode": "snobun",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Tundra Swan",
+      "scientificName": "Cygnus columbianus",
+      "speciesCode": "tunswa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Merlin",
+      "scientificName": "Falco columbarius",
+      "speciesCode": "merlin",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Surf Scoter",
+      "scientificName": "Melanitta perspicillata",
+      "speciesCode": "sursco",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Winter Wren",
+      "scientificName": "Troglodytes hiemalis",
+      "speciesCode": "winwre3",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Lapland Longspur",
+      "scientificName": "Calcarius lapponicus",
+      "speciesCode": "laplon",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Red-necked Grebe",
+      "scientificName": "Podiceps grisegena",
+      "speciesCode": "rengre",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Great Black-backed Gull",
+      "scientificName": "Larus marinus",
+      "speciesCode": "gbbgul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-capped Chickadee",
+      "scientificName": "Poecile atricapillus",
+      "speciesCode": "bkcchi",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Gray-cheeked Thrush",
+      "scientificName": "Catharus minimus",
+      "speciesCode": "gycthr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Marsh Wren",
+      "scientificName": "Cistothorus palustris",
+      "speciesCode": "marwre",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Hooded Warbler",
+      "scientificName": "Setophaga citrina",
+      "speciesCode": "hoowar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "White-eyed Vireo",
+      "scientificName": "Vireo griseus",
+      "speciesCode": "whevir",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Veery",
+      "scientificName": "Catharus fuscescens",
+      "speciesCode": "veery",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Summer Tanager",
+      "scientificName": "Piranga rubra",
+      "speciesCode": "sumtan",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Lesser Black-backed Gull",
+      "scientificName": "Larus fuscus",
+      "speciesCode": "lbbgul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Pectoral Sandpiper",
+      "scientificName": "Calidris melanotos",
+      "speciesCode": "pecsan",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Swamp Sparrow",
+      "scientificName": "Melospiza georgiana",
+      "speciesCode": "swaspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Purple Finch",
+      "scientificName": "Haemorhous purpureus",
+      "speciesCode": "purfin",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Lesser Yellowlegs",
+      "scientificName": "Tringa flavipes",
+      "speciesCode": "lesyel",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Long-billed Dowitcher",
+      "scientificName": "Limnodromus scolopaceus",
+      "speciesCode": "lobdow",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "American Woodcock",
+      "scientificName": "Scolopax minor",
+      "speciesCode": "amewoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "American Tree Sparrow",
+      "scientificName": "Spizelloides arborea",
+      "speciesCode": "amtspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Greater White-fronted Goose",
+      "scientificName": "Anser albifrons",
+      "speciesCode": "gwfgoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Ross's Goose",
+      "scientificName": "Anser rossii",
+      "speciesCode": "rosgoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Cackling Goose",
+      "scientificName": "Branta hutchinsii",
+      "speciesCode": "cacgoo1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Southern House Wren",
+      "scientificName": "Troglodytes musculus",
+      "speciesCode": "houwre4",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Dark-faced Ground-Tyrant",
+      "scientificName": "Muscisaxicola maclovianus",
+      "speciesCode": "dafgrt1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-faced Ibis",
+      "scientificName": "Theristicus melanopis",
+      "speciesCode": "bkfibi1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Great Grebe",
+      "scientificName": "Podiceps major",
+      "speciesCode": "gregre1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "South American Tern",
+      "scientificName": "Sterna hirundinacea",
+      "speciesCode": "soater1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Flying Steamer-Duck",
+      "scientificName": "Tachyeres patachonicus",
+      "speciesCode": "flystd1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Magellanic Woodpecker",
+      "scientificName": "Campephilus magellanicus",
+      "speciesCode": "magwoo1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Upland Goose",
+      "scientificName": "Chloephaga picta",
+      "speciesCode": "uplgoo1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Crested Caracara",
+      "scientificName": "Caracara plancus",
+      "speciesCode": "y00678",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Austral Blackbird",
+      "scientificName": "Curaeus curaeus",
+      "speciesCode": "ausbla1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Thorn-tailed Rayadito",
+      "scientificName": "Aphrastura spinicauda",
+      "speciesCode": "thtray1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-chested Buzzard-Eagle",
+      "scientificName": "Geranoaetus melanoleucus",
+      "speciesCode": "bcbeag1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Southern Lapwing",
+      "scientificName": "Vanellus chilensis",
+      "speciesCode": "soulap1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Rufous-collared Sparrow",
+      "scientificName": "Zonotrichia capensis",
+      "speciesCode": "rucspa1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Neotropic Cormorant",
+      "scientificName": "Nannopterum brasilianum",
+      "speciesCode": "neocor",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Kelp Gull",
+      "scientificName": "Larus dominicanus",
+      "speciesCode": "kelgul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Hudsonian Whimbrel",
+      "scientificName": "Numenius hudsonicus",
+      "speciesCode": "whimbr3",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Blackish Oystercatcher",
+      "scientificName": "Haematopus ater",
+      "speciesCode": "blaoys1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Austral Thrush",
+      "scientificName": "Turdus falcklandii",
+      "speciesCode": "austhr1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Redhead",
+      "scientificName": "Aythya americana",
+      "speciesCode": "redhea",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Green-winged Teal",
+      "scientificName": "Anas crecca",
+      "speciesCode": "gnwtea",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Loggerhead Shrike",
+      "scientificName": "Lanius ludovicianus",
+      "speciesCode": "logshr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Mottled Duck",
+      "scientificName": "Anas fulvigula",
+      "speciesCode": "motduc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Tricolored Heron",
+      "scientificName": "Egretta tricolor",
+      "speciesCode": "triher",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Roseate Spoonbill",
+      "scientificName": "Platalea ajaja",
+      "speciesCode": "rosspo1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-bellied Plover",
+      "scientificName": "Pluvialis squatarola",
+      "speciesCode": "bkbplo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Phainopepla",
+      "scientificName": "Phainopepla nitens",
+      "speciesCode": "phaino",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Woodhouse's Scrub-Jay",
+      "scientificName": "Aphelocoma woodhouseii",
+      "speciesCode": "wooscj2",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Cactus Wren",
+      "scientificName": "Campylorhynchus brunneicapillus",
+      "speciesCode": "cacwre",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Costa's Hummingbird",
+      "scientificName": "Calypte costae",
+      "speciesCode": "coshum",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Great-tailed Grackle",
+      "scientificName": "Quiscalus mexicanus",
+      "speciesCode": "grtgra",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Hooded Oriole",
+      "scientificName": "Icterus cucullatus",
+      "speciesCode": "hooori",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-throated Sparrow",
+      "scientificName": "Amphispiza bilineata",
+      "speciesCode": "bktspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "House Finch",
+      "scientificName": "Haemorhous mexicanus",
+      "speciesCode": "houfin",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Verdin",
+      "scientificName": "Auriparus flaviceps",
+      "speciesCode": "verdin",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Vermilion Flycatcher",
+      "scientificName": "Pyrocephalus rubinus",
+      "speciesCode": "verfly",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black Phoebe",
+      "scientificName": "Sayornis nigricans",
+      "speciesCode": "blkpho",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Ladder-backed Woodpecker",
+      "scientificName": "Dryobates scalaris",
+      "speciesCode": "labwoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Gila Woodpecker",
+      "scientificName": "Melanerpes uropygialis",
+      "speciesCode": "gilwoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Gambel's Quail",
+      "scientificName": "Callipepla gambelii",
+      "speciesCode": "gamqua",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-necked Stilt",
+      "scientificName": "Himantopus mexicanus",
+      "speciesCode": "bknsti",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Common Gallinule",
+      "scientificName": "Gallinula galeata",
+      "speciesCode": "comgal1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Wilson's Warbler",
+      "scientificName": "Cardellina pusilla",
+      "speciesCode": "wlswar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "American Redstart",
+      "scientificName": "Setophaga ruticilla",
+      "speciesCode": "amered",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Pine Warbler",
+      "scientificName": "Setophaga pinus",
+      "speciesCode": "pinwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Yellow-bellied Sapsucker",
+      "scientificName": "Sphyrapicus varius",
+      "speciesCode": "yebsap",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Rusty Blackbird",
+      "scientificName": "Euphagus carolinus",
+      "speciesCode": "rusbla",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black Vulture",
+      "scientificName": "Coragyps atratus",
+      "speciesCode": "blkvul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Snow Goose",
+      "scientificName": "Anser caerulescens",
+      "speciesCode": "snogoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Brown Pelican",
+      "scientificName": "Pelecanus occidentalis",
+      "speciesCode": "brnpel",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "White Ibis",
+      "scientificName": "Eudocimus albus",
+      "speciesCode": "whiibi",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Forster's Tern",
+      "scientificName": "Sterna forsteri",
+      "speciesCode": "forter",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Limpkin",
+      "scientificName": "Aramus guarauna",
+      "speciesCode": "limpki",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Anhinga",
+      "scientificName": "Anhinga anhinga",
+      "speciesCode": "anhing",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Wood Stork",
+      "scientificName": "Mycteria americana",
+      "speciesCode": "woosto",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Snowy Egret",
+      "scientificName": "Egretta thula",
+      "speciesCode": "snoegr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Semipalmated Sandpiper",
+      "scientificName": "Calidris pusilla",
+      "speciesCode": "semsan",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "American Kestrel",
+      "scientificName": "Falco sparverius",
+      "speciesCode": "amekes",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Least Flycatcher",
+      "scientificName": "Empidonax minimus",
+      "speciesCode": "leafly",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Field Sparrow",
+      "scientificName": "Spizella pusilla",
+      "speciesCode": "fiespa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Cedar Waxwing",
+      "scientificName": "Bombycilla cedrorum",
+      "speciesCode": "cedwax",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Green Heron",
+      "scientificName": "Butorides virescens",
+      "speciesCode": "grnher",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Indigo Bunting",
+      "scientificName": "Passerina cyanea",
+      "speciesCode": "indbun",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Common Yellowthroat",
+      "scientificName": "Geothlypis trichas",
+      "speciesCode": "comyel",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Northern House Wren",
+      "scientificName": "Troglodytes aedon",
+      "speciesCode": "houwre",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Tennessee Warbler",
+      "scientificName": "Leiothlypis peregrina",
+      "speciesCode": "tenwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Red-eyed Vireo",
+      "scientificName": "Vireo olivaceus",
+      "speciesCode": "reevir1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-throated Blue Warbler",
+      "scientificName": "Setophaga caerulescens",
+      "speciesCode": "btbwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Canada Warbler",
+      "scientificName": "Cardellina canadensis",
+      "speciesCode": "canwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Northern Mockingbird",
+      "scientificName": "Mimus polyglottos",
+      "speciesCode": "normoc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Scarlet Tanager",
+      "scientificName": "Piranga olivacea",
+      "speciesCode": "scatan",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Swainson's Thrush",
+      "scientificName": "Catharus ustulatus",
+      "speciesCode": "swathr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Eastern Warbling Vireo",
+      "scientificName": "Vireo gilvus",
+      "speciesCode": "eawvir1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Lesser Scaup",
+      "scientificName": "Aythya affinis",
+      "speciesCode": "lessca",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Red-breasted Nuthatch",
+      "scientificName": "Sitta canadensis",
+      "speciesCode": "rebnut",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Purple Martin",
+      "scientificName": "Progne subis",
+      "speciesCode": "purmar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Sandhill Crane",
+      "scientificName": "Antigone canadensis",
+      "speciesCode": "sancra",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Ring-necked Duck",
+      "scientificName": "Aythya collaris",
+      "speciesCode": "rinduc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Pileated Woodpecker",
+      "scientificName": "Dryocopus pileatus",
+      "speciesCode": "pilwoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Carolina Chickadee",
+      "scientificName": "Poecile carolinensis",
+      "speciesCode": "carchi",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Wild Turkey",
+      "scientificName": "Meleagris gallopavo",
+      "speciesCode": "wiltur",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Northern Flicker",
+      "scientificName": "Colaptes auratus",
+      "speciesCode": "norfli",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Red Knot",
+      "scientificName": "Calidris canutus",
+      "speciesCode": "redkno",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Short-billed Dowitcher",
+      "scientificName": "Limnodromus griseus",
+      "speciesCode": "shbdow",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Least Sandpiper",
+      "scientificName": "Calidris minutilla",
+      "speciesCode": "leasan",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rhinoceros Auklet",
+      "scientificName": "Cerorhinca monocerata",
+      "speciesCode": "rhiauk",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-necked Phalarope",
+      "scientificName": "Phalaropus lobatus",
+      "speciesCode": "renpha",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-legged Kittiwake",
+      "scientificName": "Rissa tridactyla",
+      "speciesCode": "bklkit",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black Oystercatcher",
+      "scientificName": "Haematopus bachmani",
+      "speciesCode": "blkoys",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Arctic Tern",
+      "scientificName": "Sterna paradisaea",
+      "speciesCode": "arcter",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Steller's Jay",
+      "scientificName": "Cyanocitta stelleri",
+      "speciesCode": "stejay",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Eurasian Collared-Dove",
+      "scientificName": "Streptopelia decaocto",
+      "speciesCode": "eucdov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Townsend's Warbler",
+      "scientificName": "Setophaga townsendi",
+      "speciesCode": "towwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "California Gull",
+      "scientificName": "Larus californicus",
+      "speciesCode": "calgul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Short-billed Gull",
+      "scientificName": "Larus brachyrhynchus",
+      "speciesCode": "mewgul2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Murre",
+      "scientificName": "Uria aalge",
+      "speciesCode": "commur",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Pelagic Cormorant",
+      "scientificName": "Urile pelagicus",
+      "speciesCode": "pelcor",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chestnut-backed Chickadee",
+      "scientificName": "Poecile rufescens",
+      "speciesCode": "chbchi",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Glaucous-winged Gull",
+      "scientificName": "Larus glaucescens",
+      "speciesCode": "glwgul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Peregrine Falcon",
+      "scientificName": "Falco peregrinus",
+      "speciesCode": "perfal",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bobolink",
+      "scientificName": "Dolichonyx oryzivorus",
+      "speciesCode": "boboli",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-throated Vireo",
+      "scientificName": "Vireo flavifrons",
+      "speciesCode": "yetvir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Swainson's Warbler",
+      "scientificName": "Limnothlypis swainsonii",
+      "speciesCode": "swawar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Broad-winged Hawk",
+      "scientificName": "Buteo platypterus",
+      "speciesCode": "brwhaw",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-throated Loon",
+      "scientificName": "Gavia stellata",
+      "speciesCode": "retloo",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Iceland Gull",
+      "scientificName": "Larus glaucoides",
+      "speciesCode": "y00478",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Glaucous Gull",
+      "scientificName": "Larus hyperboreus",
+      "speciesCode": "glagul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Northern Saw-whet Owl",
+      "scientificName": "Aegolius acadicus",
+      "speciesCode": "nswowl",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Short-eared Owl",
+      "scientificName": "Asio flammeus",
+      "speciesCode": "sheowl",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Painted Bunting",
+      "scientificName": "Passerina ciris",
+      "speciesCode": "paibun",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Glossy Ibis",
+      "scientificName": "Plegadis falcinellus",
+      "speciesCode": "gloibi",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black Skimmer",
+      "scientificName": "Rynchops niger",
+      "speciesCode": "blkski",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-winged Scoter",
+      "scientificName": "Melanitta deglandi",
+      "speciesCode": "whwsco2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Eastern Screech-Owl",
+      "scientificName": "Megascops asio",
+      "speciesCode": "easowl1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rufous Hummingbird",
+      "scientificName": "Selasphorus rufus",
+      "speciesCode": "rufhum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bank Swallow",
+      "scientificName": "Riparia riparia",
+      "speciesCode": "banswa",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "American Black Duck",
+      "scientificName": "Anas rubripes",
+      "speciesCode": "ambduc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Merganser",
+      "scientificName": "Mergus merganser",
+      "speciesCode": "commer",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Northern Pintail",
+      "scientificName": "Anas acuta",
+      "speciesCode": "norpin",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "American Wigeon",
+      "scientificName": "Mareca americana",
+      "speciesCode": "amewig",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Imperial Cormorant",
+      "scientificName": "Leucocarbo atriceps",
+      "speciesCode": "impcor6",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Patagonian Sierra Finch",
+      "scientificName": "Phrygilus patagonicus",
+      "speciesCode": "pasfin1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cordilleran Canastero",
+      "scientificName": "Asthenes modesta",
+      "speciesCode": "corcan1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-billed Teal",
+      "scientificName": "Anas flavirostris",
+      "speciesCode": "yebtea1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-crested Elaenia",
+      "scientificName": "Elaenia albiceps",
+      "speciesCode": "whcela1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Striped Woodpecker",
+      "scientificName": "Veniliornis lignarius",
+      "speciesCode": "strwoo6",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Gray-hooded Sierra Finch",
+      "scientificName": "Phrygilus gayi",
+      "speciesCode": "gyhsif1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-chinned Siskin",
+      "scientificName": "Spinus barbatus",
+      "speciesCode": "blcsis2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chilean Swallow",
+      "scientificName": "Tachycineta leucopyga",
+      "speciesCode": "chiswa1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Austral Parakeet",
+      "scientificName": "Enicognathus ferrugineus",
+      "speciesCode": "auspar1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Andean Condor",
+      "scientificName": "Vultur gryphus",
+      "speciesCode": "andcon1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Lesser Rhea",
+      "scientificName": "Rhea pennata",
+      "speciesCode": "lesrhe2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Diuca Finch",
+      "scientificName": "Diuca diuca",
+      "speciesCode": "codfin1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rufous-tailed Plantcutter",
+      "scientificName": "Phytotoma rara",
+      "speciesCode": "rutpla1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Dark-bellied Cinclodes",
+      "scientificName": "Cinclodes patagonicus",
+      "speciesCode": "dabcin1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cocoi Heron",
+      "scientificName": "Ardea cocoi",
+      "speciesCode": "cocher1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-winged Coot",
+      "scientificName": "Fulica leucoptera",
+      "speciesCode": "whwcoo1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-gartered Coot",
+      "scientificName": "Fulica armillata",
+      "speciesCode": "regcoo1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Spot-flanked Gallinule",
+      "scientificName": "Porphyriops melanops",
+      "speciesCode": "spfgal1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Plumbeous Rail",
+      "scientificName": "Pardirallus sanguinolentus",
+      "speciesCode": "plurai1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chiloe Wigeon",
+      "scientificName": "Mareca sibilatrix",
+      "speciesCode": "chiwig1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cinnamon Teal",
+      "scientificName": "Spatula cyanoptera",
+      "speciesCode": "cintea",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Coscoroba Swan",
+      "scientificName": "Coscoroba coscoroba",
+      "speciesCode": "cosswa1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-necked Swan",
+      "scientificName": "Cygnus melancoryphus",
+      "speciesCode": "blnswa2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-legged Cormorant",
+      "scientificName": "Poikilocarbo gaimardi",
+      "speciesCode": "relcor1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Peruvian Booby",
+      "scientificName": "Sula variegata",
+      "speciesCode": "perboo1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Inca Tern",
+      "scientificName": "Larosterna inca",
+      "speciesCode": "incter1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Franklin's Gull",
+      "scientificName": "Leucophaeus pipixcan",
+      "speciesCode": "fragul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Peruvian Pelican",
+      "scientificName": "Pelecanus thagus",
+      "speciesCode": "perpel1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Brown Creeper",
+      "scientificName": "Certhia americana",
+      "speciesCode": "brncre",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Canvasback",
+      "scientificName": "Aythya valisineria",
+      "speciesCode": "canvas",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Boat-tailed Grackle",
+      "scientificName": "Quiscalus major",
+      "speciesCode": "botgra",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Fish Crow",
+      "scientificName": "Corvus ossifragus",
+      "speciesCode": "fiscro",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Spotted Towhee",
+      "scientificName": "Pipilo maculatus",
+      "speciesCode": "spotow",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bushtit",
+      "scientificName": "Psaltriparus minimus",
+      "speciesCode": "bushti",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Gray Vireo",
+      "scientificName": "Vireo vicinior",
+      "speciesCode": "gryvir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Anna's Hummingbird",
+      "scientificName": "Calypte anna",
+      "speciesCode": "annhum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Lucy's Warbler",
+      "scientificName": "Leiothlypis luciae",
+      "speciesCode": "lucwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Abert's Towhee",
+      "scientificName": "Melozone aberti",
+      "speciesCode": "abetow",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Lesser Goldfinch",
+      "scientificName": "Spinus psaltria",
+      "speciesCode": "lesgol",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Curve-billed Thrasher",
+      "scientificName": "Toxostoma curvirostre",
+      "speciesCode": "cubthr",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bell's Vireo",
+      "scientificName": "Vireo bellii",
+      "speciesCode": "belvir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Brown-crested Flycatcher",
+      "scientificName": "Myiarchus tyrannulus",
+      "speciesCode": "bncfly",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-chinned Hummingbird",
+      "scientificName": "Archilochus alexandri",
+      "speciesCode": "bkchum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-winged Dove",
+      "scientificName": "Zenaida asiatica",
+      "speciesCode": "whwdov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Ruddy Duck",
+      "scientificName": "Oxyura jamaicensis",
+      "speciesCode": "rudduc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Great Crested Flycatcher",
+      "scientificName": "Myiarchus crinitus",
+      "speciesCode": "grcfly",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Blackburnian Warbler",
+      "scientificName": "Setophaga fusca",
+      "speciesCode": "bkbwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black Tern",
+      "scientificName": "Chlidonias niger",
+      "speciesCode": "blkter",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Ovenbird",
+      "scientificName": "Seiurus aurocapilla",
+      "speciesCode": "ovenbi1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cerulean Warbler",
+      "scientificName": "Setophaga cerulea",
+      "speciesCode": "cerwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Western Sandpiper",
+      "scientificName": "Calidris mauri",
+      "speciesCode": "wessan",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Ruddy Turnstone",
+      "scientificName": "Arenaria interpres",
+      "speciesCode": "rudtur",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Willet",
+      "scientificName": "Tringa semipalmata",
+      "speciesCode": "willet1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-throated Warbler",
+      "scientificName": "Setophaga dominica",
+      "speciesCode": "yetwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Royal Tern",
+      "scientificName": "Thalasseus maximus",
+      "speciesCode": "royter1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Laughing Gull",
+      "scientificName": "Leucophaeus atricilla",
+      "speciesCode": "laugul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Sanderling",
+      "scientificName": "Calidris alba",
+      "speciesCode": "sander",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Snowy Plover",
+      "scientificName": "Anarhynchus nivosus",
+      "speciesCode": "snoplo5",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Ground Dove",
+      "scientificName": "Columbina passerina",
+      "speciesCode": "cogdov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Orange-crowned Warbler",
+      "scientificName": "Leiothlypis celata",
+      "speciesCode": "orcwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Muscovy Duck",
+      "scientificName": "Cairina moschata",
+      "speciesCode": "musduc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "American Barn Owl",
+      "scientificName": "Tyto furcata",
+      "speciesCode": "brnowl",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Little Blue Heron",
+      "scientificName": "Egretta caerulea",
+      "speciesCode": "libher",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-billed Cuckoo",
+      "scientificName": "Coccyzus americanus",
+      "speciesCode": "yebcuc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cliff Swallow",
+      "scientificName": "Petrochelidon pyrrhonota",
+      "speciesCode": "cliswa",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Nighthawk",
+      "scientificName": "Chordeiles minor",
+      "speciesCode": "comnig",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-headed Woodpecker",
+      "scientificName": "Melanerpes erythrocephalus",
+      "speciesCode": "rehwoo",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Louisiana Waterthrush",
+      "scientificName": "Parkesia motacilla",
+      "speciesCode": "louwat",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Eastern Wood-Pewee",
+      "scientificName": "Contopus virens",
+      "speciesCode": "eawpew",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rock Pigeon",
+      "scientificName": "Columba livia",
+      "speciesCode": "rocpig",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Philadelphia Vireo",
+      "scientificName": "Vireo philadelphicus",
+      "speciesCode": "phivir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Acadian Flycatcher",
+      "scientificName": "Empidonax virescens",
+      "speciesCode": "acafly",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Ruby-throated Hummingbird",
+      "scientificName": "Archilochus colubris",
+      "speciesCode": "rthhum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chimney Swift",
+      "scientificName": "Chaetura pelagica",
+      "speciesCode": "chiswi",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chipping Sparrow",
+      "scientificName": "Spizella passerina",
+      "speciesCode": "chispa",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Greater Yellowlegs",
+      "scientificName": "Tringa melanoleuca",
+      "speciesCode": "greyel",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Mourning Dove",
+      "scientificName": "Zenaida macroura",
+      "speciesCode": "moudov",
+      "userCountsWithPhoto": 0
+    }
+  ],
+  "results": [
+    {
+      "commonName": "Red Knot",
+      "scientificName": "Calidris canutus",
+      "speciesCode": "redkno",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Short-billed Dowitcher",
+      "scientificName": "Limnodromus griseus",
+      "speciesCode": "shbdow",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Least Sandpiper",
+      "scientificName": "Calidris minutilla",
+      "speciesCode": "leasan",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Semipalmated Plover",
+      "scientificName": "Charadrius semipalmatus",
+      "speciesCode": "semplo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Sabine's Gull",
+      "scientificName": "Xema sabini",
+      "speciesCode": "sabgul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Rhinoceros Auklet",
+      "scientificName": "Cerorhinca monocerata",
+      "speciesCode": "rhiauk",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-necked Phalarope",
+      "scientificName": "Phalaropus lobatus",
+      "speciesCode": "renpha",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-legged Kittiwake",
+      "scientificName": "Rissa tridactyla",
+      "speciesCode": "bklkit",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black Oystercatcher",
+      "scientificName": "Haematopus bachmani",
+      "speciesCode": "blkoys",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Tufted Puffin",
+      "scientificName": "Fratercula cirrhata",
+      "speciesCode": "tufpuf",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Arctic Tern",
+      "scientificName": "Sterna paradisaea",
+      "speciesCode": "arcter",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Steller's Jay",
+      "scientificName": "Cyanocitta stelleri",
+      "speciesCode": "stejay",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Eurasian Collared-Dove",
+      "scientificName": "Streptopelia decaocto",
+      "speciesCode": "eucdov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Townsend's Warbler",
+      "scientificName": "Setophaga townsendi",
+      "speciesCode": "towwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "California Gull",
+      "scientificName": "Larus californicus",
+      "speciesCode": "calgul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Pigeon Guillemot",
+      "scientificName": "Cepphus columba",
+      "speciesCode": "piggui",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Short-billed Gull",
+      "scientificName": "Larus brachyrhynchus",
+      "speciesCode": "mewgul2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Murre",
+      "scientificName": "Uria aalge",
+      "speciesCode": "commur",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Marbled Murrelet",
+      "scientificName": "Brachyramphus marmoratus",
+      "speciesCode": "marmur",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Pelagic Cormorant",
+      "scientificName": "Urile pelagicus",
+      "speciesCode": "pelcor",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chestnut-backed Chickadee",
+      "scientificName": "Poecile rufescens",
+      "speciesCode": "chbchi",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Glaucous-winged Gull",
+      "scientificName": "Larus glaucescens",
+      "speciesCode": "glwgul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Mississippi Kite",
+      "scientificName": "Ictinia mississippiensis",
+      "speciesCode": "miskit",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Dickcissel",
+      "scientificName": "Spiza americana",
+      "speciesCode": "dickci",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Blue Grosbeak",
+      "scientificName": "Passerina caerulea",
+      "speciesCode": "blugrb1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Grasshopper Sparrow",
+      "scientificName": "Ammodramus savannarum",
+      "speciesCode": "graspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-bellied Whistling-Duck",
+      "scientificName": "Dendrocygna autumnalis",
+      "speciesCode": "bbwduc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Peregrine Falcon",
+      "scientificName": "Falco peregrinus",
+      "speciesCode": "perfal",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bobolink",
+      "scientificName": "Dolichonyx oryzivorus",
+      "speciesCode": "boboli",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Western Cattle-Egret",
+      "scientificName": "Ardea ibis",
+      "speciesCode": "categr1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Yellow-headed Blackbird",
+      "scientificName": "Xanthocephalus xanthocephalus",
+      "speciesCode": "yehbla",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Wilson's Phalarope",
+      "scientificName": "Phalaropus tricolor",
+      "speciesCode": "wilpha",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Golden-winged Warbler",
+      "scientificName": "Vermivora chrysoptera",
+      "speciesCode": "gowwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Eastern Whip-poor-will",
+      "scientificName": "Antrostomus vociferus",
+      "speciesCode": "easwpw1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Snowy Owl",
+      "scientificName": "Bubo scandiacus",
+      "speciesCode": "snoowl1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Yellow-crowned Night Heron",
+      "scientificName": "Nyctanassa violacea",
+      "speciesCode": "ycnher",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Yellow-throated Vireo",
+      "scientificName": "Vireo flavifrons",
+      "speciesCode": "yetvir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Swainson's Warbler",
+      "scientificName": "Limnothlypis swainsonii",
+      "speciesCode": "swawar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Blue-winged Warbler",
+      "scientificName": "Vermivora cyanoptera",
+      "speciesCode": "buwwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Great Horned Owl",
+      "scientificName": "Bubo virginianus",
+      "speciesCode": "grhowl",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Worm-eating Warbler",
+      "scientificName": "Helmitheros vermivorum",
+      "speciesCode": "woewar1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Prairie Warbler",
+      "scientificName": "Setophaga discolor",
+      "speciesCode": "prawar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Broad-winged Hawk",
+      "scientificName": "Buteo platypterus",
+      "speciesCode": "brwhaw",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-throated Loon",
+      "scientificName": "Gavia stellata",
+      "speciesCode": "retloo",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Harris's Sparrow",
+      "scientificName": "Zonotrichia querula",
+      "speciesCode": "harspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Western Meadowlark",
+      "scientificName": "Sturnella neglecta",
+      "speciesCode": "wesmea",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Sage Thrasher",
+      "scientificName": "Oreoscoptes montanus",
+      "speciesCode": "sagthr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Long-tailed Duck",
+      "scientificName": "Clangula hyemalis",
+      "speciesCode": "lotduc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Savannah Sparrow",
+      "scientificName": "Passerculus sandwichensis",
+      "speciesCode": "savspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Snow Bunting",
+      "scientificName": "Plectrophenax nivalis",
+      "speciesCode": "snobun",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Iceland Gull",
+      "scientificName": "Larus glaucoides",
+      "speciesCode": "y00478",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Glaucous Gull",
+      "scientificName": "Larus hyperboreus",
+      "speciesCode": "glagul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Northern Saw-whet Owl",
+      "scientificName": "Aegolius acadicus",
+      "speciesCode": "nswowl",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Short-eared Owl",
+      "scientificName": "Asio flammeus",
+      "speciesCode": "sheowl",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Pine Siskin",
+      "scientificName": "Spinus pinus",
+      "speciesCode": "pinsis",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Painted Bunting",
+      "scientificName": "Passerina ciris",
+      "speciesCode": "paibun",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Glossy Ibis",
+      "scientificName": "Plegadis falcinellus",
+      "speciesCode": "gloibi",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black Skimmer",
+      "scientificName": "Rynchops niger",
+      "speciesCode": "blkski",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Tundra Swan",
+      "scientificName": "Cygnus columbianus",
+      "speciesCode": "tunswa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Rough-legged Hawk",
+      "scientificName": "Buteo lagopus",
+      "speciesCode": "rolhaw",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Merlin",
+      "scientificName": "Falco columbarius",
+      "speciesCode": "merlin",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Fox Sparrow",
+      "scientificName": "Passerella iliaca",
+      "speciesCode": "foxspa",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "White-winged Scoter",
+      "scientificName": "Melanitta deglandi",
+      "speciesCode": "whwsco2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Surf Scoter",
+      "scientificName": "Melanitta perspicillata",
+      "speciesCode": "sursco",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Eastern Screech-Owl",
+      "scientificName": "Megascops asio",
+      "speciesCode": "easowl1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rufous Hummingbird",
+      "scientificName": "Selasphorus rufus",
+      "speciesCode": "rufhum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Winter Wren",
+      "scientificName": "Troglodytes hiemalis",
+      "speciesCode": "winwre3",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Lapland Longspur",
+      "scientificName": "Calcarius lapponicus",
+      "speciesCode": "laplon",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black Scoter",
+      "scientificName": "Melanitta americana",
+      "speciesCode": "blksco2",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "White-crowned Sparrow",
+      "scientificName": "Zonotrichia leucophrys",
+      "speciesCode": "whcspa",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Red-necked Grebe",
+      "scientificName": "Podiceps grisegena",
+      "speciesCode": "rengre",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Great Black-backed Gull",
+      "scientificName": "Larus marinus",
+      "speciesCode": "gbbgul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-capped Chickadee",
+      "scientificName": "Poecile atricapillus",
+      "speciesCode": "bkcchi",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Gray-cheeked Thrush",
+      "scientificName": "Catharus minimus",
+      "speciesCode": "gycthr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Marsh Wren",
+      "scientificName": "Cistothorus palustris",
+      "speciesCode": "marwre",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Bank Swallow",
+      "scientificName": "Riparia riparia",
+      "speciesCode": "banswa",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Blue-headed Vireo",
+      "scientificName": "Vireo solitarius",
+      "speciesCode": "buhvir",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Hooded Warbler",
+      "scientificName": "Setophaga citrina",
+      "speciesCode": "hoowar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "White-eyed Vireo",
+      "scientificName": "Vireo griseus",
+      "speciesCode": "whevir",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Northern Waterthrush",
+      "scientificName": "Parkesia noveboracensis",
+      "speciesCode": "norwat",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Veery",
+      "scientificName": "Catharus fuscescens",
+      "speciesCode": "veery",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Summer Tanager",
+      "scientificName": "Piranga rubra",
+      "speciesCode": "sumtan",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Barred Owl",
+      "scientificName": "Strix varia",
+      "speciesCode": "brdowl",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Lesser Black-backed Gull",
+      "scientificName": "Larus fuscus",
+      "speciesCode": "lbbgul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Pectoral Sandpiper",
+      "scientificName": "Calidris melanotos",
+      "speciesCode": "pecsan",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Swamp Sparrow",
+      "scientificName": "Melospiza georgiana",
+      "speciesCode": "swaspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Wilson's Snipe",
+      "scientificName": "Gallinago delicata",
+      "speciesCode": "wilsni1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Purple Finch",
+      "scientificName": "Haemorhous purpureus",
+      "speciesCode": "purfin",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Lesser Yellowlegs",
+      "scientificName": "Tringa flavipes",
+      "speciesCode": "lesyel",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Long-billed Dowitcher",
+      "scientificName": "Limnodromus scolopaceus",
+      "speciesCode": "lobdow",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Greater Scaup",
+      "scientificName": "Aythya marila",
+      "speciesCode": "gresca",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "American Woodcock",
+      "scientificName": "Scolopax minor",
+      "speciesCode": "amewoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "American Tree Sparrow",
+      "scientificName": "Spizelloides arborea",
+      "speciesCode": "amtspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "American Black Duck",
+      "scientificName": "Anas rubripes",
+      "speciesCode": "ambduc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Bonaparte's Gull",
+      "scientificName": "Chroicocephalus philadelphia",
+      "speciesCode": "bongul",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Bufflehead",
+      "scientificName": "Bucephala albeola",
+      "speciesCode": "buffle",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Common Merganser",
+      "scientificName": "Mergus merganser",
+      "speciesCode": "commer",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Northern Pintail",
+      "scientificName": "Anas acuta",
+      "speciesCode": "norpin",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "American Wigeon",
+      "scientificName": "Mareca americana",
+      "speciesCode": "amewig",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Northern Harrier",
+      "scientificName": "Circus hudsonius",
+      "speciesCode": "norhar2",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Greater White-fronted Goose",
+      "scientificName": "Anser albifrons",
+      "speciesCode": "gwfgoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Ross's Goose",
+      "scientificName": "Anser rossii",
+      "speciesCode": "rosgoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Horned Grebe",
+      "scientificName": "Podiceps auritus",
+      "speciesCode": "horgre",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Cackling Goose",
+      "scientificName": "Branta hutchinsii",
+      "speciesCode": "cacgoo1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Cooper's Hawk",
+      "scientificName": "Astur cooperii",
+      "speciesCode": "coohaw",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Imperial Cormorant",
+      "scientificName": "Leucocarbo atriceps",
+      "speciesCode": "impcor6",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Patagonian Sierra Finch",
+      "scientificName": "Phrygilus patagonicus",
+      "speciesCode": "pasfin1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Southern House Wren",
+      "scientificName": "Troglodytes musculus",
+      "speciesCode": "houwre4",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Dark-faced Ground-Tyrant",
+      "scientificName": "Muscisaxicola maclovianus",
+      "speciesCode": "dafgrt1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Cordilleran Canastero",
+      "scientificName": "Asthenes modesta",
+      "speciesCode": "corcan1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-faced Ibis",
+      "scientificName": "Theristicus melanopis",
+      "speciesCode": "bkfibi1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Great Grebe",
+      "scientificName": "Podiceps major",
+      "speciesCode": "gregre1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "South American Tern",
+      "scientificName": "Sterna hirundinacea",
+      "speciesCode": "soater1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Yellow-billed Teal",
+      "scientificName": "Anas flavirostris",
+      "speciesCode": "yebtea1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Flying Steamer-Duck",
+      "scientificName": "Tachyeres patachonicus",
+      "speciesCode": "flystd1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "White-crested Elaenia",
+      "scientificName": "Elaenia albiceps",
+      "speciesCode": "whcela1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Magellanic Woodpecker",
+      "scientificName": "Campephilus magellanicus",
+      "speciesCode": "magwoo1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Upland Goose",
+      "scientificName": "Chloephaga picta",
+      "speciesCode": "uplgoo1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Buff-winged Cinclodes",
+      "scientificName": "Cinclodes fuscus",
+      "speciesCode": "buwcin1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Crested Caracara",
+      "scientificName": "Caracara plancus",
+      "speciesCode": "y00678",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Austral Blackbird",
+      "scientificName": "Curaeus curaeus",
+      "speciesCode": "ausbla1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Striped Woodpecker",
+      "scientificName": "Veniliornis lignarius",
+      "speciesCode": "strwoo6",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Gray-hooded Sierra Finch",
+      "scientificName": "Phrygilus gayi",
+      "speciesCode": "gyhsif1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-chinned Siskin",
+      "scientificName": "Spinus barbatus",
+      "speciesCode": "blcsis2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chilean Swallow",
+      "scientificName": "Tachycineta leucopyga",
+      "speciesCode": "chiswa1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Thorn-tailed Rayadito",
+      "scientificName": "Aphrastura spinicauda",
+      "speciesCode": "thtray1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Austral Parakeet",
+      "scientificName": "Enicognathus ferrugineus",
+      "speciesCode": "auspar1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-chested Buzzard-Eagle",
+      "scientificName": "Geranoaetus melanoleucus",
+      "speciesCode": "bcbeag1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Andean Condor",
+      "scientificName": "Vultur gryphus",
+      "speciesCode": "andcon1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Southern Lapwing",
+      "scientificName": "Vanellus chilensis",
+      "speciesCode": "soulap1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Lesser Rhea",
+      "scientificName": "Rhea pennata",
+      "speciesCode": "lesrhe2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Diuca Finch",
+      "scientificName": "Diuca diuca",
+      "speciesCode": "codfin1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Rufous-collared Sparrow",
+      "scientificName": "Zonotrichia capensis",
+      "speciesCode": "rucspa1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Rufous-tailed Plantcutter",
+      "scientificName": "Phytotoma rara",
+      "speciesCode": "rutpla1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Dark-bellied Cinclodes",
+      "scientificName": "Cinclodes patagonicus",
+      "speciesCode": "dabcin1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cocoi Heron",
+      "scientificName": "Ardea cocoi",
+      "speciesCode": "cocher1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-winged Coot",
+      "scientificName": "Fulica leucoptera",
+      "speciesCode": "whwcoo1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-gartered Coot",
+      "scientificName": "Fulica armillata",
+      "speciesCode": "regcoo1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Spot-flanked Gallinule",
+      "scientificName": "Porphyriops melanops",
+      "speciesCode": "spfgal1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Plumbeous Rail",
+      "scientificName": "Pardirallus sanguinolentus",
+      "speciesCode": "plurai1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Chiloe Wigeon",
+      "scientificName": "Mareca sibilatrix",
+      "speciesCode": "chiwig1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cinnamon Teal",
+      "scientificName": "Spatula cyanoptera",
+      "speciesCode": "cintea",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Coscoroba Swan",
+      "scientificName": "Coscoroba coscoroba",
+      "speciesCode": "cosswa1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-necked Swan",
+      "scientificName": "Cygnus melancoryphus",
+      "speciesCode": "blnswa2",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Red-legged Cormorant",
+      "scientificName": "Poikilocarbo gaimardi",
+      "speciesCode": "relcor1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Peruvian Booby",
+      "scientificName": "Sula variegata",
+      "speciesCode": "perboo1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Inca Tern",
+      "scientificName": "Larosterna inca",
+      "speciesCode": "incter1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Franklin's Gull",
+      "scientificName": "Leucophaeus pipixcan",
+      "speciesCode": "fragul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Peruvian Pelican",
+      "scientificName": "Pelecanus thagus",
+      "speciesCode": "perpel1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Neotropic Cormorant",
+      "scientificName": "Nannopterum brasilianum",
+      "speciesCode": "neocor",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Kelp Gull",
+      "scientificName": "Larus dominicanus",
+      "speciesCode": "kelgul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Hudsonian Whimbrel",
+      "scientificName": "Numenius hudsonicus",
+      "speciesCode": "whimbr3",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Blackish Oystercatcher",
+      "scientificName": "Haematopus ater",
+      "speciesCode": "blaoys1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Austral Thrush",
+      "scientificName": "Turdus falcklandii",
+      "speciesCode": "austhr1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Chimango Caracara",
+      "scientificName": "Daptrius chimango",
+      "speciesCode": "chicar1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Common Goldeneye",
+      "scientificName": "Bucephala clangula",
+      "speciesCode": "comgol",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Brown Creeper",
+      "scientificName": "Certhia americana",
+      "speciesCode": "brncre",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Redhead",
+      "scientificName": "Aythya americana",
+      "speciesCode": "redhea",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Canvasback",
+      "scientificName": "Aythya valisineria",
+      "speciesCode": "canvas",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Green-winged Teal",
+      "scientificName": "Anas crecca",
+      "speciesCode": "gnwtea",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Golden-crowned Kinglet",
+      "scientificName": "Regulus satrapa",
+      "speciesCode": "gockin",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Gadwall",
+      "scientificName": "Mareca strepera",
+      "speciesCode": "gadwal",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Loggerhead Shrike",
+      "scientificName": "Lanius ludovicianus",
+      "speciesCode": "logshr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Hooded Merganser",
+      "scientificName": "Lophodytes cucullatus",
+      "speciesCode": "hoomer",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Mottled Duck",
+      "scientificName": "Anas fulvigula",
+      "speciesCode": "motduc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Boat-tailed Grackle",
+      "scientificName": "Quiscalus major",
+      "speciesCode": "botgra",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Fish Crow",
+      "scientificName": "Corvus ossifragus",
+      "speciesCode": "fiscro",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Tricolored Heron",
+      "scientificName": "Egretta tricolor",
+      "speciesCode": "triher",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Roseate Spoonbill",
+      "scientificName": "Platalea ajaja",
+      "speciesCode": "rosspo1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-bellied Plover",
+      "scientificName": "Pluvialis squatarola",
+      "speciesCode": "bkbplo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Spotted Towhee",
+      "scientificName": "Pipilo maculatus",
+      "speciesCode": "spotow",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Phainopepla",
+      "scientificName": "Phainopepla nitens",
+      "speciesCode": "phaino",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Bushtit",
+      "scientificName": "Psaltriparus minimus",
+      "speciesCode": "bushti",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Woodhouse's Scrub-Jay",
+      "scientificName": "Aphelocoma woodhouseii",
+      "speciesCode": "wooscj2",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Gray Vireo",
+      "scientificName": "Vireo vicinior",
+      "speciesCode": "gryvir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Cactus Wren",
+      "scientificName": "Campylorhynchus brunneicapillus",
+      "speciesCode": "cacwre",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Costa's Hummingbird",
+      "scientificName": "Calypte costae",
+      "speciesCode": "coshum",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Anna's Hummingbird",
+      "scientificName": "Calypte anna",
+      "speciesCode": "annhum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Lucy's Warbler",
+      "scientificName": "Leiothlypis luciae",
+      "speciesCode": "lucwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Great-tailed Grackle",
+      "scientificName": "Quiscalus mexicanus",
+      "speciesCode": "grtgra",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Hooded Oriole",
+      "scientificName": "Icterus cucullatus",
+      "speciesCode": "hooori",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Abert's Towhee",
+      "scientificName": "Melozone aberti",
+      "speciesCode": "abetow",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-throated Sparrow",
+      "scientificName": "Amphispiza bilineata",
+      "speciesCode": "bktspa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Lesser Goldfinch",
+      "scientificName": "Spinus psaltria",
+      "speciesCode": "lesgol",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "House Finch",
+      "scientificName": "Haemorhous mexicanus",
+      "speciesCode": "houfin",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Curve-billed Thrasher",
+      "scientificName": "Toxostoma curvirostre",
+      "speciesCode": "cubthr",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Verdin",
+      "scientificName": "Auriparus flaviceps",
+      "speciesCode": "verdin",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Bell's Vireo",
+      "scientificName": "Vireo bellii",
+      "speciesCode": "belvir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Brown-crested Flycatcher",
+      "scientificName": "Myiarchus tyrannulus",
+      "speciesCode": "bncfly",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Vermilion Flycatcher",
+      "scientificName": "Pyrocephalus rubinus",
+      "speciesCode": "verfly",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black Phoebe",
+      "scientificName": "Sayornis nigricans",
+      "speciesCode": "blkpho",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Ladder-backed Woodpecker",
+      "scientificName": "Dryobates scalaris",
+      "speciesCode": "labwoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Gila Woodpecker",
+      "scientificName": "Melanerpes uropygialis",
+      "speciesCode": "gilwoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-chinned Hummingbird",
+      "scientificName": "Archilochus alexandri",
+      "speciesCode": "bkchum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "White-winged Dove",
+      "scientificName": "Zenaida asiatica",
+      "speciesCode": "whwdov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Gambel's Quail",
+      "scientificName": "Callipepla gambelii",
+      "speciesCode": "gamqua",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Common Raven",
+      "scientificName": "Corvus corax",
+      "speciesCode": "comrav",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Black-throated Green Warbler",
+      "scientificName": "Setophaga virens",
+      "speciesCode": "btnwar",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Dunlin",
+      "scientificName": "Calidris alpina",
+      "speciesCode": "dunlin",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Black-necked Stilt",
+      "scientificName": "Himantopus mexicanus",
+      "speciesCode": "bknsti",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Ruddy Duck",
+      "scientificName": "Oxyura jamaicensis",
+      "speciesCode": "rudduc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Great Crested Flycatcher",
+      "scientificName": "Myiarchus crinitus",
+      "speciesCode": "grcfly",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Blackburnian Warbler",
+      "scientificName": "Setophaga fusca",
+      "speciesCode": "bkbwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Horned Lark",
+      "scientificName": "Eremophila alpestris",
+      "speciesCode": "horlar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Common Tern",
+      "scientificName": "Sterna hirundo",
+      "speciesCode": "comter",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Black Tern",
+      "scientificName": "Chlidonias niger",
+      "speciesCode": "blkter",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Gallinule",
+      "scientificName": "Gallinula galeata",
+      "speciesCode": "comgal1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Wilson's Warbler",
+      "scientificName": "Cardellina pusilla",
+      "speciesCode": "wlswar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Chestnut-sided Warbler",
+      "scientificName": "Setophaga pensylvanica",
+      "speciesCode": "chswar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Northern Parula",
+      "scientificName": "Setophaga americana",
+      "speciesCode": "norpar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Nashville Warbler",
+      "scientificName": "Leiothlypis ruficapilla",
+      "speciesCode": "naswar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Blackpoll Warbler",
+      "scientificName": "Setophaga striata",
+      "speciesCode": "bkpwar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Bay-breasted Warbler",
+      "scientificName": "Setophaga castanea",
+      "speciesCode": "babwar",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "American Redstart",
+      "scientificName": "Setophaga ruticilla",
+      "speciesCode": "amered",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Prothonotary Warbler",
+      "scientificName": "Protonotaria citrea",
+      "speciesCode": "prowar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Ovenbird",
+      "scientificName": "Seiurus aurocapilla",
+      "speciesCode": "ovenbi1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "American White Pelican",
+      "scientificName": "Pelecanus erythrorhynchos",
+      "speciesCode": "amwpel",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Rose-breasted Grosbeak",
+      "scientificName": "Pheucticus ludovicianus",
+      "speciesCode": "robgro",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Cerulean Warbler",
+      "scientificName": "Setophaga cerulea",
+      "speciesCode": "cerwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Brown Thrasher",
+      "scientificName": "Toxostoma rufum",
+      "speciesCode": "brnthr",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Pine Warbler",
+      "scientificName": "Setophaga pinus",
+      "speciesCode": "pinwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Yellow-bellied Sapsucker",
+      "scientificName": "Sphyrapicus varius",
+      "speciesCode": "yebsap",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Rusty Blackbird",
+      "scientificName": "Euphagus carolinus",
+      "speciesCode": "rusbla",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Northern Shoveler",
+      "scientificName": "Spatula clypeata",
+      "speciesCode": "norsho",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Black Vulture",
+      "scientificName": "Coragyps atratus",
+      "speciesCode": "blkvul",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Snow Goose",
+      "scientificName": "Anser caerulescens",
+      "speciesCode": "snogoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Western Sandpiper",
+      "scientificName": "Calidris mauri",
+      "speciesCode": "wessan",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Ruddy Turnstone",
+      "scientificName": "Arenaria interpres",
+      "speciesCode": "rudtur",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Willet",
+      "scientificName": "Tringa semipalmata",
+      "speciesCode": "willet1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-throated Warbler",
+      "scientificName": "Setophaga dominica",
+      "speciesCode": "yetwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Brown Pelican",
+      "scientificName": "Pelecanus occidentalis",
+      "speciesCode": "brnpel",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "White Ibis",
+      "scientificName": "Eudocimus albus",
+      "speciesCode": "whiibi",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Royal Tern",
+      "scientificName": "Thalasseus maximus",
+      "speciesCode": "royter1",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Forster's Tern",
+      "scientificName": "Sterna forsteri",
+      "speciesCode": "forter",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Laughing Gull",
+      "scientificName": "Leucophaeus atricilla",
+      "speciesCode": "laugul",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Sanderling",
+      "scientificName": "Calidris alba",
+      "speciesCode": "sander",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Snowy Plover",
+      "scientificName": "Anarhynchus nivosus",
+      "speciesCode": "snoplo5",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Common Ground Dove",
+      "scientificName": "Columbina passerina",
+      "speciesCode": "cogdov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Orange-crowned Warbler",
+      "scientificName": "Leiothlypis celata",
+      "speciesCode": "orcwar",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Limpkin",
+      "scientificName": "Aramus guarauna",
+      "speciesCode": "limpki",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Anhinga",
+      "scientificName": "Anhinga anhinga",
+      "speciesCode": "anhing",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Wood Stork",
+      "scientificName": "Mycteria americana",
+      "speciesCode": "woosto",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Muscovy Duck",
+      "scientificName": "Cairina moschata",
+      "speciesCode": "musduc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Yellow-rumped Warbler",
+      "scientificName": "Setophaga coronata",
+      "speciesCode": "yerwar",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Dark-eyed Junco",
+      "scientificName": "Junco hyemalis",
+      "speciesCode": "daejun",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "American Barn Owl",
+      "scientificName": "Tyto furcata",
+      "speciesCode": "brnowl",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Little Blue Heron",
+      "scientificName": "Egretta caerulea",
+      "speciesCode": "libher",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "American Herring Gull",
+      "scientificName": "Larus smithsonianus",
+      "speciesCode": "amhgul1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Snowy Egret",
+      "scientificName": "Egretta thula",
+      "speciesCode": "snoegr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Semipalmated Sandpiper",
+      "scientificName": "Calidris pusilla",
+      "speciesCode": "semsan",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Common Loon",
+      "scientificName": "Gavia immer",
+      "speciesCode": "comloo",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Caspian Tern",
+      "scientificName": "Hydroprogne caspia",
+      "speciesCode": "caster1",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Ring-billed Gull",
+      "scientificName": "Larus delawarensis",
+      "speciesCode": "ribgul",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "American Kestrel",
+      "scientificName": "Falco sparverius",
+      "speciesCode": "amekes",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Least Flycatcher",
+      "scientificName": "Empidonax minimus",
+      "speciesCode": "leafly",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Willow Flycatcher",
+      "scientificName": "Empidonax traillii",
+      "speciesCode": "wilfly",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Yellow-billed Cuckoo",
+      "scientificName": "Coccyzus americanus",
+      "speciesCode": "yebcuc",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Field Sparrow",
+      "scientificName": "Spizella pusilla",
+      "speciesCode": "fiespa",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Trumpeter Swan",
+      "scientificName": "Cygnus buccinator",
+      "speciesCode": "truswa",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Cliff Swallow",
+      "scientificName": "Petrochelidon pyrrhonota",
+      "speciesCode": "cliswa",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-crowned Night Heron",
+      "scientificName": "Nycticorax nycticorax",
+      "speciesCode": "bcnher",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Common Nighthawk",
+      "scientificName": "Chordeiles minor",
+      "speciesCode": "comnig",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Orchard Oriole",
+      "scientificName": "Icterus spurius",
+      "speciesCode": "orcori",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Hairy Woodpecker",
+      "scientificName": "Leuconotopicus villosus",
+      "speciesCode": "haiwoo",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Cedar Waxwing",
+      "scientificName": "Bombycilla cedrorum",
+      "speciesCode": "cedwax",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Red-shouldered Hawk",
+      "scientificName": "Buteo lineatus",
+      "speciesCode": "reshaw",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Red-headed Woodpecker",
+      "scientificName": "Melanerpes erythrocephalus",
+      "speciesCode": "rehwoo",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Green Heron",
+      "scientificName": "Butorides virescens",
+      "speciesCode": "grnher",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Indigo Bunting",
+      "scientificName": "Passerina cyanea",
+      "speciesCode": "indbun",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Northern Yellow Warbler",
+      "scientificName": "Setophaga aestiva",
+      "speciesCode": "yelwar1",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Common Yellowthroat",
+      "scientificName": "Geothlypis trichas",
+      "speciesCode": "comyel",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Northern House Wren",
+      "scientificName": "Troglodytes aedon",
+      "speciesCode": "houwre",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Louisiana Waterthrush",
+      "scientificName": "Parkesia motacilla",
+      "speciesCode": "louwat",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Hermit Thrush",
+      "scientificName": "Catharus guttatus",
+      "speciesCode": "herthr",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Eastern Wood-Pewee",
+      "scientificName": "Contopus virens",
+      "speciesCode": "eawpew",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Barn Swallow",
+      "scientificName": "Hirundo rustica",
+      "speciesCode": "barswa",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Rock Pigeon",
+      "scientificName": "Columba livia",
+      "speciesCode": "rocpig",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Eastern Phoebe",
+      "scientificName": "Sayornis phoebe",
+      "speciesCode": "easpho",
+      "userCountsWithPhoto": 6
+    },
+    {
+      "commonName": "Wood Thrush",
+      "scientificName": "Hylocichla mustelina",
+      "speciesCode": "woothr",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Eastern Meadowlark",
+      "scientificName": "Sturnella magna",
+      "speciesCode": "easmea",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Tennessee Warbler",
+      "scientificName": "Leiothlypis peregrina",
+      "speciesCode": "tenwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Red-eyed Vireo",
+      "scientificName": "Vireo olivaceus",
+      "speciesCode": "reevir1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Philadelphia Vireo",
+      "scientificName": "Vireo philadelphicus",
+      "speciesCode": "phivir",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Acadian Flycatcher",
+      "scientificName": "Empidonax virescens",
+      "speciesCode": "acafly",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Black-throated Blue Warbler",
+      "scientificName": "Setophaga caerulescens",
+      "speciesCode": "btbwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Canada Warbler",
+      "scientificName": "Cardellina canadensis",
+      "speciesCode": "canwar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Cape May Warbler",
+      "scientificName": "Setophaga tigrina",
+      "speciesCode": "camwar",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Gray Catbird",
+      "scientificName": "Dumetella carolinensis",
+      "speciesCode": "grycat",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Ruby-throated Hummingbird",
+      "scientificName": "Archilochus colubris",
+      "speciesCode": "rthhum",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Eastern Kingbird",
+      "scientificName": "Tyrannus tyrannus",
+      "speciesCode": "easkin",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Pied-billed Grebe",
+      "scientificName": "Podilymbus podiceps",
+      "speciesCode": "pibgre",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Red-breasted Merganser",
+      "scientificName": "Mergus serrator",
+      "speciesCode": "rebmer",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Northern Mockingbird",
+      "scientificName": "Mimus polyglottos",
+      "speciesCode": "normoc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Scarlet Tanager",
+      "scientificName": "Piranga olivacea",
+      "speciesCode": "scatan",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Black-and-white Warbler",
+      "scientificName": "Mniotilta varia",
+      "speciesCode": "bawwar",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Common Grackle",
+      "scientificName": "Quiscalus quiscula",
+      "speciesCode": "comgra",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Swainson's Thrush",
+      "scientificName": "Catharus ustulatus",
+      "speciesCode": "swathr",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Magnolia Warbler",
+      "scientificName": "Setophaga magnolia",
+      "speciesCode": "magwar",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Blue-winged Teal",
+      "scientificName": "Spatula discors",
+      "speciesCode": "buwtea",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Baltimore Oriole",
+      "scientificName": "Icterus galbula",
+      "speciesCode": "balori",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Eastern Warbling Vireo",
+      "scientificName": "Vireo gilvus",
+      "speciesCode": "eawvir1",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Spotted Sandpiper",
+      "scientificName": "Actitis macularius",
+      "speciesCode": "sposan",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Lesser Scaup",
+      "scientificName": "Aythya affinis",
+      "speciesCode": "lessca",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Wood Duck",
+      "scientificName": "Aix sponsa",
+      "speciesCode": "wooduc",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "White-breasted Nuthatch",
+      "scientificName": "Sitta carolinensis",
+      "speciesCode": "whbnut",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Chimney Swift",
+      "scientificName": "Chaetura pelagica",
+      "speciesCode": "chiswi",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Palm Warbler",
+      "scientificName": "Setophaga palmarum",
+      "speciesCode": "palwar",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Solitary Sandpiper",
+      "scientificName": "Tringa solitaria",
+      "speciesCode": "solsan",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Carolina Wren",
+      "scientificName": "Thryothorus ludovicianus",
+      "speciesCode": "carwre",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Red-breasted Nuthatch",
+      "scientificName": "Sitta canadensis",
+      "speciesCode": "rebnut",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Chipping Sparrow",
+      "scientificName": "Spizella passerina",
+      "speciesCode": "chispa",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Purple Martin",
+      "scientificName": "Progne subis",
+      "speciesCode": "purmar",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Tree Swallow",
+      "scientificName": "Tachycineta bicolor",
+      "speciesCode": "treswa",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Greater Yellowlegs",
+      "scientificName": "Tringa melanoleuca",
+      "speciesCode": "greyel",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Killdeer",
+      "scientificName": "Charadrius vociferus",
+      "speciesCode": "killde",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Sandhill Crane",
+      "scientificName": "Antigone canadensis",
+      "speciesCode": "sancra",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Ring-necked Duck",
+      "scientificName": "Aythya collaris",
+      "speciesCode": "rinduc",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Ruby-crowned Kinglet",
+      "scientificName": "Corthylio calendula",
+      "speciesCode": "ruckin",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Song Sparrow",
+      "scientificName": "Melospiza melodia",
+      "speciesCode": "sonspa",
+      "userCountsWithPhoto": 10
+    },
+    {
+      "commonName": "Osprey",
+      "scientificName": "Pandion haliaetus",
+      "speciesCode": "osprey",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Turkey Vulture",
+      "scientificName": "Cathartes aura",
+      "speciesCode": "turvul",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Double-crested Cormorant",
+      "scientificName": "Nannopterum auritum",
+      "speciesCode": "doccor",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Mute Swan",
+      "scientificName": "Cygnus olor",
+      "speciesCode": "mutswa",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Northern Rough-winged Swallow",
+      "scientificName": "Stelgidopteryx serripennis",
+      "speciesCode": "nrwswa",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Bald Eagle",
+      "scientificName": "Haliaeetus leucocephalus",
+      "speciesCode": "baleag",
+      "userCountsWithPhoto": 6
+    },
+    {
+      "commonName": "Brown-headed Cowbird",
+      "scientificName": "Molothrus ater",
+      "speciesCode": "bnhcow",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Eastern Towhee",
+      "scientificName": "Pipilo erythrophthalmus",
+      "speciesCode": "eastow",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Blue-gray Gnatcatcher",
+      "scientificName": "Polioptila caerulea",
+      "speciesCode": "buggna",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Downy Woodpecker",
+      "scientificName": "Dryobates pubescens",
+      "speciesCode": "dowwoo",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Great Egret",
+      "scientificName": "Ardea alba",
+      "speciesCode": "greegr",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "American Goldfinch",
+      "scientificName": "Spinus tristis",
+      "speciesCode": "amegfi",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "House Sparrow",
+      "scientificName": "Passer domesticus",
+      "speciesCode": "houspa",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "Pileated Woodpecker",
+      "scientificName": "Dryocopus pileatus",
+      "speciesCode": "pilwoo",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Belted Kingfisher",
+      "scientificName": "Megaceryle alcyon",
+      "speciesCode": "belkin1",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Red-tailed Hawk",
+      "scientificName": "Buteo jamaicensis",
+      "speciesCode": "rethaw",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "European Starling",
+      "scientificName": "Sturnus vulgaris",
+      "speciesCode": "eursta",
+      "userCountsWithPhoto": 4
+    },
+    {
+      "commonName": "American Coot",
+      "scientificName": "Fulica americana",
+      "speciesCode": "y00475",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Northern Cardinal",
+      "scientificName": "Cardinalis cardinalis",
+      "speciesCode": "norcar",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Red-winged Blackbird",
+      "scientificName": "Agelaius phoeniceus",
+      "speciesCode": "rewbla",
+      "userCountsWithPhoto": 6
+    },
+    {
+      "commonName": "White-throated Sparrow",
+      "scientificName": "Zonotrichia albicollis",
+      "speciesCode": "whtspa",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "American Robin",
+      "scientificName": "Turdus migratorius",
+      "speciesCode": "amerob",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Tufted Titmouse",
+      "scientificName": "Baeolophus bicolor",
+      "speciesCode": "tuftit",
+      "userCountsWithPhoto": 3
+    },
+    {
+      "commonName": "Carolina Chickadee",
+      "scientificName": "Poecile carolinensis",
+      "speciesCode": "carchi",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "American Crow",
+      "scientificName": "Corvus brachyrhynchos",
+      "speciesCode": "amecro",
+      "userCountsWithPhoto": 2
+    },
+    {
+      "commonName": "Blue Jay",
+      "scientificName": "Cyanocitta cristata",
+      "speciesCode": "blujay",
+      "userCountsWithPhoto": 6
+    },
+    {
+      "commonName": "Red-bellied Woodpecker",
+      "scientificName": "Melanerpes carolinus",
+      "speciesCode": "rebwoo",
+      "userCountsWithPhoto": 8
+    },
+    {
+      "commonName": "Wild Turkey",
+      "scientificName": "Meleagris gallopavo",
+      "speciesCode": "wiltur",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Mallard",
+      "scientificName": "Anas platyrhynchos",
+      "speciesCode": "mallar3",
+      "userCountsWithPhoto": 8
+    },
+    {
+      "commonName": "Canada Goose",
+      "scientificName": "Branta canadensis",
+      "speciesCode": "cangoo",
+      "userCountsWithPhoto": 5
+    },
+    {
+      "commonName": "Northern Flicker",
+      "scientificName": "Colaptes auratus",
+      "speciesCode": "norfli",
+      "userCountsWithPhoto": 1
+    },
+    {
+      "commonName": "Eastern Bluebird",
+      "scientificName": "Sialia sialis",
+      "speciesCode": "easblu",
+      "userCountsWithPhoto": 7
+    },
+    {
+      "commonName": "Mourning Dove",
+      "scientificName": "Zenaida macroura",
+      "speciesCode": "moudov",
+      "userCountsWithPhoto": 0
+    },
+    {
+      "commonName": "Great Blue Heron",
+      "scientificName": "Ardea herodias",
+      "speciesCode": "grbher3",
+      "userCountsWithPhoto": 3
+    }
+  ]
+}

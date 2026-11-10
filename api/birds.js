@@ -32,6 +32,10 @@ export default async function handler(req, res) {
     const lng = req.query.lng || "-82.99";
     const dist = req.query.dist || "50";
     const listType = req.query.listType || "life"; // 'life' or 'year'
+    // Species codes the user has already checked off on the client
+    const excludeCodes = new Set(
+      (req.query.exclude || "").split(",").map((c) => c.trim()).filter(Boolean)
+    );
 
     const requestOptions = {
       method: "GET",
@@ -72,9 +76,9 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Failed to fetch observations' });
     }
 
-    // Filter to find species NOT on life list
+    // Filter to find species NOT on life list and not already checked off
     const needs = recentObservations.filter(
-      (obs) => !lifeListSpecies.has(obs.comName)
+      (obs) => !lifeListSpecies.has(obs.comName) && !excludeCodes.has(obs.speciesCode)
     );
 
     // Get unique species codes
