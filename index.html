@@ -69,7 +69,8 @@
       left: -320px;
       top: 0;
       width: 320px;
-      height: 100vh;
+      height: 100vh;  /* fallback for browsers without dvh */
+      height: 100dvh; /* visible viewport: excludes mobile browser toolbars */
       background: white;
       box-shadow: 2px 0 8px rgba(0,0,0,0.2);
       overflow: hidden;
@@ -260,8 +261,14 @@
     #map {
       flex: 1;
       height: 100vh;
+      height: 100dvh;
       position: relative;
+      z-index: 0; /* own stacking context, so map z-indexes stay below the mobile sidebar */
       cursor: crosshair;
+    }
+    /* Markers get z-index = species count; keep popups above all of them (and the legend) */
+    .maplibregl-popup {
+      z-index: 1500;
     }
     #map.loading {
       cursor: wait;
@@ -486,6 +493,22 @@
       background: white;
       cursor: pointer;
     }
+    #demo-badge {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: calc(var(--z-sidebar) + 2);
+      background: #8e44ad;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 10px;
+      pointer-events: none;
+      opacity: 0.9;
+    }
     #data-warning {
       display: none;
       padding: 10px 20px;
@@ -571,118 +594,6 @@
       </div>
     </div>
   </div>
-  <script>
-    window.mockData = {
-  "home": {
-    "lat": 39.95,
-    "lng": -82.99
-  },
-  "locations": [
-    {
-      "name": "Blendon Woods Metro Park",
-      "lat": 40.0591,
-      "lng": -82.8979,
-      "locId": "L266219",
-      "distance": 8.2,
-      "speciesCount": 3,
-      "species": [
-        {
-          "commonName": "Red-tailed Hawk",
-          "speciesCode": "rethaw",
-          "count": 2,
-          "date": "2026-05-20",
-          "subId": "S123456789"
-        },
-        {
-          "commonName": "American Robin",
-          "speciesCode": "amerob",
-          "count": 5,
-          "date": "2026-05-20",
-          "subId": "S123456790"
-        },
-        {
-          "commonName": "Blue Jay",
-          "speciesCode": "blujay",
-          "count": 3,
-          "date": "2026-05-21",
-          "subId": "S123456791"
-        }
-      ]
-    },
-    {
-      "name": "Hoover Reservoir",
-      "lat": 40.1156,
-      "lng": -82.8669,
-      "locId": "L266220",
-      "distance": 12.5,
-      "speciesCount": 5,
-      "species": [
-        {
-          "commonName": "Great Blue Heron",
-          "speciesCode": "grbher3",
-          "count": 1,
-          "date": "2026-05-19",
-          "subId": "S123456792"
-        },
-        {
-          "commonName": "Bald Eagle",
-          "speciesCode": "baleag",
-          "count": 1,
-          "date": "2026-05-19",
-          "subId": "S123456792"
-        },
-        {
-          "commonName": "Osprey",
-          "speciesCode": "osprey",
-          "count": 2,
-          "date": "2026-05-20",
-          "subId": "S123456793"
-        },
-        {
-          "commonName": "Double-crested Cormorant",
-          "speciesCode": "doccor",
-          "count": 4,
-          "date": "2026-05-21",
-          "subId": "S123456794"
-        },
-        {
-          "commonName": "Ring-billed Gull",
-          "speciesCode": "ribgul",
-          "count": 8,
-          "date": "2026-05-21",
-          "subId": "S123456794"
-        }
-      ]
-    },
-    {
-      "name": "Battelle Darby Creek Metro Park",
-      "lat": 39.8833,
-      "lng": -83.2167,
-      "locId": "L266221",
-      "distance": 15.3,
-      "speciesCount": 2,
-      "species": [
-        {
-          "commonName": "Sandhill Crane",
-          "speciesCode": "sancra",
-          "count": 12,
-          "date": "2026-05-18",
-          "subId": "S123456795"
-        },
-        {
-          "commonName": "Bobolink",
-          "speciesCode": "boboli",
-          "count": 3,
-          "date": "2026-05-19",
-          "subId": "S123456796"
-        }
-      ]
-    }
-  ]
-}
-
-  </script>
-
   <script>
     // Sidebar toggle for mobile
     const sidebar = document.getElementById('sidebar');
@@ -794,12 +705,39 @@
 
     renderSeenList();
 
+    // Demo mode: fake data from demo-data.js, no API calls. Use ?demo in the URL
+    // (or open index.html straight from disk).
+    const DEMO_MODE = new URLSearchParams(window.location.search).has('demo')
+      || window.location.protocol === 'file:';
+
+    if (DEMO_MODE) {
+      document.title = '[DEMO] ' + document.title;
+      const badge = document.createElement('div');
+      badge.id = 'demo-badge';
+      badge.textContent = 'DEMO DATA';
+      document.body.appendChild(badge);
+    }
+
+    function loadDemoData() {
+      if (window.buildDemoData) return Promise.resolve();
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'demo-data.js';
+        script.onload = resolve;
+        script.onerror = () => reject(new Error('Could not load demo-data.js'));
+        document.head.appendChild(script);
+      });
+    }
+
     // Fetch bird data from API
     async function fetchBirdData(lat, lng, dist = 50, listType = 'life') {
       try {
         let response;
-        if (window.location.protocol === 'file:') {
-            response = window.mockData ? { ok: true, json: async () => window.mockData } : { ok: false, status: 404, statusText: 'Mock data not found' };
+        if (DEMO_MODE) {
+            await loadDemoData();
+            await new Promise(r => setTimeout(r, 400)); // mimic network latency
+            const demo = window.buildDemoData(lat, lng, listType, Object.keys(seenSpecies));
+            response = { ok: true, json: async () => demo };
         } else {
             // Skip species already checked off so they don't use up eBird requests
             const exclude = encodeURIComponent(Object.keys(seenSpecies).join(','));
