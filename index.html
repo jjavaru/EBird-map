@@ -6,6 +6,7 @@
   <title>eBird Needs Map</title>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" />
   <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/supercluster@8.0.1/dist/supercluster.min.js"></script>
   <style>
     :root {
         --z-sidebar: 2000;
@@ -346,7 +347,48 @@
       margin-right: 8px;
       border: 2px solid #333;
     }
-    
+    .legend-item .hotspot-badge {
+      margin-right: 8px;
+      cursor: default;
+    }
+
+    /* Hotspot / cluster badges */
+    .hotspot-badge {
+      box-sizing: border-box;
+      min-width: 26px;
+      height: 26px;
+      padding: 0 6px;
+      border-radius: 13px;
+      border: 2px solid #2c3e50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font: 700 12px/1 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.45);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.35);
+      cursor: pointer;
+      transition: opacity 0.15s, box-shadow 0.15s;
+    }
+    .hotspot-badge.cluster {
+      min-width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      font-size: 13px;
+      border-color: white;
+      /* dark ring + offset shadow so it reads as a stack of hotspots */
+      box-shadow: 0 0 0 2px #2c3e50, 3px 3px 0 2px rgba(44,62,80,0.35);
+    }
+    .hotspot-badge.dimmed {
+      opacity: 0.2;
+    }
+    .hotspot-badge.highlighted {
+      box-shadow: 0 0 0 3px #28a745, 0 1px 4px rgba(0,0,0,0.4);
+    }
+    .hotspot-badge.cluster.highlighted {
+      box-shadow: 0 0 0 2px #2c3e50, 0 0 0 5px #28a745;
+    }
+
     /* Mobile optimizations */
     @media (max-width: 767px) {
       .legend {
@@ -441,22 +483,26 @@
   </div>
   <div id="map">
     <div class="legend">
-      <h4>Species Count</h4>
+      <h4>New Species</h4>
       <div class="legend-item">
-        <div class="legend-color" style="background-color: #e74c3c;"></div>
+        <div class="hotspot-badge" style="background-color: #e74c3c;">5+</div>
         <span>5+ species</span>
       </div>
       <div class="legend-item">
-        <div class="legend-color" style="background-color: #f39c12;"></div>
+        <div class="hotspot-badge" style="background-color: #f39c12;">3</div>
         <span>3-4 species</span>
       </div>
       <div class="legend-item">
-        <div class="legend-color" style="background-color: #3498db;"></div>
+        <div class="hotspot-badge" style="background-color: #3498db;">2</div>
         <span>2 species</span>
       </div>
       <div class="legend-item">
-        <div class="legend-color" style="background-color: #9b59b6;"></div>
+        <div class="hotspot-badge" style="background-color: #9b59b6;">1</div>
         <span>1 species</span>
+      </div>
+      <div class="legend-item">
+        <div class="hotspot-badge cluster" style="background-color: #e74c3c; margin-left: 2px; margin-right: 10px;">12</div>
+        <span>Group: unique species<br>across hotspots (click)</span>
       </div>
       <div class="legend-item">
         <div class="legend-color" style="background-color: #2ecc71;"></div>
@@ -714,6 +760,8 @@
       let currentDaysFilter = 7;
       let selectedSpecies = null;
       let map, markers, clearFilterBtn;
+      let clusterIndex = null;
+      let locationsById = {};
       
       // Show or hide the partial results warning
       const dataWarning = document.getElementById('data-warning');
@@ -747,16 +795,167 @@
         };
       }
       
-      // Main render function
-      function renderMap(filteredData) {
-        // Clear existing markers if any
+      // Badge color buckets by species count
+      function colorForCount(n) {
+        if (n >= 5) return '#e74c3c'; // red
+        if (n >= 3) return '#f39c12'; // orange
+        if (n === 2) return '#3498db'; // blue
+        return '#9b59b6';             // purple
+      }
+
+      function removeAllMarkers() {
         if (markers) {
-          Object.values(markers).forEach(({ marker }) => {
-            map.removeLayer(marker);
-          });
+          Object.values(markers).forEach(({ marker }) => marker.remove());
         }
         markers = {};
-        
+      }
+
+      // Dim/highlight badges according to the selected species
+      function applyHighlight() {
+        Object.values(markers).forEach(({ element, species }) => {
+          const match = selectedSpecies && species.has(selectedSpecies);
+          element.classList.toggle('dimmed', !!selectedSpecies && !match);
+          element.classList.toggle('highlighted', !!match);
+        });
+      }
+
+      function clearFilter() {
+        selectedSpecies = null;
+        document.querySelectorAll('#species-list .species-item').forEach(i => i.classList.remove('active'));
+        clearFilterBtn.classList.remove('visible');
+        applyHighlight();
+      }
+
+      function buildPopupHtml(location) {
+        const speciesListHtml = location.species.map(s => `
+          <div class="species-item">
+            <div class="species-name">
+              <a href="https://ebird.org/species/${s.speciesCode}" target="_blank">${s.commonName}</a>
+            </div>
+            <div class="species-details">
+              ${s.count} seen on ${s.date}
+              ${s.subId ? ` • <a href="https://ebird.org/checklist/${s.subId}" target="_blank">View checklist</a>` : ''}
+            </div>
+          </div>
+        `).join('');
+
+        const hotspotLink = location.locId ? `<a href="https://ebird.org/hotspot/${location.locId}" target="_blank" class="hotspot-link">🔗 View hotspot on eBird</a>` : '';
+
+        return `
+          <div class="location-popup">
+            <h3>${location.name}</h3>
+            <div class="info">
+              ${location.distance} mi away • ${location.speciesCount} species
+              ${hotspotLink}
+            </div>
+            <div class="species-list">
+              ${speciesListHtml}
+            </div>
+          </div>
+        `;
+      }
+
+      function createHotspotMarker(location) {
+        const el = document.createElement('div');
+        el.className = 'hotspot-badge';
+        el.style.backgroundColor = colorForCount(location.speciesCount);
+        el.textContent = location.speciesCount;
+        el.title = location.name;
+
+        const marker = new maplibregl.Marker({ element: el })
+          .setLngLat([location.lng, location.lat])
+          .setPopup(new maplibregl.Popup({ offset: 16 }).setHTML(buildPopupHtml(location)))
+          .addTo(map);
+
+        return {
+          marker,
+          element: el,
+          species: new Set(location.species.map(s => s.commonName))
+        };
+      }
+
+      function createClusterMarker(feature) {
+        const { cluster_id, point_count, species } = feature.properties;
+        const uniqueCount = species.length;
+
+        const el = document.createElement('div');
+        el.className = 'hotspot-badge cluster';
+        el.style.backgroundColor = colorForCount(uniqueCount);
+        el.textContent = uniqueCount;
+        el.title = `${uniqueCount} species across ${point_count} hotspots (click to zoom in)`;
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const zoom = Math.min(clusterIndex.getClusterExpansionZoom(cluster_id), 17);
+          map.easeTo({ center: feature.geometry.coordinates, zoom });
+        });
+
+        const marker = new maplibregl.Marker({ element: el })
+          .setLngLat(feature.geometry.coordinates)
+          .addTo(map);
+
+        return { marker, element: el, species: new Set(species) };
+      }
+
+      // Build the cluster index for the current set of locations.
+      // Each point carries its species names; clusters merge them into a
+      // unique set so the cluster label = distinct species across its hotspots.
+      function buildClusterIndex(locations) {
+        clusterIndex = new Supercluster({
+          radius: 50,
+          maxZoom: 15,
+          map: props => ({ species: props.species.slice() }),
+          reduce: (acc, props) => {
+            acc.species = Array.from(new Set([...acc.species, ...props.species]));
+          }
+        });
+        clusterIndex.load(locations.map(loc => ({
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: [loc.lng, loc.lat] },
+          properties: {
+            locId: loc.locId || `${loc.lat},${loc.lng}`,
+            species: Array.from(new Set(loc.species.map(s => s.commonName)))
+          }
+        })));
+      }
+
+      // Sync DOM markers with the clusters visible at the current view.
+      // Markers are keyed so ones that stay on screen (and their open popups) survive.
+      function updateMarkers() {
+        if (!clusterIndex) return;
+        const b = map.getBounds();
+        const features = clusterIndex.getClusters(
+          [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()],
+          map.getZoom()
+        );
+
+        const visible = new Set();
+        features.forEach(f => {
+          const isCluster = f.properties.cluster;
+          const key = isCluster ? `c:${f.properties.cluster_id}` : `l:${f.properties.locId}`;
+          visible.add(key);
+          if (markers[key]) return;
+          if (isCluster) {
+            markers[key] = createClusterMarker(f);
+          } else {
+            const location = locationsById[f.properties.locId];
+            if (location) markers[key] = createHotspotMarker(location);
+          }
+        });
+
+        Object.keys(markers).forEach(key => {
+          if (!visible.has(key)) {
+            markers[key].marker.remove();
+            delete markers[key];
+          }
+        });
+
+        applyHighlight();
+      }
+
+      // Main render function
+      function renderMap(filteredData) {
+        removeAllMarkers();
+
         // Clear species list
         const speciesList = document.getElementById('species-list');
         speciesList.innerHTML = '';
@@ -801,92 +1000,14 @@
           speciesList.appendChild(item);
         });
 
-        // Add markers for each location
-        filteredData.locations.forEach(location => {
-          // Color code by species count
-          let color;
-          if (location.speciesCount >= 5) {
-            color = '#e74c3c'; // red
-          } else if (location.speciesCount >= 3) {
-            color = '#f39c12'; // orange
-          } else if (location.speciesCount === 2) {
-            color = '#3498db'; // blue
-          } else {
-            color = '#9b59b6'; // purple
-          }
-
-          // Create marker
-          // Create marker element
-          const size = 12 + (location.speciesCount * 4);
-          const el = document.createElement('div');
-          el.style.width = size + 'px';
-          el.style.height = size + 'px';
-          el.style.borderRadius = '50%';
-          el.style.backgroundColor = color;
-          el.style.border = '2px solid #2c3e50';
-          el.style.opacity = '0.9';
-          el.style.cursor = 'pointer';
-          el.dataset.color = color;
-
-          // Create marker
-          const marker = new maplibregl.Marker({ element: el })
-            .setLngLat([location.lng, location.lat])
-            .addTo(map);
-
-          // Store marker and metadata (using locId as unique key)
-          markers[location.locId] = {
-            marker: marker,
-            element: el,
-            location: location,
-            defaultColor: color
-          };
-
-          // Create popup content
-          const speciesListHtml = location.species.map(s => `
-            <div class="species-item">
-              <div class="species-name">
-                <a href="https://ebird.org/species/${s.speciesCode}" target="_blank">${s.commonName}</a>
-              </div>
-              <div class="species-details">
-                ${s.count} seen on ${s.date}
-                ${s.subId ? ` • <a href="https://ebird.org/checklist/${s.subId}" target="_blank">View checklist</a>` : ''}
-              </div>
-            </div>
-          `).join('');
-
-          const hotspotLink = location.locId ? `<a href="https://ebird.org/hotspot/${location.locId}" target="_blank" class="hotspot-link">🔗 View hotspot on eBird</a>` : '';
-
-          const popupContent = `
-            <div class="location-popup">
-              <h3>${location.name}</h3>
-              <div class="info">
-                ${location.distance} mi away • ${location.speciesCount} species
-                ${hotspotLink}
-              </div>
-              <div class="species-list">
-                ${speciesListHtml}
-              </div>
-            </div>
-          `;
-
-          marker.setPopup(new maplibregl.Popup({ offset: 25 }).setHTML(popupContent));
-        });
+        // Index locations and build clusters, then draw what's in view
+        locationsById = {};
+        filteredData.locations.forEach(loc => { locationsById[loc.locId || `${loc.lat},${loc.lng}`] = loc; });
+        buildClusterIndex(filteredData.locations);
+        updateMarkers();
 
         // Wire up click handlers for species filtering
-        function clearFilter() {
-          selectedSpecies = null;
-          document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
-          clearFilterBtn.classList.remove('visible');
-          
-          // Reset all markers to default style
-          Object.values(markers).forEach(({ element, defaultColor }) => {
-            element.style.backgroundColor = defaultColor;
-            element.style.opacity = '0.9';
-            element.style.borderWidth = '2px';
-          });
-        }
-        
-        document.querySelectorAll('.species-item').forEach(item => {
+        document.querySelectorAll('#species-list .species-item').forEach(item => {
           item.addEventListener('click', function() {
             const speciesName = this.dataset.speciesName;
             
@@ -896,25 +1017,10 @@
             } else {
               // Select this species
               selectedSpecies = speciesName;
-              document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
+              document.querySelectorAll('#species-list .species-item').forEach(i => i.classList.remove('active'));
               this.classList.add('active');
               clearFilterBtn.classList.add('visible');
-              
-              // Dim all markers first
-              Object.values(markers).forEach(({ element }) => {
-                element.style.opacity = '0.2';
-              });
-              
-              // Highlight markers that have this species
-              const relevantLocations = speciesData[speciesName].locations;
-              relevantLocations.forEach(locId => {
-                if (markers[locId]) {
-                  const { element, defaultColor } = markers[locId];
-                  element.style.backgroundColor = defaultColor;
-                  element.style.opacity = '1';
-                  element.style.borderWidth = '3px';
-                }
-              });
+              applyHighlight();
             }
           });
         });
@@ -1022,16 +1128,10 @@
 
       // Get clear filter button reference
       clearFilterBtn = document.getElementById('clear-filter');
-      clearFilterBtn.addEventListener('click', () => {
-        selectedSpecies = null;
-        document.querySelectorAll('.species-item').forEach(i => i.classList.remove('active'));
-        clearFilterBtn.classList.remove('visible');
-        Object.values(markers).forEach(({ element, defaultColor }) => {
-          element.style.backgroundColor = defaultColor;
-          element.style.opacity = '0.9';
-          element.style.borderWidth = '2px';
-        });
-      });
+      clearFilterBtn.addEventListener('click', clearFilter);
+
+      // Re-cluster as the view changes
+      map.on('moveend', updateMarkers);
       
       // Wire up days slider
       const daysSlider = document.getElementById('days-slider');
