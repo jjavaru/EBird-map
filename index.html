@@ -417,6 +417,75 @@
       padding: 20px;
       text-align: center;
     }
+    /* Check-off ("seen it") buttons */
+    .species-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .species-row .species-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .check-btn {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #28a745;
+      background: white;
+      color: #28a745;
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0;
+    }
+    .check-btn:hover {
+      background: #28a745;
+      color: white;
+    }
+    .location-popup .check-btn {
+      width: 26px;
+      height: 26px;
+      font-size: 13px;
+    }
+    #seen-section {
+      display: none;
+      border-top: 1px solid #ddd;
+      padding: 10px;
+      flex-shrink: 0;
+      max-height: 35vh;
+      overflow-y: auto;
+    }
+    #seen-section h3 {
+      margin: 0 0 8px 0;
+      font-size: 13px;
+      color: #7f8c8d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #seen-section .seen-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 6px 0;
+      font-size: 13px;
+      color: #7f8c8d;
+    }
+    #seen-section .seen-item span {
+      text-decoration: line-through;
+    }
+    #seen-section button {
+      flex-shrink: 0;
+      font-size: 12px;
+      padding: 4px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: white;
+      cursor: pointer;
+    }
     #data-warning {
       display: none;
       padding: 10px 20px;
@@ -467,6 +536,12 @@
     </div>
     
     <div id="species-list"></div>
+
+    <!-- Species checked off this trip (stored in localStorage) -->
+    <div id="seen-section">
+      <h3><span id="seen-title">Seen</span><button id="clear-seen">Clear all</button></h3>
+      <div id="seen-list"></div>
+    </div>
   </div>
   <div id="map">
     <div class="legend">
@@ -625,7 +700,8 @@
     
     // Close sidebar when clicking on a species (mobile only)
     document.addEventListener('click', function(e) {
-      if (e.target.closest('.species-item') && window.innerWidth < 768) {
+      if (e.target.closest('.check-btn') || e.target.closest('#seen-section')) return;
+      if (e.target.closest('#sidebar .species-item') && window.innerWidth < 768) {
         toggleSidebar();
       }
     });
@@ -633,7 +709,91 @@
     // Global variables
     let globalMap = null;
     let currentListType = 'life';
-    
+    let rerenderCurrentMap = null; // set by initMap; re-renders without re-fetching
+
+    // ---- Checked-off ("seen") species, persisted in localStorage ----
+    // Shape: { [speciesCode]: { name, checkedAt } }. Applies to both life and
+    // year lists, since a sighting today counts toward both.
+    const SEEN_KEY = 'ebird-map.seenSpecies';
+
+    function loadSeen() {
+      try {
+        return JSON.parse(localStorage.getItem(SEEN_KEY)) || {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    let seenSpecies = loadSeen();
+
+    function saveSeen() {
+      try {
+        localStorage.setItem(SEEN_KEY, JSON.stringify(seenSpecies));
+      } catch (e) {
+        console.warn('Could not save seen species to localStorage:', e);
+      }
+    }
+
+    function isSeen(speciesCode) {
+      return Object.prototype.hasOwnProperty.call(seenSpecies, speciesCode);
+    }
+
+    function setSeen(speciesCode, name, seen) {
+      if (seen) {
+        seenSpecies[speciesCode] = { name, checkedAt: new Date().toISOString() };
+      } else {
+        delete seenSpecies[speciesCode];
+      }
+      saveSeen();
+      renderSeenList();
+      if (rerenderCurrentMap) rerenderCurrentMap();
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
+
+    function renderSeenList() {
+      const section = document.getElementById('seen-section');
+      const list = document.getElementById('seen-list');
+      const entries = Object.entries(seenSpecies)
+        .sort((a, b) => b[1].checkedAt.localeCompare(a[1].checkedAt));
+
+      section.style.display = entries.length ? 'block' : 'none';
+      document.getElementById('seen-title').textContent = `Seen (${entries.length})`;
+      list.innerHTML = entries.map(([code, { name }]) => `
+        <div class="seen-item">
+          <span>${escapeHtml(name)}</span>
+          <button class="undo-seen" data-species-code="${escapeHtml(code)}">Undo</button>
+        </div>
+      `).join('');
+    }
+
+    // One delegated handler covers sidebar items, popups, and the seen list
+    document.addEventListener('click', function(e) {
+      const checkBtn = e.target.closest('.check-btn');
+      if (checkBtn) {
+        e.stopPropagation();
+        setSeen(checkBtn.dataset.speciesCode, checkBtn.dataset.speciesName, true);
+        return;
+      }
+      const undoBtn = e.target.closest('.undo-seen');
+      if (undoBtn) {
+        setSeen(undoBtn.dataset.speciesCode, null, false);
+        return;
+      }
+      if (e.target.id === 'clear-seen' && confirm('Clear all checked-off species?')) {
+        seenSpecies = {};
+        saveSeen();
+        renderSeenList();
+        if (rerenderCurrentMap) rerenderCurrentMap();
+      }
+    }, true); // capture phase so the species-item click handler doesn't also fire
+
+    renderSeenList();
+
     // Fetch bird data from API
     async function fetchBirdData(lat, lng, dist = 50, listType = 'life') {
       try {
@@ -641,7 +801,9 @@
         if (window.location.protocol === 'file:') {
             response = window.mockData ? { ok: true, json: async () => window.mockData } : { ok: false, status: 404, statusText: 'Mock data not found' };
         } else {
-            response = await fetch(`/api/birds?lat=${lat}&lng=${lng}&dist=${dist}&listType=${listType}`);
+            // Skip species already checked off so they don't use up eBird requests
+            const exclude = encodeURIComponent(Object.keys(seenSpecies).join(','));
+            response = await fetch(`/api/birds?lat=${lat}&lng=${lng}&dist=${dist}&listType=${listType}&exclude=${exclude}`);
         }
         
         if (!response.ok) {
@@ -758,7 +920,7 @@
         const filteredLocations = data.locations.map(location => {
           const filteredSpecies = location.species.filter(species => {
             const obsDate = new Date(species.date);
-            return obsDate >= cutoffDate;
+            return obsDate >= cutoffDate && !isSeen(species.speciesCode);
           });
           
           if (filteredSpecies.length === 0) return null;
@@ -809,14 +971,19 @@
 
       function buildPopupHtml(location) {
         const speciesListHtml = location.species.map(s => `
-          <div class="species-item">
-            <div class="species-name">
-              <a href="https://ebird.org/species/${s.speciesCode}" target="_blank">${s.commonName}</a>
+          <div class="species-item species-row">
+            <div class="species-text">
+              <div class="species-name">
+                <a href="https://ebird.org/species/${s.speciesCode}" target="_blank">${s.commonName}</a>
+              </div>
+              <div class="species-details">
+                ${s.count} seen on ${s.date}
+                ${s.subId ? ` • <a href="https://ebird.org/checklist/${s.subId}" target="_blank">View checklist</a>` : ''}
+              </div>
             </div>
-            <div class="species-details">
-              ${s.count} seen on ${s.date}
-              ${s.subId ? ` • <a href="https://ebird.org/checklist/${s.subId}" target="_blank">View checklist</a>` : ''}
-            </div>
+            <button class="check-btn" title="Mark as seen"
+              data-species-code="${escapeHtml(s.speciesCode)}"
+              data-species-name="${escapeHtml(s.commonName)}">✓</button>
           </div>
         `).join('');
 
@@ -857,7 +1024,7 @@
       }
 
       // Main render function
-      function renderMap(filteredData) {
+      function renderMap(filteredData, { fitToMarkers = true } = {}) {
         removeAllMarkers();
 
         // Clear species list
@@ -895,10 +1062,15 @@
         // Build species list in sidebar
         sortedSpecies.forEach(species => {
           const item = document.createElement('div');
-          item.className = 'species-item';
+          item.className = 'species-item species-row';
           item.innerHTML = `
-            <div class="name">${species.name}</div>
-            <div class="count">${species.count} observation${species.count > 1 ? 's' : ''} at ${species.locations.length} location${species.locations.length > 1 ? 's' : ''}</div>
+            <div class="species-text">
+              <div class="name">${species.name}</div>
+              <div class="count">${species.count} observation${species.count > 1 ? 's' : ''} at ${species.locations.length} location${species.locations.length > 1 ? 's' : ''}</div>
+            </div>
+            <button class="check-btn" title="Mark as seen"
+              data-species-code="${escapeHtml(species.code)}"
+              data-species-name="${escapeHtml(species.name)}">✓</button>
           `;
           item.dataset.speciesName = species.name;
           speciesList.appendChild(item);
@@ -929,7 +1101,7 @@
         });
 
         // Fit map to show all markers
-        if (filteredData.locations.length > 0) {
+        if (fitToMarkers && filteredData.locations.length > 0) {
           const bounds = new maplibregl.LngLatBounds();
           filteredData.locations.forEach(loc => {
             bounds.extend([loc.lng, loc.lat]);
@@ -1045,6 +1217,10 @@
         renderMap(filteredData);
       });
       
+      // Re-render in place (keeping the current zoom) when a species is checked off
+      rerenderCurrentMap = () =>
+        renderMap(filterDataByDays(fullData, currentDaysFilter), { fitToMarkers: false });
+
       // Initial render with all data
       const initialFilteredData = filterDataByDays(fullData, currentDaysFilter);
       renderMap(initialFilteredData);
