@@ -6,7 +6,6 @@
   <title>eBird Needs Map</title>
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" />
   <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
-  <script src="https://unpkg.com/supercluster@8.0.1/dist/supercluster.min.js"></script>
   <style>
     :root {
         --z-sidebar: 2000;
@@ -352,7 +351,7 @@
       cursor: default;
     }
 
-    /* Hotspot / cluster badges */
+    /* Hotspot badges */
     .hotspot-badge {
       box-sizing: border-box;
       min-width: 26px;
@@ -370,23 +369,11 @@
       cursor: pointer;
       transition: opacity 0.15s, box-shadow 0.15s;
     }
-    .hotspot-badge.cluster {
-      min-width: 32px;
-      height: 32px;
-      border-radius: 16px;
-      font-size: 13px;
-      border-color: white;
-      /* dark ring + offset shadow so it reads as a stack of hotspots */
-      box-shadow: 0 0 0 2px #2c3e50, 3px 3px 0 2px rgba(44,62,80,0.35);
-    }
     .hotspot-badge.dimmed {
       opacity: 0.2;
     }
     .hotspot-badge.highlighted {
       box-shadow: 0 0 0 3px #28a745, 0 1px 4px rgba(0,0,0,0.4);
-    }
-    .hotspot-badge.cluster.highlighted {
-      box-shadow: 0 0 0 2px #2c3e50, 0 0 0 5px #28a745;
     }
 
     /* Mobile optimizations */
@@ -499,10 +486,6 @@
       <div class="legend-item">
         <div class="hotspot-badge" style="background-color: #9b59b6;">1</div>
         <span>1 species</span>
-      </div>
-      <div class="legend-item">
-        <div class="hotspot-badge cluster" style="background-color: #e74c3c; margin-left: 2px; margin-right: 10px;">12</div>
-        <span>Group: unique species<br>across hotspots (click)</span>
       </div>
       <div class="legend-item">
         <div class="legend-color" style="background-color: #2ecc71;"></div>
@@ -760,8 +743,6 @@
       let currentDaysFilter = 7;
       let selectedSpecies = null;
       let map, markers, clearFilterBtn;
-      let clusterIndex = null;
-      let locationsById = {};
       
       // Show or hide the partial results warning
       const dataWarning = document.getElementById('data-warning');
@@ -861,6 +842,7 @@
         el.style.backgroundColor = colorForCount(location.speciesCount);
         el.textContent = location.speciesCount;
         el.title = location.name;
+        el.style.zIndex = location.speciesCount; // richer hotspots sit on top
 
         const marker = new maplibregl.Marker({ element: el })
           .setLngLat([location.lng, location.lat])
@@ -872,84 +854,6 @@
           element: el,
           species: new Set(location.species.map(s => s.commonName))
         };
-      }
-
-      function createClusterMarker(feature) {
-        const { cluster_id, point_count, species } = feature.properties;
-        const uniqueCount = species.length;
-
-        const el = document.createElement('div');
-        el.className = 'hotspot-badge cluster';
-        el.style.backgroundColor = colorForCount(uniqueCount);
-        el.textContent = uniqueCount;
-        el.title = `${uniqueCount} species across ${point_count} hotspots (click to zoom in)`;
-        el.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const zoom = Math.min(clusterIndex.getClusterExpansionZoom(cluster_id), 17);
-          map.easeTo({ center: feature.geometry.coordinates, zoom });
-        });
-
-        const marker = new maplibregl.Marker({ element: el })
-          .setLngLat(feature.geometry.coordinates)
-          .addTo(map);
-
-        return { marker, element: el, species: new Set(species) };
-      }
-
-      // Build the cluster index for the current set of locations.
-      // Each point carries its species names; clusters merge them into a
-      // unique set so the cluster label = distinct species across its hotspots.
-      function buildClusterIndex(locations) {
-        clusterIndex = new Supercluster({
-          radius: 50,
-          maxZoom: 15,
-          map: props => ({ species: props.species.slice() }),
-          reduce: (acc, props) => {
-            acc.species = Array.from(new Set([...acc.species, ...props.species]));
-          }
-        });
-        clusterIndex.load(locations.map(loc => ({
-          type: 'Feature',
-          geometry: { type: 'Point', coordinates: [loc.lng, loc.lat] },
-          properties: {
-            locId: loc.locId || `${loc.lat},${loc.lng}`,
-            species: Array.from(new Set(loc.species.map(s => s.commonName)))
-          }
-        })));
-      }
-
-      // Sync DOM markers with the clusters visible at the current view.
-      // Markers are keyed so ones that stay on screen (and their open popups) survive.
-      function updateMarkers() {
-        if (!clusterIndex) return;
-        const b = map.getBounds();
-        const features = clusterIndex.getClusters(
-          [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()],
-          map.getZoom()
-        );
-
-        const visible = new Set();
-        features.forEach(f => {
-          const isCluster = f.properties.cluster;
-          const key = isCluster ? `c:${f.properties.cluster_id}` : `l:${f.properties.locId}`;
-          visible.add(key);
-          if (markers[key]) return;
-          if (isCluster) {
-            markers[key] = createClusterMarker(f);
-          } else {
-            const location = locationsById[f.properties.locId];
-            if (location) markers[key] = createHotspotMarker(location);
-          }
-        });
-
-        Object.keys(markers).forEach(key => {
-          if (!visible.has(key)) {
-            markers[key].marker.remove();
-            delete markers[key];
-          }
-        });
-
-        applyHighlight();
       }
 
       // Main render function
@@ -1000,11 +904,10 @@
           speciesList.appendChild(item);
         });
 
-        // Index locations and build clusters, then draw what's in view
-        locationsById = {};
-        filteredData.locations.forEach(loc => { locationsById[loc.locId || `${loc.lat},${loc.lng}`] = loc; });
-        buildClusterIndex(filteredData.locations);
-        updateMarkers();
+        // Add a badge for each hotspot
+        filteredData.locations.forEach(location => {
+          markers[location.locId || `${location.lat},${location.lng}`] = createHotspotMarker(location);
+        });
 
         // Wire up click handlers for species filtering
         document.querySelectorAll('#species-list .species-item').forEach(item => {
@@ -1130,8 +1033,6 @@
       clearFilterBtn = document.getElementById('clear-filter');
       clearFilterBtn.addEventListener('click', clearFilter);
 
-      // Re-cluster as the view changes
-      map.on('moveend', updateMarkers);
       
       // Wire up days slider
       const daysSlider = document.getElementById('days-slider');
