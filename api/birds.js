@@ -86,6 +86,8 @@ export default async function handler(req, res) {
 
     // Fetch all observations for each species
     const allObservations = [];
+    // Species fetched successfully, so the client can exclude them when asking for the next batch
+    const loadedSpeciesCodes = [];
     let requestCount = 1; // includes the recentObservationsNearby request
     let warning = null;
     for (const [index, speciesCode] of uniqueSpeciesCodes.entries()) {
@@ -116,6 +118,7 @@ export default async function handler(req, res) {
         }
         break;
       }
+      loadedSpeciesCodes.push(speciesCode);
       if (speciesObs && speciesObs.length > 0) {
         allObservations.push(...speciesObs);
       }
@@ -171,6 +174,7 @@ export default async function handler(req, res) {
         })),
       })),
       warning,
+      loadedSpeciesCodes,
     };
 
     res.status(200).json(mapData);

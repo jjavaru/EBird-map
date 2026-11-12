@@ -70,11 +70,23 @@ window.buildDemoData = function buildDemoData(lat, lng, listType, excludeCodes) 
   lng = parseFloat(lng);
   const exclude = new Set(excludeCodes);
 
+  // In ?demo=warning mode, mimic the rate limit by only "loading" a batch of species
+  // per request. Excluded codes (checked off, or loaded by an earlier batch) don't count.
+  const demoParam = new URLSearchParams(window.location.search).get('demo');
+  const BATCH_SIZE = 6;
+  const candidateCodes = Object.keys(SPECIES)
+    .filter((code) => listType === 'year' || !YEAR_ONLY.has(code))
+    .filter((code) => !exclude.has(code));
+  const loadedSpeciesCodes = demoParam === 'warning'
+    ? candidateCodes.slice(0, BATCH_SIZE)
+    : candidateCodes;
+  const loaded = new Set(loadedSpeciesCodes);
+
   const locations = HOTSPOTS.map(([name, dLat, dLng, codes, ages], i) => {
     const species = codes
       .map((code, j) => ({ code, age: ages[j] }))
       .filter(({ code }) => listType === 'year' || !YEAR_ONLY.has(code))
-      .filter(({ code }) => !exclude.has(code)) // the real API skips checked-off species
+      .filter(({ code }) => loaded.has(code)) // the real API skips checked-off species
       .map(({ code, age }, j) => ({
         commonName: SPECIES[code],
         speciesCode: code,
@@ -97,12 +109,12 @@ window.buildDemoData = function buildDemoData(lat, lng, listType, excludeCodes) 
     .filter((loc) => loc.species.length > 0)
     .sort((a, b) => b.speciesCount - a.speciesCount || a.distance - b.distance);
 
-  const demoParam = new URLSearchParams(window.location.search).get('demo');
   return {
     home: { lat, lng },
     locations,
-    warning: demoParam === 'warning'
-      ? 'Demo: eBird rate limit reached: only 25 of 70 species were loaded. Results are incomplete.'
+    warning: loadedSpeciesCodes.length < candidateCodes.length
+      ? `Demo: eBird rate limit reached: only ${loadedSpeciesCodes.length} of ${candidateCodes.length} species were loaded. Results are incomplete.`
       : null,
+    loadedSpeciesCodes,
   };
 };

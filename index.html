@@ -518,6 +518,20 @@
       font-size: 13px;
       flex-shrink: 0;
     }
+    #load-more-btn {
+      margin-top: 8px;
+      padding: 4px 10px;
+      border: 1px solid #856404;
+      border-radius: 4px;
+      background: white;
+      color: #856404;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    #load-more-btn:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
   </style>
 </head>
 <body>
@@ -730,17 +744,19 @@
     }
 
     // Fetch bird data from API
-    async function fetchBirdData(lat, lng, dist = 50, listType = 'life') {
+    // extraExclude: species codes already loaded by an earlier batch (see "Load more")
+    async function fetchBirdData(lat, lng, dist = 50, listType = 'life', extraExclude = []) {
       try {
+        // Skip species already checked off (or already loaded) so they don't use up eBird requests
+        const excludeCodes = [...new Set([...Object.keys(seenSpecies), ...extraExclude])];
         let response;
         if (DEMO_MODE) {
             await loadDemoData();
             await new Promise(r => setTimeout(r, 400)); // mimic network latency
-            const demo = window.buildDemoData(lat, lng, listType, Object.keys(seenSpecies));
+            const demo = window.buildDemoData(lat, lng, listType, excludeCodes);
             response = { ok: true, json: async () => demo };
         } else {
-            // Skip species already checked off so they don't use up eBird requests
-            const exclude = encodeURIComponent(Object.keys(seenSpecies).join(','));
+            const exclude = encodeURIComponent(excludeCodes.join(','));
             response = await fetch(`/api/birds?lat=${lat}&lng=${lng}&dist=${dist}&listType=${listType}&exclude=${exclude}`);
         }
         
@@ -837,6 +853,29 @@
       }
     });
 
+    // Combine a follow-up batch into the existing data. Batches cover different species,
+    // so species lists for the same hotspot are simply concatenated.
+    function mergeBirdData(base, more) {
+      const byLocId = new Map(base.locations.map(loc => [loc.locId, { ...loc, species: [...loc.species] }]));
+      more.locations.forEach(loc => {
+        const existing = byLocId.get(loc.locId);
+        if (existing) {
+          existing.species.push(...loc.species);
+          existing.speciesCount = existing.species.length;
+        } else {
+          byLocId.set(loc.locId, { ...loc, species: [...loc.species] });
+        }
+      });
+      const locations = [...byLocId.values()]
+        .sort((a, b) => b.speciesCount - a.speciesCount || a.distance - b.distance);
+      return {
+        home: base.home,
+        locations,
+        warning: more.warning,
+        loadedSpeciesCodes: [...new Set([...(base.loadedSpeciesCodes || []), ...(more.loadedSpeciesCodes || [])])],
+      };
+    }
+
     function initMap(data) {
       // Store original data globally for filtering
       let fullData = data;
@@ -844,10 +883,42 @@
       let selectedSpecies = null;
       let map, markers, clearFilterBtn;
       
-      // Show or hide the partial results warning
+      // Show or hide the partial results warning, with a button to fetch the species that were missed
       const dataWarning = document.getElementById('data-warning');
-      dataWarning.textContent = data.warning ? `⚠️ ${data.warning}` : '';
-      dataWarning.style.display = data.warning ? 'block' : 'none';
+      function renderWarning(warning) {
+        dataWarning.innerHTML = '';
+        dataWarning.style.display = warning ? 'block' : 'none';
+        if (!warning) return;
+        const text = document.createElement('div');
+        text.textContent = `⚠️ ${warning}`;
+        dataWarning.appendChild(text);
+        const btn = document.createElement('button');
+        btn.id = 'load-more-btn';
+        btn.textContent = 'Load more birds';
+        btn.addEventListener('click', loadMoreBirds);
+        dataWarning.appendChild(btn);
+      }
+      renderWarning(data.warning);
+
+      // Fetch the next batch, excluding species already loaded, and merge it into fullData
+      async function loadMoreBirds() {
+        const btn = document.getElementById('load-more-btn');
+        btn.disabled = true;
+        btn.textContent = 'Loading...';
+        try {
+          const more = await fetchBirdData(
+            fullData.home.lat, fullData.home.lng, 50, currentListType,
+            fullData.loadedSpeciesCodes || []
+          );
+          fullData = mergeBirdData(fullData, more);
+          renderWarning(more.warning);
+          rerenderCurrentMap();
+        } catch (error) {
+          console.error('Error loading more birds:', error);
+          btn.disabled = false;
+          btn.textContent = 'Retry loading more birds';
+        }
+      }
       
       // Helper function to filter data by days
       function filterDataByDays(data, days) {
