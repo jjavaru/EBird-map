@@ -340,6 +340,23 @@
     .legend h4 {
       margin: 0 0 10px 0;
       font-size: 14px;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .legend h4::after {
+      content: '▾';
+    }
+    .legend.collapsed h4 {
+      margin: 0;
+    }
+    .legend.collapsed h4::after {
+      content: '▸';
+    }
+    .legend.collapsed .legend-body {
+      display: none;
     }
     .legend-item {
       display: flex;
@@ -376,6 +393,18 @@
       cursor: pointer;
       transition: opacity 0.15s, box-shadow 0.15s;
     }
+    /* Invisible hit area around map badges so they're easier to tap */
+    .maplibregl-marker.hotspot-badge::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+    }
+    @media (pointer: coarse) {
+      .maplibregl-marker.hotspot-badge::before {
+        inset: -12px;
+      }
+    }
     .hotspot-badge.dimmed {
       opacity: 0.2;
     }
@@ -406,6 +435,9 @@
       #clear-filter {
         padding: 6px 12px;
         font-size: 12px;
+      }
+      #seen-section {
+        max-height: 18vh;
       }
     }
     
@@ -583,6 +615,7 @@
   <div id="map">
     <div class="legend">
       <h4>New Species</h4>
+      <div class="legend-body">
       <div class="legend-item">
         <div class="hotspot-badge" style="background-color: #e74c3c;">5+</div>
         <span>5+ species</span>
@@ -606,6 +639,7 @@
       <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd; font-size: 11px; color: #7f8c8d;">
         💡 Click anywhere on map to search from new location
       </div>
+      </div>
     </div>
   </div>
   <script>
@@ -621,6 +655,11 @@
     }
     
     sidebarToggle.addEventListener('click', toggleSidebar);
+
+    // Legend: collapsed by default on mobile, tap the heading to expand/collapse
+    const legend = document.querySelector('.legend');
+    if (window.innerWidth < 768) legend.classList.add('collapsed');
+    legend.querySelector('h4').addEventListener('click', () => legend.classList.toggle('collapsed'));
     sidebarBackdrop.addEventListener('click', toggleSidebar);
     
     // Close sidebar when clicking on a species (mobile only)
@@ -877,6 +916,13 @@
     }
 
     function initMap(data) {
+      // Tear down any previous map (and its markers/listeners) before building a new one
+      if (globalMap) {
+        globalMap.off();
+        globalMap.remove();
+        globalMap = null;
+      }
+
       // Store original data globally for filtering
       let fullData = data;
       let currentDaysFilter = 7;
@@ -1156,9 +1202,12 @@
       // Add map click handler for new search
       map.on('click', async function(e) {
         // Don't trigger search if clicking on a marker
-        const features = map.queryRenderedFeatures(e.point);
         if (e.originalEvent.target.closest('.maplibregl-marker')) {
           return; // Clicked on a marker, let the popup handle it
+        }
+        // If a popup is open, this click just closes it (popup's closeOnClick handles that)
+        if (map.getContainer().querySelector('.maplibregl-popup')) {
+          return;
         }
         
         const clickedLat = e.lngLat.lat.toFixed(4);
@@ -1193,10 +1242,7 @@
           document.getElementById('loading').style.display = 'none';
           document.getElementById('map').classList.remove('loading');
           
-          // Clear existing map and reinitialize
-          map.off();
-          map.remove();
-          initMap(newData);
+          initMap(newData); // tears down the existing map
           
         } catch (error) {
           console.error('Error fetching new data:', error);
@@ -1212,19 +1258,21 @@
 
       // Get clear filter button reference
       clearFilterBtn = document.getElementById('clear-filter');
-      clearFilterBtn.addEventListener('click', clearFilter);
+      clearFilterBtn.onclick = clearFilter; // assign (not add) so re-inits don't stack handlers
 
       
       // Wire up days slider
       const daysSlider = document.getElementById('days-slider');
       const daysValue = document.getElementById('days-filter-value');
       
-      daysSlider.addEventListener('input', function() {
+      // Carry over the slider position from the previous map
+      currentDaysFilter = parseInt(daysSlider.value);
+      daysSlider.oninput = function() {
         currentDaysFilter = parseInt(this.value);
         daysValue.textContent = currentDaysFilter;
         const filteredData = filterDataByDays(fullData, currentDaysFilter);
         renderMap(filteredData);
-      });
+      };
       
       // Re-render in place (keeping the current zoom) when a species is checked off
       rerenderCurrentMap = () =>
