@@ -1,13 +1,8 @@
-import https from "https";
 import fs from "fs";
 import path from "path";
 
 const API_ROOT = "https://api.ebird.org/v2";
 const DAYS_BACK = 7;
-
-const httpsAgent = new https.Agent({
-  rejectUnauthorized: false,
-});
 
 // Serverless function handler
 export default async function handler(req, res) {
@@ -28,10 +23,14 @@ export default async function handler(req, res) {
     }
 
     // Get location from query params or use default
-    const lat = req.query.lat || "39.95";
-    const lng = req.query.lng || "-82.99";
-    const dist = req.query.dist || "50";
-    const listType = req.query.listType || "life"; // 'life' or 'year'
+    // Validate inputs: they're interpolated into eBird URLs
+    const lat = Number(req.query.lat ?? 39.95);
+    const lng = Number(req.query.lng ?? -82.99);
+    const dist = Math.min(Number(req.query.dist ?? 50), 50); // eBird max is 50 km
+    if (!(Math.abs(lat) <= 90) || !(Math.abs(lng) <= 180) || !(dist > 0)) {
+      return res.status(400).json({ error: 'Invalid lat, lng, or dist' });
+    }
+    const listType = req.query.listType === "year" ? "year" : "life";
     // Species codes the user has already checked off on the client
     const excludeCodes = new Set(
       (req.query.exclude || "").split(",").map((c) => c.trim()).filter(Boolean)
@@ -41,7 +40,6 @@ export default async function handler(req, res) {
       method: "GET",
       redirect: "follow",
       headers: { "x-ebirdapitoken": API_KEY },
-      agent: httpsAgent,
     };
 
     // Load life/year list from CSV - use process.cwd() to get project root
@@ -61,7 +59,12 @@ export default async function handler(req, res) {
       console.error(`Error reading ${listType} list:`, error);
     }
 
-    const lifeListSpecies = new Set(lifeListData.map((bird) => bird.commonName));
+    // Match on scientific name (stable across eBird's yearly common-name changes),
+    // with common name as a fallback. Only true species count; spuhs/slashes/hybrids don't.
+    const countable = lifeListData.filter((bird) => bird.category === "species");
+    const lifeListSciNames = new Set(countable.map((bird) => bird.scientificName));
+    const lifeListComNames = new Set(countable.map((bird) => bird.commonName));
+    const onList = (obs) => lifeListSciNames.has(obs.sciName) || lifeListComNames.has(obs.comName);
 
     // Fetch recent observations
     const recentObservations = await recentObservationsNearby(
@@ -78,7 +81,7 @@ export default async function handler(req, res) {
 
     // Filter to find species NOT on life list and not already checked off
     const needs = recentObservations.filter(
-      (obs) => !lifeListSpecies.has(obs.comName) && !excludeCodes.has(obs.speciesCode)
+      (obs) => isSpecies(obs) && !onList(obs) && !excludeCodes.has(obs.speciesCode)
     );
 
     // Get unique species codes
@@ -137,8 +140,8 @@ export default async function handler(req, res) {
     // Calculate distance and prepare locations
     const locationsWithDistance = Object.entries(byLocation).map(([locId, observations]) => {
       const distance = calculateDistance(
-        parseFloat(lat),
-        parseFloat(lng),
+        lat,
+        lng,
         observations[0].lat,
         observations[0].lng
       );
@@ -155,8 +158,8 @@ export default async function handler(req, res) {
     // Generate response data
     const mapData = {
       home: {
-        lat: parseFloat(lat),
-        lng: parseFloat(lng),
+        lat,
+        lng,
       },
       locations: sortedLocations.map(({ locId, observations, distance }) => ({
         name: observations[0].locName || locId,
@@ -228,19 +231,42 @@ async function parseEbirdResponse(response) {
   return response.json();
 }
 
+// eBird recent observations include hybrids, spuhs ("duck sp."), slashes, and domestics,
+// which can never be a life-list need
+function isSpecies(obs) {
+  return !/ sp\.|\/|\(hybrid\)| x |Domestic/.test(obs.comName);
+}
+
+// Minimal RFC 4180 CSV parser (handles quoted fields with commas, quotes, and newlines)
+function parseCsv(text) {
+  const rows = [];
+  let row = [], field = "", inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQuotes) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') inQuotes = false;
+      else field += c;
+    } else if (c === '"') inQuotes = true;
+    else if (c === ",") { row.push(field); field = ""; }
+    else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(field); rows.push(row); row = []; field = "";
+    } else field += c;
+  }
+  if (field || row.length) { row.push(field); rows.push(row); }
+  return rows.filter((r) => r.some((f) => f.trim()));
+}
+
 function parseLifeListCsv(csvContent) {
-  const rows = csvContent.split("\n").slice(1);
-  return rows
-    .filter(row => row.trim().length > 0)
-    .map((row) => {
-      const cols = row.split(",");
-      return {
-        taxon: cols[1],
-        commonName: cols[3],
-        scientificName: cols[4],
-        location: cols[6],
-      };
-    });
+  const [header, ...rows] = parseCsv(csvContent.replace(/^\uFEFF/, ""));
+  const col = (name) => header.indexOf(name);
+  const [cat, com, sci] = [col("Category"), col("Common Name"), col("Scientific Name")];
+  return rows.map((cols) => ({
+    category: cols[cat],
+    commonName: cols[com],
+    scientificName: cols[sci],
+  }));
 }
 
 async function recentObservationsNearby(lat, lng, dist, back, requestOptions) {

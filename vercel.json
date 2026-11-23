@@ -9,8 +9,16 @@
       "dest": "/api/$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(index\\.html|demo-data\\.js)",
       "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404
     }
   ]
 }

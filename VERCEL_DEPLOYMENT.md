@@ -1,172 +1,53 @@
-# eBird Map - Vercel Deployment Guide
+# eBird Needs Map — Deployment & Development
 
-## 🚀 Quick Start
+## Layout
 
-This guide will help you deploy your eBird map to Vercel so you can access it from your phone!
+```
+index.html                     # The app (MapLibre map, all UI)
+demo-data.js                   # Fake data for demo mode (?demo)
+demo-server.mjs                # Local static server for demo mode
+api/birds.js                   # Vercel serverless function (eBird API logic)
+ebird_world_life_list.csv      # Life list export (read by the API, not served)
+ebird_world_year_list.csv      # Year list export (read by the API, not served)
+photoCount/                    # Separate script: species that still need a photo
+vercel.json                    # Routes: only index.html, demo-data.js and /api are public
+```
 
-## Prerequisites
+## Deploying to Vercel
 
-- ✅ GitHub account with your code pushed to a repository
-- ✅ Vercel account
-- ✅ Your eBird API key
+1. Import the GitHub repo in Vercel (Framework preset: **Other**, no build command,
+   output directory `.`).
+2. Add the environment variable `EBIRD_API_KEY` (all environments).
+3. Deploy. Every push to `main` redeploys automatically.
 
-## Deployment Steps
+The API key stays server-side. `vercel.json` only serves `index.html`,
+`demo-data.js` and `/api/*`; everything else (including the CSVs) returns 404.
 
-### 1. Push Your Code to GitHub
-
-Make sure all files are committed and pushed:
+## Updating the life/year lists
 
 ```bash
-git add .
-git commit -m "Add Vercel deployment configuration"
-git push origin master
+npm run download-lists   # uses ../life-list-download (Playwright)
+git commit -am "Update lists" && git push
 ```
 
-### 2. Import Project to Vercel
+Species are matched by scientific name (falling back to common name), so eBird's
+yearly common-name changes don't cause false "needs". Only `species` rows count;
+spuh/slash/hybrid rows are ignored. The year list needs re-downloading after Jan 1.
 
-1. Go to [vercel.com](https://vercel.com)
-2. Click "Add New Project"
-3. Select your GitHub repository: `jjavaru/EBird-map`
-4. Click "Import"
-
-### 3. Configure Environment Variables
-
-**CRITICAL STEP** - Set up your eBird API key:
-
-1. In the import screen, expand "Environment Variables"
-2. Add the following:
-   - **Name:** `EBIRD_API_KEY`
-   - **Environment:** Check all (Production, Preview, Development)
-3. Click "Add"
-
-### 4. Configure Build Settings
-
-Vercel should auto-detect the settings, but verify:
-
-- **Framework Preset:** Other
-- **Build Command:** (leave empty or use: `echo 'No build needed'`)
-- **Output Directory:** `.` (current directory)
-- **Install Command:** `npm install`
-
-### 5. Deploy!
-
-1. Click "Deploy"
-2. Wait 30-60 seconds for deployment to complete
-3. You'll get a URL like: `https://ebird-map-yourname.vercel.app`
-
-### 6. Access from Your Phone
-
-1. Open your phone's browser
-2. Visit your Vercel URL
-3. Bookmark it or add to home screen for easy access!
-
-## Important Notes
-
-### Your Life List CSV
-
-The API function tries to read `ebird_world_life_list.csv` from the project root. Make sure this file is:
-
-- ✅ Committed to your GitHub repository
-- ✅ Named exactly: `ebird_world_life_list.csv`
-
-### Updating Your Location
-
-To change the default location (currently Columbus, OH), you have two options:
-
-**Option A:** Update the API function
-Edit `api/birds.js` lines 30-32 to change the default coordinates:
-
-```javascript
-const lat = req.query.lat || "YOUR_LATITUDE";
-const lng = req.query.lng || "YOUR_LONGITUDE";
-```
-
-**Option B:** Use URL parameters
-Access the site with custom coordinates:
-
-```
-https://your-site.vercel.app/?lat=49.2888&lng=-123.1111
-```
-
-### API Key Security
-
-Your eBird API key is stored as an environment variable on Vercel and is NOT exposed in your frontend code. ✅ Secure!
-
-### Free Tier Limits
-
-Vercel's free tier includes:
-
-- Unlimited deployments
-- Automatic HTTPS
-- 100 GB bandwidth per month
-- Serverless function executions (more than enough for personal use)
-
-## Troubleshooting
-
-### Error: "EBIRD_API_KEY not configured"
-
-- Go to Vercel dashboard → Your project → Settings → Environment Variables
-- Make sure `EBIRD_API_KEY` is set correctly
-- Redeploy the project
-
-### No birds showing up
-
-- Check that `ebird_world_life_list.csv` exists in your repo
-- Verify the CSV file format matches the expected columns
-- Check browser console (F12) for errors
-
-### Map not loading
-
-- Verify you have internet connection (map tiles load from external CDN)
-- Check browser console for JavaScript errors
-
-## Updates & Redeployment
-
-Every time you push to GitHub, Vercel automatically redeploys your site! 🎉
-
-Just:
-
-```bash
-git add .
-git commit -m "Your changes"
-git push
-```
-
-Vercel will detect the push and redeploy in ~30 seconds.
-
-## Local Development
-
-To test locally before deploying:
+## Local development
 
 ```bash
 npm install
-npm run dev
+npm run demo        # http://localhost:3000/?demo — fake data, no eBird calls
 ```
 
-Then open `bird-map.html` in your browser.
+Opening `index.html` directly from disk also runs in demo mode. To hit the real API
+locally, use `vercel dev` with `EBIRD_API_KEY` in `.env`.
 
----
+## Troubleshooting
 
-## File Structure
-
-```
-ebird/
-├── index.html              # Main map page (updated for API)
-├── bird-map.html          # Original static version (backup)
-├── api/
-│   └── birds.js           # Serverless function (eBird API logic)
-├── ebird.mts              # Local development script
-├── ebird_world_life_list.csv  # Your life list (must be in repo)
-├── package.json           # Dependencies
-├── vercel.json           # Vercel configuration
-└── .gitignore            # Ignored files
-```
-
-## Next Steps
-
-- 📱 Add site to your phone's home screen
-- 🗺️ Share the URL with birding friends
-- 🔄 Update your life list CSV and push to auto-redeploy
-- ⚙️ Customize the default location for your area
-
-Happy birding! 🐦
+- **"EBIRD_API_KEY not configured"**: set it in Vercel → Settings → Environment
+  Variables, then redeploy.
+- **"eBird rate limit reached"**: the API makes one eBird request per needed species;
+  use "Load more birds" to fetch the rest.
+- **No birds showing**: check the CSVs are committed and the browser console for errors.

@@ -674,6 +674,7 @@
     let globalMap = null;
     let currentListType = 'life';
     let rerenderCurrentMap = null; // set by initMap; re-renders without re-fetching
+    let currentHome = null; // search center of the data currently shown
 
     // ---- Checked-off ("seen") species, persisted in localStorage ----
     // Shape: { [speciesCode]: { name, checkedAt } }. Applies to both life and
@@ -840,8 +841,8 @@
         document.getElementById('loading').style.display = 'block';
         document.getElementById('loading').textContent = 'Loading bird data...';
         
-        const currentCenter = globalMap.getCenter();
-        const data = await fetchBirdData(currentCenter.lat, currentCenter.lng, 50, currentListType);
+        // Same search center, new list (not the map's view center, which fitBounds moved)
+        const data = await fetchBirdData(currentHome.lat, currentHome.lng, 50, currentListType);
         
         // Update timestamp
         const now = new Date();
@@ -925,6 +926,7 @@
 
       // Store original data globally for filtering
       let fullData = data;
+      currentHome = data.home;
       let currentDaysFilter = 7;
       let selectedSpecies = null;
       let map, markers, clearFilterBtn;
@@ -974,7 +976,7 @@
         // Filter locations and their species by date
         const filteredLocations = data.locations.map(location => {
           const filteredSpecies = location.species.filter(species => {
-            const obsDate = new Date(species.date);
+            const obsDate = parseEbirdDate(species.date);
             return obsDate >= cutoffDate && !isSeen(species.speciesCode);
           });
           
@@ -993,6 +995,11 @@
         };
       }
       
+      // eBird dates look like "2026-05-16 14:01"; make them ISO so every browser parses them
+      function parseEbirdDate(str) {
+        return new Date(String(str).replace(' ', 'T'));
+      }
+
       // Badge color buckets by species count
       function colorForCount(n) {
         if (n >= 5) return '#e74c3c'; // red
@@ -1029,11 +1036,11 @@
           <div class="species-item species-row">
             <div class="species-text">
               <div class="species-name">
-                <a href="https://ebird.org/species/${s.speciesCode}" target="_blank">${s.commonName}</a>
+                <a href="https://ebird.org/species/${encodeURIComponent(s.speciesCode)}" target="_blank">${escapeHtml(s.commonName)}</a>
               </div>
               <div class="species-details">
-                ${s.count} seen on ${s.date}
-                ${s.subId ? ` • <a href="https://ebird.org/checklist/${s.subId}" target="_blank">View checklist</a>` : ''}
+                ${escapeHtml(s.count)} seen on ${escapeHtml(s.date)}
+                ${s.subId ? ` • <a href="https://ebird.org/checklist/${encodeURIComponent(s.subId)}" target="_blank">View checklist</a>` : ''}
               </div>
             </div>
             <button class="check-btn" title="Mark as seen"
@@ -1042,11 +1049,11 @@
           </div>
         `).join('');
 
-        const hotspotLink = location.locId ? `<a href="https://ebird.org/hotspot/${location.locId}" target="_blank" class="hotspot-link">🔗 View hotspot on eBird</a>` : '';
+        const hotspotLink = location.locId ? `<a href="https://ebird.org/hotspot/${encodeURIComponent(location.locId)}" target="_blank" class="hotspot-link">🔗 View hotspot on eBird</a>` : '';
 
         return `
           <div class="location-popup">
-            <h3>${location.name}</h3>
+            <h3>${escapeHtml(location.name)}</h3>
             <div class="info">
               ${location.distance} mi away • ${location.speciesCount} species
               ${hotspotLink}
@@ -1120,7 +1127,7 @@
           item.className = 'species-item species-row';
           item.innerHTML = `
             <div class="species-text">
-              <div class="name">${species.name}</div>
+              <div class="name">${escapeHtml(species.name)}</div>
               <div class="count">${species.count} observation${species.count > 1 ? 's' : ''} at ${species.locations.length} location${species.locations.length > 1 ? 's' : ''}</div>
             </div>
             <button class="check-btn" title="Mark as seen"
