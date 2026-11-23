@@ -7,7 +7,8 @@
     "dev": "tsx ebird.mts",
     "demo": "node demo-server.mjs",
     "photo-count": "NODE_TLS_REJECT_UNAUTHORIZED=0 tsx photoCount/photo-count.mts",
-    "build": "echo 'No build needed for serverless functions'"
+    "build": "echo 'No build needed for serverless functions'",
+    "download-lists": "npm --prefix ../life-list-download run download --"
   },
   "dependencies": {},
   "devDependencies": {
