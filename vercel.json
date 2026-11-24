@@ -9,11 +9,18 @@
       "dest": "/api/$1"
     },
     {
+      "src": "/sw\\.js",
+      "headers": {
+        "Cache-Control": "no-cache"
+      },
+      "continue": true
+    },
+    {
       "src": "/",
       "dest": "/index.html"
     },
     {
-      "src": "/(index\\.html|demo-data\\.js)",
+      "src": "/(index\\.html|demo-data\\.js|sw\\.js|manifest\\.webmanifest|icons/[\\w.-]+)",
       "dest": "/$1"
     },
     {

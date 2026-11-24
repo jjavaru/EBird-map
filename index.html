@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>eBird Needs Map</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#2c3e50">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Needs Map">
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" />
   <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
   <style>
@@ -412,6 +419,69 @@
       box-shadow: 0 0 0 3px #28a745, 0 1px 4px rgba(0,0,0,0.4);
     }
 
+    /* "Search near me" button, bottom-left of the map */
+    #near-me-btn {
+      position: absolute;
+      left: 10px;
+      bottom: 30px;
+      z-index: 1000;
+      padding: 10px 14px;
+      background: white;
+      color: #2c3e50;
+      border: none;
+      border-radius: 22px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+      cursor: pointer;
+    }
+    #near-me-btn:hover {
+      background: #f1f3f5;
+    }
+    #near-me-btn:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
+
+    /* Offline notice over the map (the sidebar copy is hidden on phones) */
+    #map-notice {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      max-width: calc(100% - 40px);
+      padding: 8px 14px;
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 16px;
+      font-size: 13px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    /* "You are here" dot */
+    .user-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #1a73e8;
+      border: 3px solid white;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.2), 0 0 0 8px rgba(26,115,232,0.2);
+      pointer-events: none; /* taps go through to the map / badges underneath */
+    }
+    .legend-item .user-dot {
+      box-sizing: border-box;
+      width: 16px;
+      height: 16px;
+      margin: 0 10px 0 2px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+    }
+
     /* Mobile optimizations */
     @media (max-width: 767px) {
       .legend {
@@ -636,11 +706,17 @@
         <div class="legend-color" style="background-color: #2ecc71;"></div>
         <span>Search Center</span>
       </div>
+      <div class="legend-item">
+        <div class="user-dot"></div>
+        <span>You</span>
+      </div>
       <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd; font-size: 11px; color: #7f8c8d;">
         💡 Click anywhere on map to search from new location
       </div>
       </div>
     </div>
+    <button id="near-me-btn">📍 Search near me</button>
+    <div id="map-notice" title="Tap to dismiss"></div>
   </div>
   <script>
     // Sidebar toggle for mobile
@@ -783,6 +859,157 @@
       });
     }
 
+    // ---- Small localStorage helpers (storage can be unavailable, e.g. private mode) ----
+    function storageGet(key) {
+      try {
+        return JSON.parse(localStorage.getItem(key));
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function storageSet(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (e) {
+        console.warn(`Could not save ${key} to localStorage:`, e);
+      }
+    }
+
+    // ---- Location ----
+    const LAST_SEARCH_KEY = 'ebird-map.lastSearch';
+    const DEFAULT_CENTER = { lat: 39.95, lng: -82.99 }; // Columbus, OH
+    let lastKnownPosition = null; // { lat, lng } from the device
+    let userDot = null;
+    let watchId = null;
+
+    function geoErrorMessage(err) {
+      if (err.code === err.PERMISSION_DENIED) {
+        return 'Location access is blocked. Allow location for this site to search near you.';
+      }
+      if (err.code === err.TIMEOUT) return 'Timed out finding your location.';
+      return 'Could not determine your location.';
+    }
+
+    function getCurrentPosition() {
+      return new Promise((resolve, reject) => {
+        if (!navigator.geolocation) {
+          reject(new Error('Location is not available in this browser.'));
+          return;
+        }
+        navigator.geolocation.getCurrentPosition(
+          pos => {
+            const p = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+            setUserPosition(p);
+            startWatchingPosition();
+            resolve(p);
+          },
+          err => reject(new Error(geoErrorMessage(err))),
+          { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }
+        );
+      });
+    }
+
+    // Once we have permission, keep the "you are here" dot current while the app is open
+    function startWatchingPosition() {
+      if (watchId !== null) return;
+      watchId = navigator.geolocation.watchPosition(
+        pos => setUserPosition({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
+        () => {}, // keep the last known dot on errors
+        { enableHighAccuracy: true, maximumAge: 30000 }
+      );
+    }
+
+    function setUserPosition(p) {
+      lastKnownPosition = p;
+      showUserDot();
+    }
+
+    function showUserDot() {
+      if (!globalMap || !lastKnownPosition) return;
+      if (!userDot) {
+        const el = document.createElement('div');
+        el.className = 'user-dot';
+        el.style.zIndex = 1000; // above badges and the search center; taps pass through
+        userDot = new maplibregl.Marker({ element: el });
+      }
+      userDot.setLngLat([lastKnownPosition.lng, lastKnownPosition.lat]).addTo(globalMap);
+    }
+
+    // Where to search on startup: near you if the location comes back quickly,
+    // otherwise the last place searched, otherwise the default.
+    async function startingLocation() {
+      try {
+        return await Promise.race([
+          getCurrentPosition(),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Location took too long')), 8000)),
+        ]);
+      } catch (e) {
+        console.warn('Starting without device location:', e.message);
+        return storageGet(LAST_SEARCH_KEY) || DEFAULT_CENTER;
+      }
+    }
+
+    // ---- Last results per list, so the app still shows something with no signal ----
+    function savedResultsKey(listType) {
+      return `ebird-map.lastResults.${listType}`;
+    }
+
+    function saveResults(listType, data) {
+      if (DEMO_MODE) return; // don't let fake data stand in for real results
+      storageSet(savedResultsKey(listType), { savedAt: new Date().toISOString(), data });
+    }
+
+    function formatTime(date) {
+      return date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+    }
+
+    function formatSavedAt(iso) {
+      const date = new Date(iso);
+      const sameDay = date.toDateString() === new Date().toDateString();
+      return sameDay
+        ? formatTime(date)
+        : `${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}, ${formatTime(date)}`;
+    }
+
+    // Fetch birds around a point and rebuild the map. Used by startup, "Search near me",
+    // tapping the map, and switching lists. If eBird can't be reached, shows the last
+    // saved results for this list instead.
+    async function searchAt(lat, lng, loadingText = 'Loading bird data...') {
+      const loading = document.getElementById('loading');
+      const mapEl = document.getElementById('map');
+      loading.style.display = 'block';
+      loading.textContent = loadingText;
+      mapEl.classList.add('loading');
+      try {
+        const data = await fetchBirdData(lat, lng, 50, currentListType);
+        storageSet(LAST_SEARCH_KEY, { lat: Number(lat), lng: Number(lng) });
+        document.getElementById('data-timestamp').textContent = `Updated at ${formatTime(new Date())}`;
+        loading.style.display = 'none';
+        initMap(data);
+      } catch (error) {
+        console.error('Error loading bird data:', error);
+        const saved = storageGet(savedResultsKey(currentListType));
+        if (saved) {
+          const when = formatSavedAt(saved.savedAt);
+          document.getElementById('data-timestamp').textContent = `Saved results from ${when}`;
+          loading.style.display = 'none';
+          initMap(saved.data, {
+            offlineNotice: `Couldn't reach eBird (${error.message}). Showing your last results, from ${when}.`,
+          });
+        } else {
+          loading.innerHTML = `
+            <div class="error">
+              <div>Error loading bird data</div>
+              <div style="font-size: 14px; margin-top: 10px;">${escapeHtml(error.message)}</div>
+            </div>
+          `;
+        }
+      } finally {
+        mapEl.classList.remove('loading');
+      }
+    }
+
     // Fetch bird data from API
     // extraExclude: species codes already loaded by an earlier batch (see "Load more")
     async function fetchBirdData(lat, lng, dist = 50, listType = 'life', extraExclude = []) {
@@ -836,62 +1063,40 @@
       }
     });
     
-    async function reloadMapData() {
-      try {
-        document.getElementById('loading').style.display = 'block';
-        document.getElementById('loading').textContent = 'Loading bird data...';
-        
-        // Same search center, new list (not the map's view center, which fitBounds moved)
-        const data = await fetchBirdData(currentHome.lat, currentHome.lng, 50, currentListType);
-        
-        // Update timestamp
-        const now = new Date();
-        const timeString = now.toLocaleTimeString('en-US', { 
-          hour: 'numeric', 
-          minute: '2-digit',
-          hour12: true 
-        });
-        document.getElementById('data-timestamp').textContent = `Updated at ${timeString}`;
-        
-        document.getElementById('loading').style.display = 'none';
-        initMap(data);
-      } catch (error) {
-        console.error('Error reloading bird data:', error);
-        document.getElementById('loading').innerHTML = `
-          <div class="error">
-            <div>Error loading bird data</div>
-            <div style="font-size: 14px; margin-top: 10px;">${error.message}</div>
-          </div>
-        `;
-      }
+    function reloadMapData() {
+      // Same search center, new list (not the map's view center, which fitBounds moved)
+      return searchAt(currentHome.lat, currentHome.lng);
     }
-    
+
     window.addEventListener('DOMContentLoaded', async function() {
+      document.getElementById('loading').textContent = 'Finding your location...';
+      const start = await startingLocation();
+      searchAt(start.lat, start.lng);
+    });
+
+    const nearMeBtn = document.getElementById('near-me-btn');
+    nearMeBtn.addEventListener('click', async function() {
+      const label = nearMeBtn.textContent;
+      nearMeBtn.disabled = true;
+      nearMeBtn.textContent = '📍 Finding you...';
       try {
-        document.getElementById('loading').textContent = 'Loading bird data...';
-        const data = await fetchBirdData(39.95, -82.99, 50, currentListType); // Default location
-        
-        // Update timestamp in sidebar
-        const now = new Date();
-        const timeString = now.toLocaleTimeString('en-US', { 
-          hour: 'numeric', 
-          minute: '2-digit',
-          hour12: true 
-        });
-        document.getElementById('data-timestamp').textContent = `Updated at ${timeString}`;
-        
-        document.getElementById('loading').style.display = 'none';
-        initMap(data);
+        const pos = await getCurrentPosition();
+        await searchAt(pos.lat, pos.lng, 'Searching for birds near you...');
       } catch (error) {
-        console.error('Error loading bird data:', error);
-        document.getElementById('loading').innerHTML = `
-          <div class="error">
-            <div>Error loading bird data</div>
-            <div style="font-size: 14px; margin-top: 10px;">${error.message}</div>
-          </div>
-        `;
+        alert(error.message); // location errors; searchAt handles its own
+      } finally {
+        nearMeBtn.disabled = false;
+        nearMeBtn.textContent = label;
       }
     });
+
+    // Installable app / offline support (not available when opened from disk)
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .catch(e => console.warn('Service worker registration failed:', e));
+      });
+    }
 
     // Combine a follow-up batch into the existing data. Batches cover different species,
     // so species lists for the same hotspot are simply concatenated.
@@ -916,8 +1121,10 @@
       };
     }
 
-    function initMap(data) {
+    // offlineNotice: set when showing saved results because eBird couldn't be reached
+    function initMap(data, { offlineNotice = null } = {}) {
       // Tear down any previous map (and its markers/listeners) before building a new one
+      if (userDot) userDot.remove();
       if (globalMap) {
         globalMap.off();
         globalMap.remove();
@@ -933,20 +1140,30 @@
       
       // Show or hide the partial results warning, with a button to fetch the species that were missed
       const dataWarning = document.getElementById('data-warning');
-      function renderWarning(warning) {
+      function renderWarning(warning, { loadMore = true } = {}) {
         dataWarning.innerHTML = '';
         dataWarning.style.display = warning ? 'block' : 'none';
         if (!warning) return;
         const text = document.createElement('div');
         text.textContent = `⚠️ ${warning}`;
         dataWarning.appendChild(text);
+        if (!loadMore) return;
         const btn = document.createElement('button');
         btn.id = 'load-more-btn';
         btn.textContent = 'Load more birds';
         btn.addEventListener('click', loadMoreBirds);
         dataWarning.appendChild(btn);
       }
-      renderWarning(data.warning);
+      const mapNotice = document.getElementById('map-notice');
+      mapNotice.style.display = offlineNotice ? 'block' : 'none';
+      mapNotice.textContent = offlineNotice ? `📴 Offline: showing saved results` : '';
+      mapNotice.onclick = () => { mapNotice.style.display = 'none'; };
+      if (offlineNotice) {
+        renderWarning(offlineNotice, { loadMore: false });
+      } else {
+        renderWarning(data.warning);
+        saveResults(currentListType, fullData);
+      }
 
       // Fetch the next batch, excluding species already loaded, and merge it into fullData
       async function loadMoreBirds() {
@@ -960,6 +1177,7 @@
           );
           fullData = mergeBirdData(fullData, more);
           renderWarning(more.warning);
+          saveResults(currentListType, fullData);
           rerenderCurrentMap();
         } catch (error) {
           console.error('Error loading more birds:', error);
@@ -1183,6 +1401,7 @@
       
       // Save map reference globally
       globalMap = map;
+      showUserDot();
       
       // Add navigation controls to top-right
       map.addControl(new maplibregl.NavigationControl(), 'top-right');
@@ -1227,40 +1446,8 @@
           return; // User cancelled
         }
         
-        // Show loading indicator
-        document.getElementById('map').classList.add('loading');
-        document.getElementById('loading').style.display = 'block';
-        document.getElementById('loading').textContent = `Searching for birds near ${clickedLat}, ${clickedLng}...`;
-        
-        try {
-          // Fetch new data
-          const newData = await fetchBirdData(clickedLat, clickedLng, 50, currentListType);
-          
-          // Update timestamp
-          const now = new Date();
-          const timeString = now.toLocaleTimeString('en-US', { 
-            hour: 'numeric', 
-            minute: '2-digit',
-            hour12: true 
-          });
-          document.getElementById('data-timestamp').textContent = `Updated at ${timeString}`;
-          
-          // Hide loading and remove loading cursor
-          document.getElementById('loading').style.display = 'none';
-          document.getElementById('map').classList.remove('loading');
-          
-          initMap(newData); // tears down the existing map
-          
-        } catch (error) {
-          console.error('Error fetching new data:', error);
-          document.getElementById('map').classList.remove('loading');
-          document.getElementById('loading').innerHTML = `
-            <div class="error">
-              <div>Error loading bird data</div>
-              <div style="font-size: 14px; margin-top: 10px;">${error.message}</div>
-            </div>
-          `;
-        }
+        searchAt(Number(clickedLat), Number(clickedLng),
+          `Searching for birds near ${clickedLat}, ${clickedLng}...`);
       });
 
       // Get clear filter button reference
