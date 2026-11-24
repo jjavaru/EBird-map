@@ -412,11 +412,8 @@
         inset: -12px;
       }
     }
-    .hotspot-badge.dimmed {
-      opacity: 0.2;
-    }
-    .hotspot-badge.highlighted {
-      box-shadow: 0 0 0 3px #28a745, 0 1px 4px rgba(0,0,0,0.4);
+    .hotspot-badge.filtered-out {
+      display: none;
     }
 
     /* "Search near me" button, bottom-left of the map */
@@ -684,7 +681,7 @@
   </div>
   <div id="map">
     <div class="legend">
-      <h4>New Species</h4>
+      <h4>Legend</h4>
       <div class="legend-body">
       <div class="legend-item">
         <div class="hotspot-badge" style="background-color: #e74c3c;">5+</div>
@@ -1233,12 +1230,13 @@
         markers = {};
       }
 
-      // Dim/highlight badges according to the selected species
+      // With a species selected, hide the badges of hotspots that don't have it
       function applyHighlight() {
-        Object.values(markers).forEach(({ element, species }) => {
-          const match = selectedSpecies && species.has(selectedSpecies);
-          element.classList.toggle('dimmed', !!selectedSpecies && !match);
-          element.classList.toggle('highlighted', !!match);
+        Object.values(markers).forEach(({ marker, element, species }) => {
+          const hide = !!selectedSpecies && !species.has(selectedSpecies);
+          element.classList.toggle('filtered-out', hide);
+          // Don't leave a popup open for a badge that just disappeared
+          if (hide && marker.getPopup()?.isOpen()) marker.togglePopup();
         });
       }
 
